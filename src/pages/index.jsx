@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Sticky from 'react-sticky-el';
+import React from "react"
+import PropTypes from "prop-types"
+import Sticky from "react-sticky-el"
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet"
 
-import Theme, { theme } from '@pagerland/themes/src/WebApp';
+import Theme, { theme } from "@pagerland/themes/src/WebApp"
 import {
   Navbar,
   Copyright,
@@ -17,11 +17,11 @@ import {
   Clients,
   Cta,
   Pricing,
-} from '@pagerland/themes/src/WebApp/containers';
+} from "@pagerland/themes/src/WebApp/containers"
 
-import preview from '@pagerland/themes/src/WebApp/assets/preview.png';
+import preview from "@pagerland/themes/src/WebApp/assets/preview.png"
 
-import SEO from '../components/SEO';
+import SEO from "../components/SEO"
 
 const WebApp = ({ url }) => (
   <Theme>
@@ -32,7 +32,7 @@ const WebApp = ({ url }) => (
     </Helmet>
     <SEO title="Mobile App" />
 
-    <Sticky style={{ zIndex: 999, position: 'relative' }}>
+    <Sticky style={{ zIndex: 999, position: "relative" }}>
       <Navbar />
     </Sticky>
 
@@ -48,14 +48,14 @@ const WebApp = ({ url }) => (
     <Footer name="contact" />
     <Copyright />
   </Theme>
-);
+)
 
 WebApp.propTypes = {
   url: PropTypes.string,
-};
+}
 
 WebApp.defaultProps = {
-  url: 'https://pager.land/gatsby/',
-};
+  url: "https://pager.land/gatsby/",
+}
 
-export default WebApp;
+export default WebApp
