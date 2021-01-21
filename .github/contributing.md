@@ -6,10 +6,10 @@
 - When running `git remote -v` you should see something like this:
 
 ```bash
-origin	git@github.com:spartan-dev/scalu.git (fetch)
-origin	git@github.com:spartan-dev/scalu.git (push)
-upstream	git@github.com:[your-username]/scalu.git (fetch)
-upstream	git@github.com:[your-username]/scalu.git (push)
+origin	git@github.com:[your-username]/scalu.git (fetch)
+origin	git@github.com:[your-username]/scalu.git (push)
+upstream	git@github.com:spartan-dev/scalu.git (fetch)
+upstream	git@github.com:spartan-dev/scalu.git (push)
 ```
 
 - You should always keep your `develop` branch up-to-date before creating your own branch.
