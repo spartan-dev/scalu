@@ -38,19 +38,19 @@ export default {
     links: [
       {
         to: '',
-        label: 'Home',
+        label: 'Inicio',
       },
       {
         to: 'about',
-        label: 'About',
+        label: 'Servicios',
       },
       {
         to: 'features',
-        label: 'Features',
+        label: 'Paquetes',
       },
       {
         to: 'screens',
-        label: 'Screens',
+        label: 'Nosotros',
       },
       {
         to: 'clients',
@@ -62,7 +62,7 @@ export default {
       },
       {
         to: 'contact',
-        label: 'Contact',
+        label: 'Contacto',
       },
     ],
     actions: [

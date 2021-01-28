@@ -3,19 +3,21 @@ import { css } from 'styled-components';
 export const space = [0, 4, 8, 16, 32, 64];
 
 export const colors = {
-  primary: '#2BD7B8',
-  secondary: '#2D5D7C',
-  tertiary: '#33B9E3',
-  quaternary: '#EF5939',
+  primary: '#8D00FF',
+  secondary: '#FFB800',
+  tertiary: '#FF5F00',
+  quaternary: '#FF42B3',
+  quinary: '#00CE73',
   error: '#EB5757',
   success: '#27AE60',
   shades: {
-    primary: ['#2BD7B8', '#42EBCC', '#49F5D6', '#80FFE8'],
-    secondary: ['#2D5D7C', '#3F7496', '#5286A8', '#6D96B1'],
-    tertiary: ['#33B9E3', '#46CBF4', '#59D7FF', '#88E2FF'],
-    quaternary: ['#EF5939', '#FF6847', '#FB7C61', '#FF9680'],
+    primary: ['8D00FF', 'rgba(141, 0, 255, 0.8)', 'rgba(141, 0, 255, 0.6)', '#80FFE8'],
+    secondary: ['#FFB800', 'rgba(255, 184, 0, 0.8);', 'rgba(255, 184, 0, 0.6);', '#6D96B1'],
+    tertiary: ['#FF5F00', 'rgba(255, 95, 0, 0.8);', 'rgba(255, 95, 0, 0.6);', '#88E2FF'],
+    quaternary: ['#FF42B3', 'rgba(255, 66, 179, 0.8)', 'rgba(255, 66, 179, 0.6)', '#FF9680'],
+    quinary: ['#00CE73', 'rgba(0, 206, 115, 0.8)', 'rgba(0, 206, 115, 0.6)', '#FF9680'],
   },
-  gray: ['#204A65', '#57778B', '#8FA4B2', '#C7D2D8', '#DDE4E8', '#EFF2F4', '#F8FAFA', '#FFFFFF'],
+  gray: ['#101820', '#4F4F4F', '#4F4F4F', '#F8F8F8', '#DDE4E8', '#EFF2F4', '#F8FAFA', '#FFFFFF'],
   gradients: {
     primary: 'linear-gradient(144.99deg, #2BD7B8 22.12%, #42EBCC 77.88%)',
     secondary: 'linear-gradient(144.99deg, #2D5D7C 22.32%, #5286A8 77.88%)',
