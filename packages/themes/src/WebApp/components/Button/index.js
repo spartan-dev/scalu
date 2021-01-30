@@ -11,7 +11,6 @@ export default {
 
     padding: 10px 30px;
     white-space: nowrap;
-    border-radius: 15px;
     transition: ${transition.all};
 
     ${variant({
@@ -65,13 +64,13 @@ export default {
   sizes: {
     small: css`
       padding: 6px 16px;
-      border-radius: 8px;
-      ${Typography.variants.button};
+      ${Typography.variants.button2};
+      width: 172px;
+      height: 48px;
     `,
     large: css`
       padding: 20px 30px;
       ${Typography.variants.button1};
-      border-radius: 15px;
     `,
   },
 };

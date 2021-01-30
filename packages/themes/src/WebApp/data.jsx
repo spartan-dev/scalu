@@ -53,14 +53,6 @@ export default {
         label: 'Nosotros',
       },
       {
-        to: 'clients',
-        label: 'Clients',
-      },
-      {
-        to: 'pricing',
-        label: 'Pricing',
-      },
-      {
         to: 'contact',
         label: 'Contacto',
       },

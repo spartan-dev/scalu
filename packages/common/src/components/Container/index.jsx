@@ -17,7 +17,7 @@ const Container = styled.div`
   `}
 
   ${media.greaterThan('large')`
-    width: 1170px;
+    width: 1139px;
   `}
 
   ${theme('Layout')}
