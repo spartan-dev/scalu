@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 
+
 export const space = [0, 4, 8, 16, 32, 64];
 
 export const colors = {
@@ -47,7 +48,7 @@ export const colors = {
 export const typography = {
   googleFont:
     'https://fonts.googleapis.com/css?family=Sarabun:300,400,400i,500,600,700,800&display=swap',
-  fontFamily: 'Sarabun, sans-serif',
+  fontFamily: 'Gillroy, sans-serif',
   color: colors.gray[0],
   sizes: {
     base: 18,
