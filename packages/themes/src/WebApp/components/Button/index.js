@@ -67,6 +67,7 @@ export default {
       ${Typography.variants.button2};
       width: 172px;
       height: 48px;
+      box-shadow: 0px 24px 32px rgba(141, 0, 255, 0.15);
     `,
     large: css`
       padding: 20px 30px;

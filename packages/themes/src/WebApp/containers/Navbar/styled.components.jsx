@@ -9,7 +9,7 @@ import Box from '@pagerland/common/src/components/Box';
 import { base } from '@pagerland/common/src/utils';
 
 import Typography from '../../components/Typography';
-import { transition } from '../../styles';
+import { transition, typography} from '../../styles';
 
 export const Wrapper = styled(Box)`
   transition: ${transition.all};
@@ -28,6 +28,7 @@ export const LogoWrapper = styled.a`
 // eslint-disable-next-line jsx-a11y/anchor-has-content
 export const NavbarLink = styled(({ activeColor, ...props }) => <a {...props} />)`
   display: block;
+  font-family: ${typography.roboto.fontFamily};
   ${Typography.variants.button2};
   transition: ${transition.all};
   ${base};
@@ -40,7 +41,9 @@ export const NavbarLink = styled(({ activeColor, ...props }) => <a {...props} />
 export const ToggleButton = styled(HamburgerSpin)`
   outline: none;
   ${base};
-
+    width: 25px;
+    height: 15.5px;
+  
   & span,
   & span::after,
   & span::before {
@@ -54,6 +57,8 @@ export const MobileWrapper = styled(Box)`
   transition: ${transition.all};
   transform: scale(1.2);
   overflow: auto;
+  
+
 
   ${props =>
     props.isActive &&

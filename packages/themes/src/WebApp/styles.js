@@ -46,18 +46,29 @@ export const colors = {
 };
 
 export const typography = {
-  googleFont:
-    'https://fonts.googleapis.com/css?family=Sarabun:300,400,400i,500,600,700,800&display=swap',
-  fontFamily: 'Gillroy, sans-serif',
-  color: colors.gray[0],
-  sizes: {
-    base: 18,
+  roboto: {
+    googleFont:
+    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap",
+    fontFamily: 'Roboto, sans-serif',
+    color: colors.gray[0],
+    sizes: {
+      base: 18,
+    },
+  },
+  gillroy: {
+      googleFont:
+      'https://fonts.googleapis.com/css?family=Sarabun:300,400,400i,500,600,700,800&display=swap',
+      fontFamily: 'Gillroy, sans-serif',
+      color: colors.gray[0],
+      sizes: {
+        base: 18,
+      },
   },
 };
 
 export const body = {
-  fontSize: typography.sizes.base,
-  fontFamily: typography.fontFamily,
+  fontSize: typography.roboto.sizes.base,
+  fontFamily: typography.gillroy.fontFamily,
   lineHeight: 1.6,
   color: colors.gray[0],
 };

@@ -13,7 +13,7 @@ const Container = styled.div`
   margin: 0 auto;
 
   ${media.greaterThan('medium')`
-    width: 720px;
+    width: 1023px;
   `}
 
   ${media.greaterThan('large')`

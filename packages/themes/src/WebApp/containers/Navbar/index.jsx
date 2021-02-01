@@ -10,6 +10,7 @@ import List from '@pagerland/common/src/components/List';
 import NavbarWrapper from '@pagerland/common/src/components/Navbar';
 import Button from '@pagerland/common/src/components/Button';
 
+
 import LanderPagerLogo from '../../components/Logo';
 
 import data from '../../data';
@@ -67,7 +68,7 @@ const Navbar = ({
                 </LogoWrapper>
               )}
               <Box {...MenuItemsListProps}>{menu(onClose)}</Box>
-              <ToggleButton isActive={isOpen} toggleButton={onToggle} {...ToggleButtonProps} />
+              <ToggleButton  isActive={isOpen} toggleButton={onToggle} {...ToggleButtonProps} />
             </Box>
           </Container>
         </Wrapper>
@@ -219,7 +220,9 @@ Navbar.defaultProps = {
   ToggleButtonProps: {
     buttonWidth: 24,
     position: 'absolute',
-    right: 3,
+    padding: 0,
+    right: 4,
+    top: '24px',
     color: 'gray.0',
     display: {
       lg: 'none',
@@ -246,7 +249,7 @@ Navbar.defaultProps = {
     buttonWidth: 24,
     color: 'gray.0',
     position: 'absolute',
-    right: 3,
+    right: 4,
     top: 3,
   },
   ButtonProps: {
