@@ -249,8 +249,9 @@ Navbar.defaultProps = {
     buttonWidth: 24,
     color: 'gray.0',
     position: 'absolute',
+    padding: 0,
     right: 4,
-    top: 3,
+    top: '24px',
   },
   ButtonProps: {
     variant: 'primary',
