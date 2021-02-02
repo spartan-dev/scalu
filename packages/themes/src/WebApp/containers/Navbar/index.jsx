@@ -199,6 +199,7 @@ Navbar.defaultProps = {
       lg: 0,
     },
     color: 'gray.2',
+    fontWeight: 'normal',
     as: Link,
     activeColor: 'primary',
     ...smoothLinkProps,

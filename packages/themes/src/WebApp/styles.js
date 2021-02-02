@@ -48,7 +48,7 @@ export const colors = {
 export const typography = {
   roboto: {
     googleFont:
-    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap",
+    "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap",
     fontFamily: 'Roboto, sans-serif',
     color: colors.gray[0],
     sizes: {
@@ -67,7 +67,7 @@ export const typography = {
 };
 
 export const body = {
-  fontSize: typography.roboto.sizes.base,
+  fontSize: typography.gillroy.sizes.base,
   fontFamily: typography.gillroy.fontFamily,
   lineHeight: 1.6,
   color: colors.gray[0],

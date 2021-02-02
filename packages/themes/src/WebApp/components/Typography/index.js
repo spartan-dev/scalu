@@ -95,7 +95,6 @@ export default {
     button2: {
       fontSize: 16,
       lineHeight: '19px',
-      fontWeight: 'bold',
       letterSpacing: '0.07em',
     },
     button: {
