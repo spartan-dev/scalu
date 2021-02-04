@@ -61,31 +61,23 @@ export default {
     links: [
       {
         to: "",
-        label: "Home",
+        label: "Inicio",
       },
       {
         to: "services",
-        label: "Services",
-      },
-      {
-        to: "about",
-        label: "About",
-      },
-      {
-        to: "team",
-        label: "Team",
+        label: "Servicios",
       },
       {
         to: "pricing",
-        label: "Pricing",
+        label: "Paquetes",
       },
       {
-        to: "blog",
-        label: "News",
+        to: "team",
+        label: "Nosotros",
       },
       {
         to: "contact",
-        label: "Contact",
+        label: "Contacto",
       },
     ],
     actions: [
