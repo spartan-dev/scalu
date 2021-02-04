@@ -4,58 +4,54 @@ import Sticky from "react-sticky-el"
 
 import { Helmet } from "react-helmet"
 
-import Theme, { theme } from "@pagerland/themes/src/WebApp"
+import Theme, { theme } from "@pagerland/themes/src/Startup"
 import {
   Navbar,
   Copyright,
-  Footer,
   Welcome,
-  Brands,
+  Services,
   About,
-  Features,
-  Screenshots,
-  Clients,
-  Cta,
+  Team,
   Pricing,
-} from "@pagerland/themes/src/WebApp/containers"
+  Blog,
+  Contact,
+} from "@pagerland/themes/src/Startup/containers"
 
-import preview from "@pagerland/themes/src/WebApp/assets/preview.png"
+import preview from "@pagerland/themes/src/Startup/assets/preview.jpg"
 
 import SEO from "../components/SEO"
 
-const WebApp = ({ url }) => (
+const Startup = ({ url }) => (
   <Theme>
     <Helmet>
       <link href={theme.typography.googleFont} rel="stylesheet" />
       <meta name="theme-color" content={theme.colors.primary} />
       <meta property="og:image" content={`${url}${preview}`} />
     </Helmet>
-    <SEO title="Mobile App" />
+    <SEO title="Startup" />
 
     <Sticky style={{ zIndex: 999, position: "relative" }}>
       <Navbar />
     </Sticky>
 
     <Welcome name="" />
-    <Brands name="" />
+    <Services name="services" />
     <About name="about" />
-    <Features name="features" />
-    <Screenshots name="screens" />
-    <Clients name="clients" />
+    <Team name="team" />
     <Pricing name="pricing" />
-    <Cta />
+    <Blog name="blog" />
+    <Contact name="contact" />
 
-    <Footer name="contact" />
     <Copyright />
   </Theme>
 )
 
-WebApp.propTypes = {
+Startup.propTypes = {
   url: PropTypes.string,
 }
 
-WebApp.defaultProps = {
+Startup.defaultProps = {
   url: "https://pager.land/gatsby/",
 }
 
-export default WebApp
+export default Startup

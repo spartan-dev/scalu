@@ -15,7 +15,7 @@ Gatsby webapp
 2. Startup local server
    `$ yarn dev`
 
-App will be running in http://localhost:3000
+App will be running in http://localhost:8000
 
 ## Code Formatting
 
