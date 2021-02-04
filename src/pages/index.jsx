@@ -24,7 +24,8 @@ import SEO from "../components/SEO"
 const Startup = ({ url }) => (
   <Theme>
     <Helmet>
-      <link href={theme.typography.googleFont} rel="stylesheet" />
+      <link href={theme.typography.gillroy.googleFont} rel="stylesheet" />
+      <link href={theme.typography.roboto.googleFont} rel="stylesheet" />
       <meta name="theme-color" content={theme.colors.primary} />
       <meta property="og:image" content={`${url}${preview}`} />
     </Helmet>
@@ -37,8 +38,8 @@ const Startup = ({ url }) => (
     <Welcome name="" />
     <Services name="services" />
     <About name="about" />
-    <Team name="team" />
     <Pricing name="pricing" />
+    <Team name="team" />
     <Blog name="blog" />
     <Contact name="contact" />
 

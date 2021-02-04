@@ -3,7 +3,9 @@ import { base, theme } from '../../utils';
 
 export const Wrapper = styled.button`
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
   font: inherit;

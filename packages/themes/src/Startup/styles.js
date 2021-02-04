@@ -1,48 +1,72 @@
 import { css } from "styled-components"
 import { transparentize } from "polished"
 
-export const space = [0, 4, 8, 16, 32, 64]
+export const space = [0, 4, 8, 16, 32, 64];
 
 export const colors = {
-  primary: "#0C4B5B",
-  secondary: "#51B3A7",
-  accent: "#F24F28",
-  black: "#252728",
-  error: "#EB5757",
-  success: "#27AE60",
+  primary: '#8D00FF',
+  secondary: '#FFB800',
+  accent: '#FF5F00',
+  quaternary: '#FF42B3',
+  quinary: '#00CE73',
+  error: '#EB5757',
+  success: '#27AE60',
   shades: {
-    primary: ["#0C4B5B", "#126F87", "#1895B4", "#1EBAE1"],
-    secondary: ["#51B3A7", "#75C3B9", "#98D2CB", "#BCE2DD"],
-    accent: ["#F24F28", "#F57557", "#F89D87", "#FBC4B7"],
+    primary: ['8D00FF', 'rgba(141, 0, 255, 0.8)', 'rgba(141, 0, 255, 0.6)', '#80FFE8'],
+    secondary: ['#FFB800', 'rgba(255, 184, 0, 0.8);', 'rgba(255, 184, 0, 0.6);', '#6D96B1'],
+    accent: ['#FF5F00', 'rgba(255, 95, 0, 0.8);', 'rgba(255, 95, 0, 0.6);', '#88E2FF'],
+    quaternary: ['#FF42B3', 'rgba(255, 66, 179, 0.8)', 'rgba(255, 66, 179, 0.6)', '#FF9680'],
+    quinary: ['#00CE73', 'rgba(0, 206, 115, 0.8)', 'rgba(0, 206, 115, 0.6)', '#FF9680'],
   },
-  gray: [
-    "#3D4042",
-    "#6E7477",
-    "#A2A6A9",
-    "#BDC0C2",
-    "#D7D9DA",
-    "#E4E6E7",
-    "#F7F7F8",
-    "#FFFFFF",
-  ],
-}
+  gray: ['#101820', '#4F4F4F', '#828282', '#F8F8F8', '#252728', '#EFF2F4', '#F8FAFA', '#FFFFFF'],
+
+  svgGradients: {
+    primary: {
+      from: '#2BD7B8',
+      to: '#42EBCC',
+    },
+    secondary: {
+      from: '#2D5D7C',
+      to: '#5286A8',
+    },
+    accent: {
+      from: '#33B9E3',
+      to: '#59D7FF',
+    },
+    quaternary: {
+      from: '#EF5939',
+      to: '#FB7C61',
+    },
+  },
+};
 
 export const typography = {
-  googleFont:
-    "https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap",
-  fontFamily: "'Sen', sans-serif",
-  color: colors.gray[1],
-  sizes: {
-    base: 16,
+  roboto: {
+    googleFont:
+    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap",
+    fontFamily: 'Roboto, sans-serif',
+    color: colors.gray[0],
+    sizes: {
+      base: 18,
+    },
   },
-}
+  gillroy: {
+      googleFont:
+      'https://fonts.googleapis.com/css?family=Sarabun:300,400,400i,500,600,700,800&display=swap',
+      fontFamily: 'Gillroy, sans-serif',
+      color: colors.gray[0],
+      sizes: {
+        base: 18,
+      },
+  },
+};
 
 export const body = {
-  fontSize: typography.sizes.base,
-  fontFamily: typography.fontFamily,
+  fontSize: typography.roboto.sizes.base,
+  fontFamily: typography.gillroy.fontFamily,
   lineHeight: 1.6,
   color: colors.gray[0],
-}
+};
 
 export const transition = {
   base: ".2s ease-in-out",
@@ -71,7 +95,7 @@ export const shadows = {
   primary: `0px 24px 32px ${transparentize(0.86, colors.primary)}`,
   secondary: `0px 24px 32px ${transparentize(0.86, colors.secondary)}`,
   accent: `0px 24px 32px ${transparentize(0.86, colors.accent)}`,
-  black: `0px 24px 32px ${transparentize(0.86, colors.black)}`,
+  black: `0px 24px 32px ${transparentize(0.86, colors.gray[5])}`,
 }
 
 export const global = css`

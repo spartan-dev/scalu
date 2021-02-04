@@ -9,11 +9,10 @@ export default {
   main: css`
     ${Typography.main};
     ${Typography.variants.button2};
-
     padding: 11px 48px 12px;
     white-space: nowrap;
-    border-radius: ${borderRadius.large}px;
     transition: ${transition.all};
+    letter-spacing: '0.07em';
 
     ${variant({
       prop: "variant",
@@ -43,7 +42,7 @@ export default {
         color: ${colors.shades.primary[2]};
       }
     `,
-    ...["primary", "secondary", "accent"].reduce(
+    ...["primary", "secondary", "accent",'quaternary'].reduce(
       (variants, color) => ({
         ...variants,
         [color]: css`
@@ -68,13 +67,14 @@ export default {
   sizes: {
     small: css`
       padding: 6px 48px 7px;
-      border-radius: ${borderRadius.normal}px;
-      ${Typography.variants.button};
+      ${Typography.variants.button2};
+      width: 172px;
+      height: 48px;
+      box-shadow: 0px 24px 32px rgba(141, 0, 255, 0.15);
     `,
     large: css`
       padding: 15px 48px;
       ${Typography.variants.button1};
-      border-radius: ${borderRadius.xLarge}px;
     `,
   },
   disabled: {
