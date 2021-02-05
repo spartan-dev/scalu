@@ -20,6 +20,12 @@ export default {
     variants: {
       h1: {
         fontSize: 70,
+        fontWeight: 600,
+        lineHeight: '64px',
+        letterSpacing: '0.04em',
+      },
+      title: {
+        fontSize: 70,
         fontWeight: 800,
         lineHeight: '64px',
         letterSpacing: '0.04em',

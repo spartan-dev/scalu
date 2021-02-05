@@ -18,7 +18,6 @@ const Welcome = ({
   text,
   img,
   actions,
-  avatars,
   WrapperProps,
   ContainerProps,
   CaptionProps,
@@ -27,7 +26,6 @@ const Welcome = ({
   ActionButtonsProps,
   ImageWrapperProps,
   ImageProps,
-  AvatarsProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <ContainerWithBackground {...ContainerProps}>
@@ -45,11 +43,6 @@ const Welcome = ({
         </Fade>
       </Box>
       <Box {...ImageWrapperProps}>
-        {avatars.map((avatar, key) => (
-          <Fade top cascade duration={600} key={key} delay={key * 50}>
-            <Avatar {...avatar} {...AvatarsProps[key]} />
-          </Fade>
-        ))}
         <Squares />
         <Fade cascade duration={600}>
           <RoundedImage {...ImageProps} {...img} />
@@ -173,6 +166,9 @@ Welcome.defaultProps = {
   },
   ActionButtonsProps: {
     mt: 4,
+    width: 172,
+    height: 48,
+    letterSpacing: '.07em',
   },
   ImageWrapperProps: {
     zIndex: 4,
