@@ -15,7 +15,7 @@ const Services = ({
   name,
   title,
   text,
-  cta,
+  actions,
   services,
   WrapperProps,
   ContainerProps,
@@ -27,7 +27,7 @@ const Services = ({
   ServiceIconProps,
   ServiceTitleProps,
   ServiceTextProps,
-  CtaProps,
+  ActionButtonsProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <Container {...ContainerProps}>
@@ -49,9 +49,13 @@ const Services = ({
         ))}
       </Grid>
       <Fade top cascade duration={600}>
-        <Button {...CtaProps} {...cta}>
-          {cta.label}
-        </Button>
+        <Box {...ActionButtonsProps}>
+          {actions.map(({ label, ...props }, key) => (
+            <Button {...props} key={key}>
+              {label}
+            </Button>
+          ))}
+        </Box>
       </Fade>
     </Container>
   </Box>
@@ -117,6 +121,9 @@ Services.propTypes = {
    * @See @pagerland/common/src/components/Button
    */
   CtaProps: PropTypes.object,
+
+  ActionButtonsProps: PropTypes.object,
+  
   /**
    * Title node of component
    */
@@ -200,6 +207,13 @@ Services.defaultProps = {
     mx: "auto",
     variant: "secondary",
     as: "a",
+  },
+  ActionButtonsProps: {
+    width: '100%',
+    height: 48,
+    letterSpacing: '.07em',
+    display: 'flex',
+    justifyContent: 'center',
   },
   ...data.services,
 }
