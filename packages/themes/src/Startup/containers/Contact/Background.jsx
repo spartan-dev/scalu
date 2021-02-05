@@ -36,6 +36,8 @@ const Background = props => (
       fill="currentColor"
     />
   </Svg>
+ 
+  
 )
 
 export default Background

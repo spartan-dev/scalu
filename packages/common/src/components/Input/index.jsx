@@ -98,6 +98,10 @@ Input.propTypes = {
    */
   type: PropTypes.string,
   /**
+   * Width of input
+   */
+  height: PropTypes.string,
+  /**
    * Label above input
    */
   label: PropTypes.node,

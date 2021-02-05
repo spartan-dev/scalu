@@ -40,9 +40,11 @@ import Estimations from "./assets/estimation.svg"
 import Ecommerce from "./assets/ecommerce.svg"
 import Support from "./assets/support.svg"
 
+
 import PricingBasic from "./assets/pricing/basic.svg"
 import PricingAdvanced from "./assets/pricing/advanced.svg"
 import PricingExpert from "./assets/pricing/expert.svg"
+import Powerfull from './assets/powerfull.svg'
 
 import Article1 from "./assets/articles/article-1.jpg"
 import Article12x from "./assets/articles/article-1@2x.jpg"
@@ -435,19 +437,21 @@ export default {
     },
   },
   contact: {
-    title: "Contact us",
+    firstTitle: 'Que nada detenga tu salida de la caja...',
+    src:`${Powerfull}`,
+    title: "CONTÁCTANOS",
     sections: [
       {
         icon: MapMarker,
-        text: textToMultiline`5263 Sunset St undefined Salinas,\nWest Virginia 25420\nUnited States`,
+        text: textToMultiline`Magnolias 203, Nova Ciudad Cayalá, zona 16. Guatemala`,
       },
       {
         icon: MobilePhone,
-        text: "(219) 555-0114",
+        text: "+502 42118498",
       },
       {
         icon: PaperAirplane,
-        text: "nathan.roberts@example.com",
+        text: "sgarcia@scalu.io",
       },
     ],
     socialLinks: [
@@ -473,15 +477,16 @@ export default {
       },
     ],
     mailer: {
-      title: "Request a demo",
-      cta: "Send request",
+      title: "AGENDAR LLAMADA",
+      cta: "Mandar información",
       validationSchema: Yup.object({
         name: Yup.string()
-          .max(15, "Must be 15 characters or less")
-          .required("Required"),
-        company: Yup.string().required("Required"),
-        email: Yup.string().email("Must be an email").required("Required"),
-        date: Yup.string().required("Required"),
+          .max(15, "Deben ser 15 caracteres o menos")
+          .required("Campo requerido"),
+        country: Yup.string().required("Campo requerido"),
+        email: Yup.string().email("Debe contener un e-mail válido").required("Campo requerido"),
+        phone: Yup.string().required("Campo requerido"),
+        comments: Yup.string().required("Campo requerido"),
       }),
       // eslint-disable-next-line no-undef
       onSubmit: values =>
@@ -489,46 +494,39 @@ export default {
       fields: [
         {
           name: "name",
-          label: "First name",
+          label: "Nombre",
           placeholder: "ie. John Doe",
           initialValue: "",
         },
         {
-          name: "company",
-          label: "Company",
-          placeholder: "i.e. Best Trade Ltd.",
-          initialValue: "",
-        },
-        {
           name: "email",
-          label: "E-mail",
+          label: "Correo",
           placeholder: "i.e. john.doe@email.com",
           type: "email",
           initialValue: "",
         },
         {
-          name: "date",
-          label: "Date and time",
-          placeholder: "Choose",
-          type: "datetime-local",
+          name: "country",
+          label: "Código de país",
+          placeholder: "123",
+          type: "number",
+          initialValue: "",
+        },
+        {
+          name: "phone",
+          label: "Número de teléfono",
+          placeholder: "123-456-7890",
+          type: "number",
+          initialValue: "",
+        },
+        {
+          name: "comments",
+          label: "¡Cuéntanos tu idea!",
+          placeholder: `Mensaje...`,
           initialValue: "",
         },
       ],
     },
   },
-  footer: {
-    links: [
-      {
-        label: "Disclaimer",
-        href:
-          "https://themeforest.net/item/pagerland-react-and-gatsby-landing-page-templates/26548567",
-      },
-      {
-        label: "Terms & conditions",
-        href:
-          "https://themeforest.net/item/pagerland-react-and-gatsby-landing-page-templates/26548567",
-      },
-    ],
-  },
-  copyright: "© 2020 Coffeecream Themes",
+  copyright: "© 2020 Scalu Technologies",
 }
