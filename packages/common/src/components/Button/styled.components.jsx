@@ -14,7 +14,7 @@ export const Wrapper = styled.button`
   cursor: pointer;
   user-select: none;
   border: none;
-  outline: 0;
+  
 
   & + & {
     margin-left: ${props => props.theme?.space?.[2] || 4}px;

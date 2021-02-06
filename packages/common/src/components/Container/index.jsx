@@ -12,8 +12,9 @@ const Container = styled.div`
   padding: 0 ${props => props.theme?.space?.[3] || 16}px;
   margin: 0 auto;
 
+  
   ${media.greaterThan('medium')`
-    width: 1023px;
+    width: 767px;
   `}
 
   ${media.greaterThan('large')`

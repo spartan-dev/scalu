@@ -18,7 +18,7 @@ export const colors = {
     quaternary: ['#FF42B3', 'rgba(255, 66, 179, 0.8)', 'rgba(255, 66, 179, 0.6)', '#FF9680'],
     quinary: ['#00CE73', 'rgba(0, 206, 115, 0.8)', 'rgba(0, 206, 115, 0.6)', '#FF9680'],
   },
-  gray: ['#101820', '#4F4F4F', '#828282', '#F8F8F8', '#252728', '#EFF2F4', '#F8FAFA', '#FFFFFF'],
+  gray: ['#101820', '#4F4F4F', '#828282', '#F8F8F8', '#d1d4d5;', '#EFF2F4', '#F8FAFA', '#FFFFFF'],
 
   svgGradients: {
     primary: {
@@ -103,6 +103,7 @@ export const global = css`
     footer {
       display: flex;
       align-items: center;
+      justify-content: 'center';
 
       &::before {
         display: block;

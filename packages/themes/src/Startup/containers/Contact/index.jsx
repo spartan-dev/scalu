@@ -8,6 +8,7 @@ import Typography from "@pagerland/common/src/components/Typography"
 import Container from "@pagerland/common/src/components/Container"
 import Icon from "@pagerland/common/src/components/Icon"
 import Link from "@pagerland/common/src/components/Link"
+import Img from "@pagerland/common/src/components/Img"
 
 import Card from "@pagerland/common/src/components/Card"
 import { Form, Formik } from "formik"
@@ -17,8 +18,10 @@ import data from "../../data"
 import Background from "./Background"
 import Squares from "./Squares"
 
+
 const Contact = ({
   name,
+  firstTitle,
   title,
   sections,
   socialLinks,
@@ -35,8 +38,14 @@ const Contact = ({
   MailerCardProps,
   MailerTitleProps,
   MailerButtonProps,
+  src,
+  FirstTitleProps,
 }) => (
   <Box name={name} {...WrapperProps}>
+    <Box {...FirstTitleProps}>
+      <Typography {...TitleProps}>{firstTitle}</Typography>
+      <Img src={src}/>
+    </Box>
     <Background />
     <Container {...ContainerProps}>
       <Box {...DetailsWrapperProps}>
@@ -45,7 +54,7 @@ const Contact = ({
           {sections.map((section, key) => (
             <Box key={key} {...SectionItemProps}>
               <Icon
-                color={["primary", "secondary", "accent"][key % 3]}
+                color={["primary", "primary", "primary"][key % 3]}
                 icon={section.icon}
                 {...SectionIconProps}
               />
@@ -96,9 +105,11 @@ const Contact = ({
                   <Input key={field.name} {...field} />
                 ))}
               </div>
-              <Button type="submit" {...MailerButtonProps}>
-                {mailer.cta}
-              </Button>
+              <Box display='flex' justifyContent='center'>
+                <Button {...MailerButtonProps}>
+                  {mailer.cta}
+                </Button>
+              </Box>
             </Fade>
           </Form>
         </Formik>
@@ -172,6 +183,14 @@ Contact.propTypes = {
    * @See @pagerland/common/src/components/Button
    */
   MailerButtonProps: PropTypes.object,
+  /**
+   * Props of input button
+   */
+  InputProps: PropTypes.object,
+  /**
+   * First Title  of component
+   */
+  FirstTitleProps: PropTypes.object,
   /**
    * Title node of component
    */
@@ -307,6 +326,13 @@ Contact.defaultProps = {
   },
   SectionTextProps: {
     color: "gray.1",
+    fontSize: 16,
+    lineHeight: '24px',
+    letterSpacing: '0.07em',
+    fontWeight:'normal',
+    width: {
+      lg: '140px',
+    }
   },
   SocialLinkWrapperProps: {
     flexBox: true,
@@ -333,12 +359,6 @@ Contact.defaultProps = {
       _: 24,
       md: 5,
     },
-    boxShadow: "primary",
-    borderRadius: {
-      _: "large",
-      md: "xxxLarge",
-    },
-    color: "gray.7",
     position: "relative",
   },
   MailerTitleProps: {
@@ -349,7 +369,21 @@ Contact.defaultProps = {
   },
   MailerButtonProps: {
     mt: 4,
-    variant: "secondary",
+    variant: "primary",
+    fontSize: 20,
+    lineHeight: '23px',
+    letterSpacing: '0.07em',
+    fontWeight: 600,
+  },
+  FirstTitleProps: {
+    mb: {
+      _: 158,
+      lg: 234,
+    },
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection:'column',
+    alignItems:'center',
   },
   ...data.contact,
 }

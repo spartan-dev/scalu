@@ -11,28 +11,14 @@ import data from "../../data"
 
 const Copyright = ({
   copyright,
-  links,
   WrapperProps,
   ContainerProps,
   TextProps,
-  LinkListProps,
-  LinkListItemProps,
-  LinkProps,
+
 }) => (
   <Box {...WrapperProps}>
     <Container {...ContainerProps}>
       <Typography {...TextProps}>{copyright}</Typography>
-      {links && (
-        <List {...LinkListProps}>
-          {links.map(({ label, ...link }, key) => (
-            <List.Item {...LinkListItemProps} key={key}>
-              <Typography {...LinkProps} {...link}>
-                {label}
-              </Typography>
-            </List.Item>
-          ))}
-        </List>
-      )}
     </Container>
   </Box>
 )
@@ -69,17 +55,6 @@ Copyright.propTypes = {
    * Props of links items
    * @See @pagerland/common/src/components/List
    */
-  LinkListProps: PropTypes.object,
-  /**
-   * Props of links list single item
-   * @See @pagerland/common/src/components/List.Item
-   */
-  LinkListItemProps: PropTypes.object,
-  /**
-   * Link component props
-   * @See @pagerland/common/src/components/Typography
-   */
-  LinkProps: PropTypes.object,
 }
 
 Copyright.defaultProps = {
@@ -87,33 +62,24 @@ Copyright.defaultProps = {
   copyright: data.copyright,
   TextProps: {
     variant: "body2",
-    color: "gray.3",
+    color: "gray.2",
   },
   WrapperProps: {
     py: 18,
     borderTopWidth: 1,
     borderTopStyle: "solid",
     borderTopColor: "gray.5",
+    display: 'flex',
+    justifyContent: 'center',
   },
   ContainerProps: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     flexDirection: {
       _: "column",
       md: "row",
     },
-  },
-  LinkListProps: {
-    display: "flex",
-  },
-  LinkListItemProps: {
-    mx: 3,
-  },
-  LinkProps: {
-    as: "a",
-    variant: "body2",
-    color: "gray.3",
   },
 }
 
