@@ -38,9 +38,9 @@ import Avatar72x from "./assets/avatars/avatar-7@2x.jpg"
 import Avatar8 from "./assets/avatars/avatar-8.jpg"
 import Avatar82x from "./assets/avatars/avatar-8@2x.jpg"
 
-import Estimations from "./assets/estimation.svg"
-import Ecommerce from "./assets/ecommerce.svg"
-import Support from "./assets/support.svg"
+import Practico from "./assets/practico.svg"
+import Experiencia from "./assets/experiencia.svg"
+import Multiplica from "./assets/multiplica.svg"
 
 
 import PricingBasic from "./assets/pricing/basic.svg"
@@ -124,32 +124,49 @@ export default {
     },
   },
   services: {
-    title: "Our services",
+    title: "¿CÓMO TE AYUDAMOS?",
+    text: 'Scalu Technologies te ofrece asesoría, desarrollo y acompañamiento en branding, marketing, diseño, desarrollo web, ventas, logística y sourcing para tu negocio digital.',
     services: [
       {
-        icon: Estimations,
-        title: "Estimation",
+        icon: Practico,
+        title: [
+          <Typography variant="h5" color='primary'>
+              Práctico y ágil
+          </Typography>
+      ],
         text:
-          "Vivamus eleifend nec purus eget rutrum. Cras urna lacus, consectetur ut erat sed, commodo gravida mauris. Sed eu vulputate sapien. Nulla consectetur efficitur congue.",
+          "Diseñamos para ser amigables con el usuario, enfocándonos en la experiencia de compra ágil.",
       },
       {
-        icon: Ecommerce,
-        title: "Ecommerce",
+        icon: Experiencia,
+        title: [
+          <Typography variant="h5" color='primary'>
+           Alta experiencia
+          </Typography>
+        ],
         text:
-          "Vivamus eleifend nec purus eget rutrum. Cras urna lacus, consectetur ut erat sed, commodo gravida mauris. Sed eu vulputate sapien. Nulla consectetur efficitur congue.",
+          "Al ser expertos en productos de mucho tráfico sumamos valor a tu negocio mientras restamos error.",
       },
       {
-        icon: Support,
-        title: "Support",
+        icon: Multiplica,
+        title: [ 
+          <Typography variant="h5" color='primary'>
+            Multiplica tus clientes
+          </Typography>
+          ],
         text:
-          "Vivamus eleifend nec purus eget rutrum. Cras urna lacus, consectetur ut erat sed, commodo gravida mauris. Sed eu vulputate sapien. Nulla consectetur efficitur congue.",
+          "Agregamos valor medible a través de la adquisición de usuarios y retención de los mismos.",
       },
     ],
-    cta: {
-      label: "Request a free demo",
-      href:
-        "https://themeforest.net/item/pagerland-react-and-gatsby-landing-page-templates/26548567",
-    },
+    actions: [
+      {
+        label: "Contáctonos",
+        to: "contact",
+        as: Link,
+        ...smoothLinkProps,
+        variant: "primary",
+      },
+    ],
   },
   about: {
     img: {
@@ -161,8 +178,7 @@ export default {
       "Nunc nec ultricies quam. Integer iaculis erat id leo consequat ultricies. Pellentesque mattis ultricies rhoncus. Maecenas vehicula efficitur sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam laoreet at erat sit amet efficitur. Nam interdum tellus molestie, elementum felis in, consectetur ipsum. Aenean justo dolor, pretium nec dui eget, vulputate ullamcorper dolor.",
     cta: {
       label: "Learn more bout us",
-      href:
-        "https://themeforest.net/item/pagerland-react-and-gatsby-landing-page-templates/26548567",
+      to: "contact",
     },
   },
   team: {

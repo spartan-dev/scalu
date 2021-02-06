@@ -6,7 +6,6 @@ import Fade from "react-reveal/Fade"
 import Typography from "@pagerland/common/src/components/Typography"
 import Button from "@pagerland/common/src/components/Button"
 
-import Avatar from "../../components/Avatar"
 import data from "../../data"
 
 import { ContainerWithBackground, RoundedImage } from "./styled.components"

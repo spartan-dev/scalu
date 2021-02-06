@@ -15,7 +15,7 @@ const Services = ({
   name,
   title,
   text,
-  cta,
+  actions,
   services,
   WrapperProps,
   ContainerProps,
@@ -27,7 +27,7 @@ const Services = ({
   ServiceIconProps,
   ServiceTitleProps,
   ServiceTextProps,
-  CtaProps,
+  ActionButtonsProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <Container {...ContainerProps}>
@@ -49,9 +49,13 @@ const Services = ({
         ))}
       </Grid>
       <Fade top cascade duration={600}>
-        <Button {...CtaProps} {...cta}>
-          {cta.label}
-        </Button>
+        <Box {...ActionButtonsProps}>
+          {actions.map(({ label, ...props }, key) => (
+            <Button {...props} key={key}>
+              {label}
+            </Button>
+          ))}
+        </Box>
       </Fade>
     </Container>
   </Box>
@@ -117,6 +121,9 @@ Services.propTypes = {
    * @See @pagerland/common/src/components/Button
    */
   CtaProps: PropTypes.object,
+
+  ActionButtonsProps: PropTypes.object,
+  
   /**
    * Title node of component
    */
@@ -169,6 +176,11 @@ Services.defaultProps = {
   TextProps: {
     color: "gray.1",
     mb: 4,
+    px:{
+      _: 21,
+      md:80,
+      lg:200,
+    },
   },
   GridProps: {
     gridTemplateColumns: {
@@ -183,7 +195,9 @@ Services.defaultProps = {
   ServiceIconProps: {
     display: "block",
     mx: "auto",
-    mb: 3,
+    mb: 56,
+    mt: 56,
+    height: '100%',
   },
   ServiceTitleProps: {
     textAlign: "center",
@@ -194,12 +208,24 @@ Services.defaultProps = {
   ServiceTextProps: {
     color: "gray.1",
     textAlign: "center",
+    px:{
+      _: 21,
+      md:40,
+      lg:0,
+    },
   },
   CtaProps: {
     textAlign: "center",
     mx: "auto",
     variant: "secondary",
     as: "a",
+  },
+  ActionButtonsProps: {
+    width: '100%',
+    height: 48,
+    letterSpacing: '.07em',
+    display: 'flex',
+    justifyContent: 'center',
   },
   ...data.services,
 }

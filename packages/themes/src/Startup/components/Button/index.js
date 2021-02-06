@@ -12,7 +12,7 @@ export default {
     padding: 11px 48px 12px;
     white-space: nowrap;
     transition: ${transition.all};
-    letter-spacing: '0.07em';
+    letter-spacing: 0.07em;
 
     ${variant({
       prop: "variant",

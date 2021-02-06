@@ -50,7 +50,7 @@ export default {
       },
       h5: {
         fontSize: 24,
-        fontWeight: 800,
+        fontWeight: 600,
         lineHeight: '32px',
         letterSpacing: '0.03em',
       },
