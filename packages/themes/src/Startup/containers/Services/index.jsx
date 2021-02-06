@@ -176,6 +176,11 @@ Services.defaultProps = {
   TextProps: {
     color: "gray.1",
     mb: 4,
+    px:{
+      _: 21,
+      md:80,
+      lg:200,
+    },
   },
   GridProps: {
     gridTemplateColumns: {
@@ -190,7 +195,9 @@ Services.defaultProps = {
   ServiceIconProps: {
     display: "block",
     mx: "auto",
-    mb: 3,
+    mb: 56,
+    mt: 56,
+    height: '100%',
   },
   ServiceTitleProps: {
     textAlign: "center",
@@ -201,6 +208,11 @@ Services.defaultProps = {
   ServiceTextProps: {
     color: "gray.1",
     textAlign: "center",
+    px:{
+      _: 21,
+      md:40,
+      lg:0,
+    },
   },
   CtaProps: {
     textAlign: "center",
