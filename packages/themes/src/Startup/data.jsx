@@ -1,8 +1,11 @@
 /* eslint-disable no-alert */
+import React from 'react';
+
 import { smoothLinkProps } from "@pagerland/common/src/utils"
 import { Link } from "react-scroll"
 
 import textToMultiline from "@pagerland/common/src/utils/textToMultiline"
+import Typography from '@pagerland/common/src/components/Typography';
 
 import MapMarker from "@pagerland/icons/src/monochrome/MapMarker"
 import MobilePhone from "@pagerland/icons/src/monochrome/MobilePhone"
@@ -14,8 +17,7 @@ import Twitter from "@pagerland/icons/src/monochrome/Twitter"
 import Linkedin from "@pagerland/icons/src/monochrome/Linkedin"
 
 import * as Yup from "yup"
-import Welcome from "./assets/welcome.jpg"
-import Welcome2x from "./assets/welcome@2x.jpg"
+import Welcome from "./assets/welcome.png"
 import AboutUs from "./assets/about-us.jpg"
 import AboutUs2x from "./assets/about-us@2x.jpg"
 
@@ -91,44 +93,35 @@ export default {
     ],
   },
   welcome: {
-    title: "The only landing page template you need for your company",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu magna pharetra sem ullamcorper bibendum quis et mauris. Phasellus tincidunt iaculis porttitor.",
+    title: [
+      "SCALE OUTSIDE",
+    <Typography as="span" variant="title">
+      {" "} THE <br/> BOX 
+      <Typography as="span" variant="title" color='primary'>
+      .
+    </Typography>
+    </Typography>,
+    ],
+    text: [
+      "En Scalu Technologies",
+      <Typography as="span" variant="body1" color='primary'>
+        {" "} damos soluciones ágiles para escalar tu negocio físico a dígital.
+      </Typography>,
+       'Te acampañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.',
+    ],
     actions: [
       {
-        label: "Check our services",
-        to: "services",
+        label: "Contáctonos",
+        to: "contact",
         as: Link,
         ...smoothLinkProps,
-        variant: "secondary",
+        variant: "primary",
       },
     ],
     img: {
       src: Welcome,
-      srcSet: `${Welcome} 1x, ${Welcome2x} 2x`,
+      srcSet: `${Welcome} 1x`,
     },
-    avatars: [
-      {
-        src: Avatar1,
-        srcSet: `${Avatar1} 1x, ${Avatar12x} 2x`,
-      },
-      {
-        src: Avatar2,
-        srcSet: `${Avatar2} 1x, ${Avatar22x} 2x`,
-      },
-      {
-        src: Avatar3,
-        srcSet: `${Avatar3} 1x, ${Avatar32x} 2x`,
-      },
-      {
-        src: Avatar4,
-        srcSet: `${Avatar4} 1x, ${Avatar42x} 2x`,
-      },
-      {
-        src: Avatar5,
-        srcSet: `${Avatar5} 1x, ${Avatar52x} 2x`,
-      },
-    ],
   },
   services: {
     title: "Our services",

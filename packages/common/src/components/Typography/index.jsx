@@ -26,6 +26,7 @@ Typography.propTypes = {
       'quote2',
       'small',
       'large',
+      'title'
     ]),
     PropTypes.object,
   ]),
