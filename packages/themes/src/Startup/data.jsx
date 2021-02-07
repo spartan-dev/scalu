@@ -18,8 +18,6 @@ import Linkedin from "@pagerland/icons/src/monochrome/Linkedin"
 
 import * as Yup from "yup"
 import Welcome from "./assets/welcome.png"
-import AboutUs from "./assets/about-us.jpg"
-import AboutUs2x from "./assets/about-us@2x.jpg"
 
 import Avatar1 from "./assets/avatars/avatar-1.jpg"
 import Avatar12x from "./assets/avatars/avatar-1@2x.jpg"
@@ -173,18 +171,108 @@ export default {
       },
     ],
   },
-  about: {
-    img: {
-      src: AboutUs,
-      srcSet: `${AboutUs} 1x, ${AboutUs2x} 2x`,
-    },
-    title: "About us",
+  experts: {
+    title: "NUESTROS EXPERTOS",
     text:
-      "Nunc nec ultricies quam. Integer iaculis erat id leo consequat ultricies. Pellentesque mattis ultricies rhoncus. Maecenas vehicula efficitur sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam laoreet at erat sit amet efficitur. Nam interdum tellus molestie, elementum felis in, consectetur ipsum. Aenean justo dolor, pretium nec dui eget, vulputate ullamcorper dolor.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     cta: {
-      label: "Learn more bout us",
-      to: "contact",
+      label: "¡Únete a nuestros expertos!",
+      to: "",
     },
+    sections: [
+        {
+        title: 'Marketing',
+        features: [
+          {
+            label1:'Analista de marketing digital',
+          },
+          {
+            label2:'Community manager',
+          },
+          {
+            label3:'Experto en AdWords de Google',
+          },
+          {
+            label4:'Consultor SEO',
+          },
+          {
+            label5:'Diseñador de logos',
+          },
+        ]
+      },
+        {
+          title: 'Diseño',
+          features: [
+            {
+              label1:'Diseñador gráfico',
+            },
+            {
+              label2:'Diseñador web',
+            },
+            {
+              label3:'Diseñador UI',
+            },
+            {
+              label4:'Diseñador UX',
+            },
+            {
+              label5:'Programador WordPress',
+            },
+          ]
+        },
+        {
+          title: 'Desarrollo',
+          features: [
+            {
+              label1:'Progamador Frontend / Backend',
+            },
+            {
+              label2:'Ingeniero DevOps',
+            },
+            {
+              label3:'Ingeniero Microservicios y APIS',
+            },
+            {
+              label4:'Programador Android',
+            },
+            {
+              label5:'Programador IOS',
+            },
+            {
+              label6:'Programador Java',
+            },
+            {
+              label7:'Programador PHP ',
+            },
+            {
+              label8:'Programador Python',
+            },
+          ]
+        },
+        {
+          title: 'Contenidos',
+          features: [
+            {
+              label1:'Redactor de Articulos',
+            },
+            {
+              label2:'Transcriptor',
+            },
+            {
+              label3:'Traductor',
+            },
+            {
+              label4:'Locutor',
+            },
+            {
+              label5:'Musico Comercial',
+            },
+            {
+              label6:'Promotor Musical',
+            },
+          ]
+        },
+    ]
   },
   team: {
     title: "Meet our team",

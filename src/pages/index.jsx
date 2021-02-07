@@ -13,7 +13,7 @@ import {
   Copyright,
   Welcome,
   Services,
-  About,
+  Experts,
   Team,
   Pricing,
   Contact,
@@ -41,7 +41,7 @@ const Startup = ({ url }) => (
     <Services name="services" />
     <Pricing name="pricing" />
     <Team name="team" />
-    <About name="about" />
+    <Experts name="experts" />
     <Contact name="contact" />
 
     <Copyright />
