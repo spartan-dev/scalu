@@ -174,13 +174,14 @@ Services.defaultProps = {
     textAlign: "center",
   },
   TextProps: {
-    color: "gray.1",
+    color: "gray.8",
     mb: 4,
     px:{
       _: 21,
       md:80,
       lg:200,
     },
+    variant: 'body1'
   },
   GridProps: {
     gridTemplateColumns: {
@@ -213,6 +214,8 @@ Services.defaultProps = {
       md:40,
       lg:0,
     },
+    variant: 'body2',
+    fontWeight: 300,
   },
   CtaProps: {
     textAlign: "center",

@@ -1,21 +1,27 @@
 import styled from "styled-components";
-import Typography from "../../components/Typography"
-import { typography } from "../../styles"
 
 
 export const Details = styled.details`
+ display: block;    
 `;
 
 export const TextWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 96px;
+  
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33% ;
+  }
+  
 `;
 
 export const Summary = styled.summary`
   display: flex;
   flex-direction: row;
-  ${Typography.variants.h3};
   border-bottom: solid;
   margin-bottom: 31px;
   padding-bottom: 9px;

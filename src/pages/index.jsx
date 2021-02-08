@@ -40,8 +40,8 @@ const Startup = ({ url }) => (
     <Welcome name="" />
     <Services name="services" />
     <Pricing name="pricing" />
-    <Team name="team" />
     <Experts name="experts" />
+    <Team name="team" />
     <Contact name="contact" />
 
     <Copyright />

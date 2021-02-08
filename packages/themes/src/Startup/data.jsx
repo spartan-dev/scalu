@@ -187,17 +187,18 @@ export default {
             label1:'Analista de marketing digital',
           },
           {
-            label2:'Community manager',
+            label2:'Experto en AdWords de Google',
           },
           {
-            label3:'Experto en AdWords de Google',
+            label3:'Diseñador de logos',
           },
           {
-            label4:'Consultor SEO',
+            label4:'Community manager',
           },
           {
-            label5:'Diseñador de logos',
+            label5:'Consultor SEO',
           },
+          
         ]
       },
         {
@@ -207,17 +208,18 @@ export default {
               label1:'Diseñador gráfico',
             },
             {
-              label2:'Diseñador web',
+              label2:'Diseñador UI',
             },
             {
-              label3:'Diseñador UI',
+              label3:'Programador WordPress',
             },
             {
-              label4:'Diseñador UX',
+              label4:'Diseñador web',
             },
             {
-              label5:'Programador WordPress',
+              label5:'Diseñador UX',
             },
+            
           ]
         },
         {
@@ -227,23 +229,23 @@ export default {
               label1:'Progamador Frontend / Backend',
             },
             {
-              label2:'Ingeniero DevOps',
+              label2:'Programador Android',
             },
             {
-              label3:'Ingeniero Microservicios y APIS',
+              label3:'Programador Java',
             },
             {
-              label4:'Programador Android',
+              label4:'Ingeniero DevOps',
             },
             {
               label5:'Programador IOS',
+            },       
+            {
+              label6:'Programador PHP ',
             },
             {
-              label6:'Programador Java',
-            },
-            {
-              label7:'Programador PHP ',
-            },
+              label7:'Ingeniero Microservicios y APIS',
+            }, 
             {
               label8:'Programador Python',
             },
@@ -256,17 +258,17 @@ export default {
               label1:'Redactor de Articulos',
             },
             {
-              label2:'Transcriptor',
+              label2:'Traductor',
             },
             {
-              label3:'Traductor',
+              label3:'Musico Comercial',
             },
             {
-              label4:'Locutor',
+              label4:'Transcriptor',
             },
             {
-              label5:'Musico Comercial',
-            },
+              label5:'Locutor',
+            },   
             {
               label6:'Promotor Musical',
             },

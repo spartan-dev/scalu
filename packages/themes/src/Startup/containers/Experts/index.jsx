@@ -25,10 +25,11 @@ const Experts = ({
   TitleProps,
   TextProps,
   CtaProps,
-  AccordionProps,
+  AccordionWrapperProps,
   AccordionTitleProps,
   AccordionLabelProps,
   AccordionTextProps,
+  AcctionButtonProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <Background />
@@ -37,17 +38,14 @@ const Experts = ({
         <Fade bottom cascade duration={600}>
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
-          <Box {...AccordionProps}>  
+          <Box  {...AccordionWrapperProps}  >  
             {sections?.map((section, i) => ( 
               <Accordion key={i} >
                 <Details>
                   <Summary>
-                    <Typography
-                    {...AccordionTitleProps}
-                    {...sections[i]?.AccordionTitleProps}
-                    >
-                    {section.title}
-                    </Typography>
+                    <Typography {...AccordionTitleProps} {...sections[i]?.AccordionTitleProps}>
+                      {section.title}
+                    </Typography>  
                   </Summary>
                     <TextWrapper {...AccordionTextProps}>
                       {section.features?.map((feature, i) => (
@@ -57,53 +55,13 @@ const Experts = ({
                             {...sections[i]?.AccordionLabelProps}
                             >
                             {feature.label1}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label2}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label3}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label4}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label5}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label6}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label7}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label8}
-                          </Typography>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
                             {feature.label9}
                           </Typography>
                         </div>
@@ -113,14 +71,20 @@ const Experts = ({
               </Accordion>
             ))}
           </Box>
-          <Button {...CtaProps} {...cta}>
-            {cta.label}
-          </Button>
+          <Box {...AcctionButtonProps}>
+            <Button {...CtaProps} {...cta}>
+              {cta.label}
+            </Button>
+          </Box>
         </Fade>
       </Box>
     </Container>
   </Box>
 )
+
+const AccordionPropTypes = {
+  AccordionTitleProps: PropTypes.object,
+}
 
 Experts.propTypes = {
   /**
@@ -160,12 +124,25 @@ Experts.propTypes = {
   /**
    * Img details
    */
+  sections: PropTypes.arrayOf(
+    PropTypes.shape({
+      /**
+       * Title of section
+       */
+      title: PropTypes.node,
+    })),
 
-  AccordionProps: PropTypes.object,
-  AccordionTitleProps: PropTypes.object,
+  AcctionButtonProps: PropTypes.object,
+  
   AccordionLabelProps: PropTypes.object,
-  AccordionTextProps: PropTypes.object,
 
+  AccordionWrapperProps: PropTypes.object,
+
+  sections: PropTypes.arrayOf(PropTypes.shape(AccordionPropTypes)),
+
+  /**
+   * Title node of component
+   */
   title: PropTypes.node,
   /**
    * Main description
@@ -215,18 +192,73 @@ Experts.defaultProps = {
     color: "black",
     mb: 4,
     textAlign: 'center',
+
   },
   TextProps: {
-    color: "gray.1",
+    color: "gray.8",
     mb: 48,
+    px:{
+      _: 21,
+      md:80,
+      lg:200,
+    },
+    variant: 'body1',
+    fontWeight: 300,
   },
+  AcctionButtonProps: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+
   CtaProps: {
-    as: "a",
     variant: "primary",
+    as: 'a',
+    height: 48,
+    width: 296,
+    fontWeight: 800,
   },
-  AccordionProps: {
+  AccordionWrapperProps: {
     mb: 40,
   },
+  AccordionLabelProps: {
+    mb: 20,
+    fontSize: 20,
+    lineHeight: '40px',
+    letterSpacing: '0.025em',
+    fontWeight: 300,
+    textAlign: 'center',
+    color: "gray.8",
+  },
+  AccordionTitleProps: {
+    fontSize: 30,
+    lineHeight: '35px',
+    fontWeight: 'bold',
+    letterSpacing: '0.025em',
+  },
+
+  sections: [
+    {
+      AccordionTitleProps: {
+        color:'accent',
+      },
+    },
+    {
+      AccordionTitleProps: {
+        color:'secondary',
+      },
+    },
+    {
+      AccordionTitleProps: {
+        color:'primary',
+      },
+    },
+    {
+      AccordionTitleProps: {
+        color:'primary',
+      },
+    },
+  ],
   ...data.experts,
   
 }
