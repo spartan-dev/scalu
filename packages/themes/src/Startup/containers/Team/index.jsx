@@ -27,16 +27,10 @@ const Team = ({
   ContainerProps,
   CaptionProps,
   TitleProps,
-  TextProps,
   GridProps,
-  CtaProps,
   PersonWrapperProps,
   AvatarProps,
   NameProps,
-  PositionProps,
-  LinkedinIconProps,
-  TwitterIconProps,
-  SkypeIconProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <Container {...ContainerProps}>

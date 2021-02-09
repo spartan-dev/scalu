@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 
 export const Details = styled.details`
- display: block;    
+ display: block;   
 `;
 
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 96px;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33% ;
+    align-items: flex-start;
   }
   
 `;
