@@ -8,8 +8,12 @@ export const Wrapper = styled.div`
   display: inline-block;
   flex-shrink: 0;
   flex-grow: 0;
-  width: 92px;
-  height: 92px;
+  width: 88px;
+  height: 88px;
+  @media (min-width: 1024px) {
+    width: 148px;
+    height: 148px;
+  }
 
   ${base};
 `
@@ -21,5 +25,4 @@ export const Image = styled(Img)`
   flex-grow: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
 `

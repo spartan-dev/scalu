@@ -76,7 +76,7 @@ export default {
         label: "Paquetes",
       },
       {
-        to: "team",
+        to: "experts",
         label: "Nosotros",
       },
       {
@@ -277,7 +277,7 @@ export default {
     ]
   },
   team: {
-    title: "Meet our team",
+    title: "Estamos orgullosos de trabajar con los mejores clientes",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu magna pharetra sem ullamcorper bibendum quis et mauris. Phasellus tincidunt iaculis porttitor. Sed ut mi varius, gravida nulla eget, bibendum est. Ut auctor nec erat vitae placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     cta: {

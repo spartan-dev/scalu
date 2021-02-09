@@ -9,9 +9,8 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 96px;
-  
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33% ;
@@ -26,6 +25,7 @@ export const Summary = styled.summary`
   margin-bottom: 31px;
   padding-bottom: 9px;
   justify-content: center;
+  color: ${props => props.color || ''};
   ::-webkit-details-marker {
   display: none;
 }

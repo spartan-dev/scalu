@@ -43,7 +43,6 @@ const Team = ({
       <Box {...CaptionProps}>
         <Fade bottom cascade duration={600}>
           <Typography {...TitleProps}>{title}</Typography>
-          <Typography {...TextProps}>{text}</Typography>
         </Fade>
       </Box>
       <Grid {...GridProps}>
@@ -52,31 +51,10 @@ const Team = ({
             <Box {...PersonWrapperProps}>
               <Avatar {...AvatarProps} {...person.avatar} />
               <Typography {...NameProps}>{person.name}</Typography>
-              <Typography {...PositionProps}>{person.position}</Typography>
-              {person.social.linkedin && (
-                <Link href={person.social.linkedin}>
-                  <Icon icon={LinkedinAlt} {...LinkedinIconProps} />
-                </Link>
-              )}
-              {person.social.twitter && (
-                <Link href={person.social.twitter}>
-                  <Icon icon={Twitter} {...TwitterIconProps} />
-                </Link>
-              )}
-              {person.social.skype && (
-                <Link href={person.social.skype}>
-                  <Icon icon={Skype} {...SkypeIconProps} />
-                </Link>
-              )}
             </Box>
           </Fade>
         ))}
       </Grid>
-      <Fade top cascade duration={600}>
-        <Button {...CtaProps} {...cta}>
-          {cta.label}
-        </Button>
-      </Fade>
     </Container>
   </Box>
 )
@@ -230,7 +208,6 @@ Team.defaultProps = {
     },
   },
   AvatarProps: {
-    width: 92,
     mb: 2,
   },
   NameProps: {

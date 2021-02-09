@@ -30,6 +30,7 @@ const Experts = ({
   AccordionLabelProps,
   AccordionTextProps,
   AcctionButtonProps,
+  SummaryProps
 }) => (
   <Box name={name} {...WrapperProps}>
     <Background />
@@ -42,7 +43,7 @@ const Experts = ({
             {sections?.map((section, i) => ( 
               <Accordion key={i} >
                 <Details>
-                  <Summary>
+                  <Summary {...SummaryProps} {...sections[i]?.SummaryProps} >
                     <Typography {...AccordionTitleProps} {...sections[i]?.AccordionTitleProps}>
                       {section.title}
                     </Typography>  
@@ -84,6 +85,7 @@ const Experts = ({
 
 const AccordionPropTypes = {
   AccordionTitleProps: PropTypes.object,
+  SummaryProps: PropTypes.object,
 }
 
 Experts.propTypes = {
@@ -137,9 +139,9 @@ Experts.propTypes = {
   AccordionLabelProps: PropTypes.object,
 
   AccordionWrapperProps: PropTypes.object,
+  ...AccordionPropTypes,
 
   sections: PropTypes.arrayOf(PropTypes.shape(AccordionPropTypes)),
-
   /**
    * Title node of component
    */
@@ -236,25 +238,24 @@ Experts.defaultProps = {
     fontWeight: 'bold',
     letterSpacing: '0.025em',
   },
-
   sections: [
     {
-      AccordionTitleProps: {
+      SummaryProps: {
         color:'accent',
       },
     },
     {
-      AccordionTitleProps: {
+      SummaryProps: {
         color:'secondary',
       },
     },
     {
-      AccordionTitleProps: {
+      SummaryProps: {
         color:'primary',
       },
     },
     {
-      AccordionTitleProps: {
+      SummaryProps: {
         color:'primary',
       },
     },
