@@ -1,11 +1,11 @@
 /* eslint-disable no-alert */
-import React from 'react';
+import React from "react"
 
 import { smoothLinkProps } from "@pagerland/common/src/utils"
 import { Link } from "react-scroll"
 
 import textToMultiline from "@pagerland/common/src/utils/textToMultiline"
-import Typography from '@pagerland/common/src/components/Typography';
+import Typography from "@pagerland/common/src/components/Typography"
 
 import MapMarker from "@pagerland/icons/src/monochrome/MapMarker"
 import MobilePhone from "@pagerland/icons/src/monochrome/MobilePhone"
@@ -42,11 +42,13 @@ import Practico from "./assets/practico.svg"
 import Experiencia from "./assets/experiencia.svg"
 import Multiplica from "./assets/multiplica.svg"
 
+import PricingExplore from "./assets/pricing/plan-1.svg"
+import PricingStartup from "./assets/pricing/plan-2.svg"
+import PricingGrowup from "./assets/pricing/plan-3.svg"
+import PricingScaleup from "./assets/pricing/plan-4.svg"
+import PricingOndemand from "./assets/pricing/plan-5.svg"
 
-import PricingBasic from "./assets/pricing/basic.svg"
-import PricingAdvanced from "./assets/pricing/advanced.svg"
-import PricingExpert from "./assets/pricing/expert.svg"
-import Powerfull from './assets/powerfull.svg'
+import Powerfull from "./assets/powerfull.svg"
 
 import Article1 from "./assets/articles/article-1.jpg"
 import Article12x from "./assets/articles/article-1@2x.jpg"
@@ -95,19 +97,21 @@ export default {
   welcome: {
     title: [
       "SCALE OUTSIDE",
-    <Typography as="span" variant="title">
-      {" "} THE <br/> BOX 
-      <Typography as="span" variant="title" color='primary'>
-      .
-    </Typography>
-    </Typography>,
+      <Typography as="span" variant="title">
+        {" "}
+        THE <br /> BOX
+        <Typography as="span" variant="title" color="primary">
+          .
+        </Typography>
+      </Typography>,
     ],
     text: [
       "En Scalu Technologies",
-      <Typography as="span" variant="body1" color='primary'>
-        {" "} damos soluciones ágiles para escalar tu negocio físico a dígital.
+      <Typography as="span" variant="body1" color="primary">
+        {" "}
+        damos soluciones ágiles para escalar tu negocio físico a dígital.
       </Typography>,
-       'Te acampañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.',
+      "Te acampañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.",
     ],
     actions: [
       {
@@ -125,35 +129,36 @@ export default {
   },
   services: {
     title: "¿CÓMO TE AYUDAMOS?",
-    text: 'Scalu Technologies te ofrece asesoría, desarrollo y acompañamiento en branding, marketing, diseño, desarrollo web, ventas, logística y sourcing para tu negocio digital.',
+    text:
+      "Scalu Technologies te ofrece asesoría, desarrollo y acompañamiento en branding, marketing, diseño, desarrollo web, ventas, logística y sourcing para tu negocio digital.",
     services: [
       {
         icon: Practico,
         title: [
-          <Typography variant="h5" color='primary'>
-              Práctico y ágil
-          </Typography>
-      ],
+          <Typography variant="h5" color="primary">
+            Práctico y ágil
+          </Typography>,
+        ],
         text:
           "Diseñamos para ser amigables con el usuario, enfocándonos en la experiencia de compra ágil.",
       },
       {
         icon: Experiencia,
         title: [
-          <Typography variant="h5" color='primary'>
-           Alta experiencia
-          </Typography>
+          <Typography variant="h5" color="primary">
+            Alta experiencia
+          </Typography>,
         ],
         text:
           "Al ser expertos en productos de mucho tráfico sumamos valor a tu negocio mientras restamos error.",
       },
       {
         icon: Multiplica,
-        title: [ 
-          <Typography variant="h5" color='primary'>
+        title: [
+          <Typography variant="h5" color="primary">
             Multiplica tus clientes
-          </Typography>
-          ],
+          </Typography>,
+        ],
         text:
           "Agregamos valor medible a través de la adquisición de usuarios y retención de los mismos.",
       },
@@ -298,35 +303,29 @@ export default {
     ],
   },
   pricing: {
-    title: "Pricing",
+    title: "PAQUETES",
+    text:
+      "Tenemos el paquete perfecto para tu negocio ya que nuestras soluciones son personalizadas y no pagarás por un servicio que no requieres.",
     prices: {
       currency: "$",
       sections: [
         {
-          icon: PricingBasic,
-          title: "Basic",
-          price: "9.99",
-          period: "month",
+          icon: PricingExplore,
+          title: "Explore",
+          text: "Si deseas conocer y explorar soluciones digitales",
           features: [
             {
-              text: "users",
-              prefix: "2",
+              text: " - catálogo de soluciones",
+              prefix: "GRATIS",
             },
             {
-              text: "estimates per month",
-              prefix: "10",
+              text: "Desarrollado por expertos",
             },
             {
-              text: "invoices per month",
-              prefix: "10",
-            },
-            {
-              text: "support",
-              prefix: "Basic",
+              text: "Sin subscripciones innecesarias",
             },
           ],
           button: {
-            text: "Buy basic plan",
             ButtonProps: {
               as: "a",
               href: "https://mypags.app",
@@ -334,30 +333,21 @@ export default {
           },
         },
         {
-          icon: PricingAdvanced,
-          title: "Advanced",
-          price: "19.99",
-          period: "month",
+          icon: PricingStartup,
+          title: "Startup",
+          text: "Si deseas comenzar a vender en canales digitales",
           features: [
             {
-              text: "users",
-              prefix: "5",
+              text: "Soluciones ágiles",
             },
             {
-              text: "estimates per month",
-              prefix: "20",
+              text: "Los mejores proveedores",
             },
             {
-              text: "invoices per month",
-              prefix: "20",
-            },
-            {
-              text: "support",
-              prefix: "Basic",
+              text: "Ajustados a tu presupuesto",
             },
           ],
           button: {
-            text: "Buy advanced plan",
             ButtonProps: {
               as: "a",
               href: "https://mypags.app",
@@ -365,30 +355,56 @@ export default {
           },
         },
         {
-          icon: PricingExpert,
-          title: "Expert",
-          price: "29.99",
-          period: "month",
+          icon: PricingGrowup,
+          title: "Growup",
+          text: "Si deseas renovar tus plataformas digitales",
           features: [
             {
-              text: "users",
-              prefix: "10",
+              text: "Nuevas tecnologías y estrategías ",
             },
             {
-              text: "estimates per month",
-              prefix: "Unlimited",
+              text: "Diseños innovadores",
             },
             {
-              text: "invoices per month",
-              prefix: "Unlimited",
-            },
-            {
-              text: "support",
-              prefix: "Priority",
+              text: "Generación de contenidos",
             },
           ],
           button: {
-            text: "Buy expert plan",
+            ButtonProps: {
+              as: "a",
+              href: "https://mypags.app",
+            },
+          },
+        },
+        {
+          icon: PricingScaleup,
+          title: "Scaleup",
+          text: "Si necesitas una solución a la medida",
+          features: [
+            {
+              text: "Experiencia SCALU",
+            },
+            {
+              text: "Acompañamiento especializado",
+            },
+            {
+              text: "Desarrollo ágil",
+            },
+          ],
+          button: {
+            ButtonProps: {
+              as: "a",
+              href: "https://mypags.app",
+            },
+          },
+        },
+        {
+          icon: PricingOndemand,
+          title: "On demand",
+          text: "Pregunta por nuestra fabrica de desarrollos ",
+          secondText:
+            " donde proveemos Outsourcing Especializado y Soluciones Digitales en temas de E-commerce, Logística, Servicios Financieros y Cyberseguridad.",
+          button: {
             ButtonProps: {
               as: "a",
               href: "https://mypags.app",
@@ -446,8 +462,8 @@ export default {
     },
   },
   contact: {
-    firstTitle: 'Que nada detenga tu salida de la caja...',
-    src:`${Powerfull}`,
+    firstTitle: "Que nada detenga tu salida de la caja...",
+    src: `${Powerfull}`,
     title: "CONTÁCTANOS",
     sections: [
       {
@@ -493,7 +509,9 @@ export default {
           .max(15, "Deben ser 15 caracteres o menos")
           .required("Campo requerido"),
         country: Yup.string().required("Campo requerido"),
-        email: Yup.string().email("Debe contener un e-mail válido").required("Campo requerido"),
+        email: Yup.string()
+          .email("Debe contener un e-mail válido")
+          .required("Campo requerido"),
         phone: Yup.string().required("Campo requerido"),
         comments: Yup.string().required("Campo requerido"),
       }),

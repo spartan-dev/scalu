@@ -1,15 +1,17 @@
-require('dotenv').config();
+require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: 'Pagerland Gatsby',
-    description: '',
-    author: 'Pagerland Team',
+    title: "Scalu Technologies | Scale outside the box",
+    description:
+      "En Scalu Technologies damos soluciones ágiles para escalar tu negocio físico a dígital. .Te acampañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.",
+    keywords:
+      "negocio, digital, página web, comercio electrónico, ecommerce, desarrollo, branding, diseño, marketing, web",
   },
-  pathPrefix: process.env.GATSBY_APP_DIR || '',
+  pathPrefix: process.env.GATSBY_APP_DIR || "",
   plugins: [
     {
-      resolve: 'gatsby-plugin-no-sourcemaps',
+      resolve: "gatsby-plugin-no-sourcemaps",
     },
     {
       resolve: `gatsby-plugin-styled-components`,
@@ -20,30 +22,30 @@ module.exports = {
     {
       resolve: `gatsby-plugin-portal`,
       options: {
-        key: 'portal',
-        id: 'portal',
+        key: "portal",
+        id: "portal",
       },
     },
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
+        name: "gatsby-starter-default",
+        short_name: "starter",
+        start_url: "/",
         background_color: `#189AB4`,
         theme_color: `#189AB4`,
-        display: 'minimal-ui',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        display: "minimal-ui",
+        icon: "src/images/icon.jpg", // This path is relative to the root of the site.
       },
     },
     {
@@ -53,6 +55,6 @@ module.exports = {
         head: false,
       },
     },
-    'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
   ],
-};
+}

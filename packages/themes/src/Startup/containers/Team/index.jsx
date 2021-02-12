@@ -185,7 +185,7 @@ Team.propTypes = {
 
 Team.defaultProps = {
   WrapperProps: {
-    py: {
+    pb: {
       _: 56,
       md: 64,
       lg: 96,

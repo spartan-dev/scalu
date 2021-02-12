@@ -11,7 +11,7 @@ function Index({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+            keywords
           }
         }
       }
@@ -25,8 +25,8 @@ function Index({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={site.siteMetadata.title}
+      titleTemplate={site.siteMetadata.title}
       meta={[
         {
           name: "description",
@@ -60,13 +60,21 @@ function Index({ description, lang, meta, title }) {
           name: "twitter:description",
           content: metaDescription,
         },
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords,
+        },
+        {
+          name: "robots",
+          content: "INDEX,FOLLOW",
+        },
       ].concat(meta)}
     />
   )
 }
 
 Index.defaultProps = {
-  lang: "en",
+  lang: "es",
   meta: [],
   description: "",
 }
