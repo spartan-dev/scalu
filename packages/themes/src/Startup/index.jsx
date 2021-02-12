@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { ThemeProvider } from "styled-components"
 import { ParallaxProvider } from "react-scroll-parallax"
 
+import "./fonts.css"
+
 import Global from "@pagerland/common/src/components/Global"
 import SvgUtils from "@pagerland/common/src/components/SvgUtils"
 
