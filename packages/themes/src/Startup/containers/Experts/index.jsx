@@ -6,51 +6,66 @@ import Fade from "react-reveal/Fade"
 import Typography from "@pagerland/common/src/components/Typography"
 import Container from "@pagerland/common/src/components/Container"
 import Button from "@pagerland/common/src/components/Button"
+import { Details, Summary, Accordion, TextWrapper } from "./styled.components"
 
 import data from "../../data"
-import { RoundedImage } from "./styled.components"
 
 import Background from "./Background"
-import Squares from "./Squares"
 
-const About = ({
+const Experts = ({
   name,
   title,
   text,
+  sections,
   cta,
-  img,
   WrapperProps,
   ContainerProps,
   CaptionProps,
   TitleProps,
   TextProps,
   CtaProps,
-  ImageWrapperProps,
-  ImageProps,
+  AccordionWrapperProps,
+  AccordionTitleProps,
+  AccordionLabelProps,
+  AcctionButtonProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <Background />
     <Container {...ContainerProps}>
-      <Box {...ImageWrapperProps}>
-        <Fade cascade duration={600}>
-          <RoundedImage {...ImageProps} {...img} />
-        </Fade>
-        <Squares />
-      </Box>
       <Box {...CaptionProps}>
         <Fade bottom cascade duration={600}>
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
-          <Button {...CtaProps} {...cta}>
-            {cta.label}
-          </Button>
+          <Box {...AccordionWrapperProps}>
+            {sections.map(section => (
+              <Accordion>
+                <Details>
+                  <Summary color={section.color}>
+                    <Typography {...AccordionTitleProps}>
+                      {section.name}
+                    </Typography>
+                  </Summary>
+                  <TextWrapper>
+                    {section.labels.map(label => (
+                      <Typography {...AccordionLabelProps}>{label}</Typography>
+                    ))}
+                  </TextWrapper>
+                </Details>
+              </Accordion>
+            ))}
+          </Box>
+          <Box {...AcctionButtonProps}>
+            <Button {...CtaProps} {...cta}>
+              {cta.label}
+            </Button>
+          </Box>
         </Fade>
       </Box>
     </Container>
   </Box>
 )
 
-About.propTypes = {
+Experts.propTypes = {
   /**
    * Name of container, can be used for anchors
    */
@@ -67,16 +82,6 @@ About.propTypes = {
   ContainerProps: PropTypes.object,
   /**
    * Wrapper for image
-   * @See @pagerland/common/src/components/Box
-   */
-  ImageWrapperProps: PropTypes.object,
-  /**
-   * Welcome image props
-   * @See @pagerland/common/src/components/Img
-   */
-  ImageProps: PropTypes.object,
-  /**
-   * Caption props
    * @See @pagerland/common/src/components/Box
    */
   CaptionProps: PropTypes.object,
@@ -98,7 +103,23 @@ About.propTypes = {
   /**
    * Img details
    */
-  img: PropTypes.object,
+  sections: PropTypes.arrayOf(
+    PropTypes.shape({
+      /**
+       * Title of section
+       */
+      name: PropTypes.node,
+    })
+  ),
+
+  AcctionButtonProps: PropTypes.object,
+
+  AccordionLabelProps: PropTypes.object,
+
+  AccordionTitleProps: PropTypes.object,
+
+  AccordionWrapperProps: PropTypes.object,
+
   /**
    * Title node of component
    */
@@ -117,7 +138,7 @@ About.propTypes = {
   ),
 }
 
-About.defaultProps = {
+Experts.defaultProps = {
   WrapperProps: {
     overflow: {
       _: "hidden",
@@ -132,45 +153,69 @@ About.defaultProps = {
   },
   ContainerProps: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: {
       _: "column",
       lg: "row",
     },
   },
-  ImageWrapperProps: {
-    position: "relative",
-    mb: {
-      _: 60,
-      lg: 0,
-    },
-  },
-  ImageProps: {
-    maxWidth: "100%",
-  },
   CaptionProps: {
     textAlign: {
       _: "center",
       lg: "left",
     },
-    maxWidth: 544,
   },
   TitleProps: {
     as: "h2",
     variant: "h2",
     color: "black",
     mb: 4,
+    textAlign: "center",
   },
   TextProps: {
-    color: "gray.1",
+    color: "gray.8",
     mb: 48,
+    px: {
+      _: 21,
+      md: 80,
+      lg: 200,
+    },
+    variant: "body1",
+    fontWeight: 300,
   },
+  AcctionButtonProps: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+  },
+
   CtaProps: {
-    as: "a",
     variant: "primary",
+    as: "a",
+    height: 48,
+    width: 296,
+    fontWeight: 800,
   },
-  ...data.about,
+  AccordionWrapperProps: {
+    mb: 80,
+  },
+  AccordionLabelProps: {
+    mb: 20,
+    fontSize: 20,
+    lineHeight: 1.5,
+    letterSpacing: "0.025em",
+    fontWeight: 300,
+    textAlign: "center",
+    color: "gray.8",
+  },
+  AccordionTitleProps: {
+    fontSize: 30,
+    lineHeight: "35px",
+    fontWeight: "bold",
+    letterSpacing: "0.025em",
+  },
+  ...data.experts,
 }
 
-export default About
+export default Experts

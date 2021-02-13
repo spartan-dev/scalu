@@ -18,8 +18,6 @@ import Linkedin from "@pagerland/icons/src/monochrome/Linkedin"
 
 import * as Yup from "yup"
 import Welcome from "./assets/welcome.png"
-import AboutUs from "./assets/about-us.jpg"
-import AboutUs2x from "./assets/about-us@2x.jpg"
 
 import Avatar1 from "./assets/avatars/avatar-1.jpg"
 import Avatar12x from "./assets/avatars/avatar-1@2x.jpg"
@@ -78,7 +76,7 @@ export default {
         label: "Paquetes",
       },
       {
-        to: "team",
+        to: "experts",
         label: "Nosotros",
       },
       {
@@ -173,21 +171,67 @@ export default {
       },
     ],
   },
-  about: {
-    img: {
-      src: AboutUs,
-      srcSet: `${AboutUs} 1x, ${AboutUs2x} 2x`,
-    },
-    title: "About us",
+  experts: {
+    title: "NUESTROS EXPERTOS",
     text:
-      "Nunc nec ultricies quam. Integer iaculis erat id leo consequat ultricies. Pellentesque mattis ultricies rhoncus. Maecenas vehicula efficitur sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam laoreet at erat sit amet efficitur. Nam interdum tellus molestie, elementum felis in, consectetur ipsum. Aenean justo dolor, pretium nec dui eget, vulputate ullamcorper dolor.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     cta: {
-      label: "Learn more bout us",
-      to: "contact",
+      label: "¡Únete a nuestros expertos!",
+      to: "",
     },
+    sections: [
+      {
+        name: "Marketing",
+        color: "secondary",
+        labels: [
+          "Analista de marketing digital",
+          "Experto en AdWords de Google",
+          "Diseñador de logos",
+          "Community manager",
+          "Consultor SEO",
+        ],
+      },
+      {
+        name: "Diseño",
+        color: "accent",
+        labels: [
+          "Diseñador gráfico",
+          "Diseñador UI",
+          "Programador WordPress",
+          "Diseñador web",
+          "Diseñador UX",
+        ],
+      },
+      {
+        name: "Desarrollo",
+        color: "quaternary",
+        labels: [
+          "Progamador Frontend / Backend",
+          "Programador Android",
+          "Programador Java",
+          "Ingeniero DevOps",
+          "Programador IOS",
+          "Programador PHP ",
+          "Ingeniero Microservicios y APIS",
+          "Programador Python",
+        ],
+      },
+      {
+        name: "Contenidos",
+        color: "quinary",
+        labels: [
+          "Redactor de Articulos",
+          "Traductor",
+          "Musico Comercial",
+          "Transcriptor",
+          "Locutor",
+          "Promotor Musical",
+        ],
+      },
+    ],
   },
   team: {
-    title: "Meet our team",
+    title: "Estamos orgullosos de trabajar con los mejores clientes",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu magna pharetra sem ullamcorper bibendum quis et mauris. Phasellus tincidunt iaculis porttitor. Sed ut mi varius, gravida nulla eget, bibendum est. Ut auctor nec erat vitae placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     cta: {

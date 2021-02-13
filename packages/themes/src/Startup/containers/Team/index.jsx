@@ -6,44 +6,27 @@ import Fade from "react-reveal/Fade"
 import Typography from "@pagerland/common/src/components/Typography"
 import Container from "@pagerland/common/src/components/Container"
 import Grid from "@pagerland/common/src/components/Grid"
-import Button from "@pagerland/common/src/components/Button"
-import Icon from "@pagerland/common/src/components/Icon"
 
-import LinkedinAlt from "@pagerland/icons/src/monochrome/LinkedinAlt"
-import Twitter from "@pagerland/icons/src/monochrome/Twitter"
-import Skype from "@pagerland/icons/src/monochrome/Skype"
-
-import Link from "@pagerland/common/src/components/Link"
 import data from "../../data"
 import Avatar from "../../components/Avatar"
 
 const Team = ({
   name,
   title,
-  text,
-  cta,
   people,
   WrapperProps,
   ContainerProps,
   CaptionProps,
   TitleProps,
-  TextProps,
   GridProps,
-  CtaProps,
   PersonWrapperProps,
   AvatarProps,
-  NameProps,
-  PositionProps,
-  LinkedinIconProps,
-  TwitterIconProps,
-  SkypeIconProps,
 }) => (
   <Box name={name} {...WrapperProps}>
     <Container {...ContainerProps}>
       <Box {...CaptionProps}>
         <Fade bottom cascade duration={600}>
           <Typography {...TitleProps}>{title}</Typography>
-          <Typography {...TextProps}>{text}</Typography>
         </Fade>
       </Box>
       <Grid {...GridProps}>
@@ -51,32 +34,10 @@ const Team = ({
           <Fade bottom cascade duration={600} delay={key * 100}>
             <Box {...PersonWrapperProps}>
               <Avatar {...AvatarProps} {...person.avatar} />
-              <Typography {...NameProps}>{person.name}</Typography>
-              <Typography {...PositionProps}>{person.position}</Typography>
-              {person.social.linkedin && (
-                <Link href={person.social.linkedin}>
-                  <Icon icon={LinkedinAlt} {...LinkedinIconProps} />
-                </Link>
-              )}
-              {person.social.twitter && (
-                <Link href={person.social.twitter}>
-                  <Icon icon={Twitter} {...TwitterIconProps} />
-                </Link>
-              )}
-              {person.social.skype && (
-                <Link href={person.social.skype}>
-                  <Icon icon={Skype} {...SkypeIconProps} />
-                </Link>
-              )}
             </Box>
           </Fade>
         ))}
       </Grid>
-      <Fade top cascade duration={600}>
-        <Button {...CtaProps} {...cta}>
-          {cta.label}
-        </Button>
-      </Fade>
     </Container>
   </Box>
 )
@@ -230,7 +191,6 @@ Team.defaultProps = {
     },
   },
   AvatarProps: {
-    width: 92,
     mb: 2,
   },
   NameProps: {

@@ -13,7 +13,7 @@ import {
   Copyright,
   Welcome,
   Services,
-  About,
+  Experts,
   Team,
   Pricing,
   Contact,
@@ -26,7 +26,6 @@ import SEO from "../components/SEO"
 const Startup = ({ url }) => (
   <Theme>
     <Helmet>
-      <link href={theme.typography.gillroy.googleFont} rel="stylesheet" />
       <link href={theme.typography.roboto.googleFont} rel="stylesheet" />
       <meta name="theme-color" content={theme.colors.primary} />
       <meta property="og:image" content={`${url}${preview}`} />
@@ -40,8 +39,8 @@ const Startup = ({ url }) => (
     <Welcome name="" />
     <Services name="services" />
     <Pricing name="pricing" />
+    <Experts name="experts" />
     <Team name="team" />
-    <About name="about" />
     <Contact name="contact" />
 
     <Copyright />

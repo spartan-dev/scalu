@@ -384,6 +384,7 @@ Contact.defaultProps = {
     justifyContent: 'center',
     flexDirection:'column',
     alignItems:'center',
+    textAlign:'center',
   },
   ...data.contact,
 }
