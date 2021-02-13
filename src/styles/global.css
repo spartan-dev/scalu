@@ -1,0 +1,22 @@
+button:focus,
+input:focus {
+  outline: none !important;
+}
+
+button.dot___3c3SI {
+  background-color: rgba(141, 0, 255, 0.3);
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: none;
+  opacity: 0.75;
+}
+
+button.dot___3c3SI.carousel__dot--selected {
+  background: #8d00ff;
+  opacity: 0.75;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: none;
+}

@@ -2,7 +2,7 @@ import { css } from "styled-components"
 import { variant } from "@pagerland/common/src/utils"
 
 import { transparentize } from "polished"
-import { borderRadius, colors, transition } from "../../styles"
+import { colors, transition } from "../../styles"
 import Typography from "../Typography"
 
 export default {
@@ -42,7 +42,7 @@ export default {
         color: ${colors.shades.primary[2]};
       }
     `,
-    ...["primary", "secondary", "accent",'quaternary'].reduce(
+    ...["primary", "secondary", "accent", "quaternary", "quinary"].reduce(
       (variants, color) => ({
         ...variants,
         [color]: css`

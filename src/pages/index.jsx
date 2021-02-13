@@ -4,6 +4,9 @@ import Sticky from "react-sticky-el"
 
 import { Helmet } from "react-helmet"
 
+import "pure-react-carousel/dist/react-carousel.es.css"
+import "../styles/global.css"
+
 import Theme, { theme } from "@pagerland/themes/src/Startup"
 import {
   Navbar,
@@ -13,7 +16,6 @@ import {
   About,
   Team,
   Pricing,
-  Blog,
   Contact,
 } from "@pagerland/themes/src/Startup/containers"
 
@@ -29,7 +31,7 @@ const Startup = ({ url }) => (
       <meta name="theme-color" content={theme.colors.primary} />
       <meta property="og:image" content={`${url}${preview}`} />
     </Helmet>
-    <SEO title="Startup" />
+    <SEO />
 
     <Sticky style={{ zIndex: 999, position: "relative" }}>
       <Navbar />
