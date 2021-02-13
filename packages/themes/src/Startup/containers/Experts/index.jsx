@@ -6,12 +6,11 @@ import Fade from "react-reveal/Fade"
 import Typography from "@pagerland/common/src/components/Typography"
 import Container from "@pagerland/common/src/components/Container"
 import Button from "@pagerland/common/src/components/Button"
-import { Details, Summary, Accordion, TextWrapper, } from './styled.components'
+import { Details, Summary, Accordion, TextWrapper } from "./styled.components"
 
 import data from "../../data"
 
 import Background from "./Background"
-
 
 const Experts = ({
   name,
@@ -28,9 +27,7 @@ const Experts = ({
   AccordionWrapperProps,
   AccordionTitleProps,
   AccordionLabelProps,
-  AccordionTextProps,
   AcctionButtonProps,
-  SummaryProps
 }) => (
   <Box name={name} {...WrapperProps}>
     <Background />
@@ -39,35 +36,20 @@ const Experts = ({
         <Fade bottom cascade duration={600}>
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
-          <Box  {...AccordionWrapperProps}  >  
-            {sections?.map((section, i) => ( 
-              <Accordion key={i} >
+          <Box {...AccordionWrapperProps}>
+            {sections.map(section => (
+              <Accordion>
                 <Details>
-                  <Summary {...SummaryProps} {...sections[i]?.SummaryProps} >
-                    <Typography {...AccordionTitleProps} {...sections[i]?.AccordionTitleProps}>
-                      {section.title}
-                    </Typography>  
+                  <Summary color={section.color}>
+                    <Typography {...AccordionTitleProps}>
+                      {section.name}
+                    </Typography>
                   </Summary>
-                    <TextWrapper {...AccordionTextProps}>
-                      {section.features?.map((feature, i) => (
-                        <div>
-                          <Typography
-                            {...AccordionLabelProps}
-                            {...sections[i]?.AccordionLabelProps}
-                            >
-                            {feature.label1}
-                            {feature.label2}
-                            {feature.label3}
-                            {feature.label4}
-                            {feature.label5}
-                            {feature.label6}
-                            {feature.label7}
-                            {feature.label8}
-                            {feature.label9}
-                          </Typography>
-                        </div>
-                      ))}
-                    </TextWrapper>
+                  <TextWrapper>
+                    {section.labels.map(label => (
+                      <Typography {...AccordionLabelProps}>{label}</Typography>
+                    ))}
+                  </TextWrapper>
                 </Details>
               </Accordion>
             ))}
@@ -82,11 +64,6 @@ const Experts = ({
     </Container>
   </Box>
 )
-
-const AccordionPropTypes = {
-  AccordionTitleProps: PropTypes.object,
-  SummaryProps: PropTypes.object,
-}
 
 Experts.propTypes = {
   /**
@@ -131,17 +108,18 @@ Experts.propTypes = {
       /**
        * Title of section
        */
-      title: PropTypes.node,
-    })),
+      name: PropTypes.node,
+    })
+  ),
 
   AcctionButtonProps: PropTypes.object,
-  
+
   AccordionLabelProps: PropTypes.object,
 
-  AccordionWrapperProps: PropTypes.object,
-  ...AccordionPropTypes,
+  AccordionTitleProps: PropTypes.object,
 
-  sections: PropTypes.arrayOf(PropTypes.shape(AccordionPropTypes)),
+  AccordionWrapperProps: PropTypes.object,
+
   /**
    * Title node of component
    */
@@ -193,75 +171,51 @@ Experts.defaultProps = {
     variant: "h2",
     color: "black",
     mb: 4,
-    textAlign: 'center',
-
+    textAlign: "center",
   },
   TextProps: {
     color: "gray.8",
     mb: 48,
-    px:{
+    px: {
       _: 21,
-      md:80,
-      lg:200,
+      md: 80,
+      lg: 200,
     },
-    variant: 'body1',
+    variant: "body1",
     fontWeight: 300,
   },
   AcctionButtonProps: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
   },
 
   CtaProps: {
     variant: "primary",
-    as: 'a',
+    as: "a",
     height: 48,
     width: 296,
     fontWeight: 800,
   },
   AccordionWrapperProps: {
-    mb: 40,
+    mb: 80,
   },
   AccordionLabelProps: {
     mb: 20,
     fontSize: 20,
-    lineHeight: '40px',
-    letterSpacing: '0.025em',
+    lineHeight: 1.5,
+    letterSpacing: "0.025em",
     fontWeight: 300,
-    textAlign: 'center',
+    textAlign: "center",
     color: "gray.8",
   },
   AccordionTitleProps: {
     fontSize: 30,
-    lineHeight: '35px',
-    fontWeight: 'bold',
-    letterSpacing: '0.025em',
+    lineHeight: "35px",
+    fontWeight: "bold",
+    letterSpacing: "0.025em",
   },
-  sections: [
-    {
-      SummaryProps: {
-        color:'accent',
-      },
-    },
-    {
-      SummaryProps: {
-        color:'secondary',
-      },
-    },
-    {
-      SummaryProps: {
-        color:'primary',
-      },
-    },
-    {
-      SummaryProps: {
-        color:'primary',
-      },
-    },
-  ],
   ...data.experts,
-  
 }
 
 export default Experts

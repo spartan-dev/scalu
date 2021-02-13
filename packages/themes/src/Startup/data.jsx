@@ -180,101 +180,55 @@ export default {
       to: "",
     },
     sections: [
-        {
-        title: 'Marketing',
-        features: [
-          {
-            label1:'Analista de marketing digital',
-          },
-          {
-            label2:'Experto en AdWords de Google',
-          },
-          {
-            label3:'Diseñador de logos',
-          },
-          {
-            label4:'Community manager',
-          },
-          {
-            label5:'Consultor SEO',
-          },
-          
-        ]
+      {
+        name: "Marketing",
+        color: "secondary",
+        labels: [
+          "Analista de marketing digital",
+          "Experto en AdWords de Google",
+          "Diseñador de logos",
+          "Community manager",
+          "Consultor SEO",
+        ],
       },
-        {
-          title: 'Diseño',
-          features: [
-            {
-              label1:'Diseñador gráfico',
-            },
-            {
-              label2:'Diseñador UI',
-            },
-            {
-              label3:'Programador WordPress',
-            },
-            {
-              label4:'Diseñador web',
-            },
-            {
-              label5:'Diseñador UX',
-            },
-            
-          ]
-        },
-        {
-          title: 'Desarrollo',
-          features: [
-            {
-              label1:'Progamador Frontend / Backend',
-            },
-            {
-              label2:'Programador Android',
-            },
-            {
-              label3:'Programador Java',
-            },
-            {
-              label4:'Ingeniero DevOps',
-            },
-            {
-              label5:'Programador IOS',
-            },       
-            {
-              label6:'Programador PHP ',
-            },
-            {
-              label7:'Ingeniero Microservicios y APIS',
-            }, 
-            {
-              label8:'Programador Python',
-            },
-          ]
-        },
-        {
-          title: 'Contenidos',
-          features: [
-            {
-              label1:'Redactor de Articulos',
-            },
-            {
-              label2:'Traductor',
-            },
-            {
-              label3:'Musico Comercial',
-            },
-            {
-              label4:'Transcriptor',
-            },
-            {
-              label5:'Locutor',
-            },   
-            {
-              label6:'Promotor Musical',
-            },
-          ]
-        },
-    ]
+      {
+        name: "Diseño",
+        color: "accent",
+        labels: [
+          "Diseñador gráfico",
+          "Diseñador UI",
+          "Programador WordPress",
+          "Diseñador web",
+          "Diseñador UX",
+        ],
+      },
+      {
+        name: "Desarrollo",
+        color: "quaternary",
+        labels: [
+          "Progamador Frontend / Backend",
+          "Programador Android",
+          "Programador Java",
+          "Ingeniero DevOps",
+          "Programador IOS",
+          "Programador PHP ",
+          "Ingeniero Microservicios y APIS",
+          "Programador Python",
+        ],
+      },
+      {
+        name: "Contenidos",
+        color: "quinary",
+        labels: [
+          "Redactor de Articulos",
+          "Traductor",
+          "Musico Comercial",
+          "Transcriptor",
+          "Locutor",
+          "Promotor Musical",
+        ],
+      },
+    ],
   },
   team: {
     title: "Estamos orgullosos de trabajar con los mejores clientes",
