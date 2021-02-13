@@ -1,72 +1,99 @@
 import { css } from "styled-components"
 import { transparentize } from "polished"
 
-export const space = [0, 4, 8, 16, 32, 64];
+export const space = [0, 4, 8, 16, 32, 64]
 
 export const colors = {
-  primary: '#8D00FF',
-  secondary: '#FFB800',
-  accent: '#FF5F00',
-  quaternary: '#FF42B3',
-  quinary: '#00CE73',
-  error: '#EB5757',
-  success: '#27AE60',
+  primary: "#8D00FF",
+  secondary: "#FFB800",
+  accent: "#FF5F00",
+  quaternary: "#FF42B3",
+  quinary: "#00CE73",
+  error: "#EB5757",
+  success: "#27AE60",
   shades: {
-    primary: ['8D00FF', 'rgba(141, 0, 255, 0.8)', 'rgba(141, 0, 255, 0.6)', '#80FFE8'],
-    secondary: ['#FFB800', 'rgba(255, 184, 0, 0.8);', 'rgba(255, 184, 0, 0.6);', '#6D96B1'],
-    accent: ['#FF5F00', 'rgba(255, 95, 0, 0.8);', 'rgba(255, 95, 0, 0.6);', '#88E2FF'],
-    quaternary: ['#FF42B3', 'rgba(255, 66, 179, 0.8)', 'rgba(255, 66, 179, 0.6)', '#FF9680'],
-    quinary: ['#00CE73', 'rgba(0, 206, 115, 0.8)', 'rgba(0, 206, 115, 0.6)', '#FF9680'],
+    primary: [
+      "8D00FF",
+      "rgba(141, 0, 255, 0.8)",
+      "rgba(141, 0, 255, 0.6)",
+      "#80FFE8",
+    ],
+    secondary: [
+      "#FFB800",
+      "rgba(255, 184, 0, 0.8);",
+      "rgba(255, 184, 0, 0.6);",
+      "#6D96B1",
+    ],
+    accent: [
+      "#FF5F00",
+      "rgba(255, 95, 0, 0.8);",
+      "rgba(255, 95, 0, 0.6);",
+      "#88E2FF",
+    ],
+    quaternary: [
+      "#FF42B3",
+      "rgba(255, 66, 179, 0.8)",
+      "rgba(255, 66, 179, 0.6)",
+      "#FF9680",
+    ],
+    quinary: [
+      "#00CE73",
+      "rgba(0, 206, 115, 0.8)",
+      "rgba(0, 206, 115, 0.6)",
+      "#FF9680",
+    ],
   },
-  gray: ['#101820', '#4F4F4F', '#828282', '#F8F8F8', '#d1d4d5;', '#EFF2F4', '#F8FAFA', '#FFFFFF','#333333'],
+
+  gray: [
+    "#101820",
+    "#4F4F4F",
+    "#828282",
+    "#F8F8F8",
+    "#d1d4d5;",
+    "#EFF2F4",
+    "#F8FAFA",
+    "#FFFFFF",
+    "#333333",
+  ],
 
   svgGradients: {
     primary: {
-      from: '#2BD7B8',
-      to: '#42EBCC',
+      from: "#2BD7B8",
+      to: "#42EBCC",
     },
     secondary: {
-      from: '#2D5D7C',
-      to: '#5286A8',
+      from: "#2D5D7C",
+      to: "#5286A8",
     },
     accent: {
-      from: '#33B9E3',
-      to: '#59D7FF',
+      from: "#33B9E3",
+      to: "#59D7FF",
     },
     quaternary: {
-      from: '#EF5939',
-      to: '#FB7C61',
+      from: "#EF5939",
+      to: "#FB7C61",
     },
   },
-};
+}
 
 export const typography = {
   roboto: {
     googleFont:
-    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap",
-    fontFamily: 'Roboto, sans-serif',
+      "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap",
+    fontFamily: "Roboto, sans-serif",
     color: colors.gray[0],
     sizes: {
       base: 18,
     },
   },
-  gillroy: {
-      googleFont:
-      'https://fonts.googleapis.com/css?family=Sarabun:300,400,400i,500,600,700,800&display=swap',
-      fontFamily: 'Gillroy, sans-serif',
-      color: colors.gray[0],
-      sizes: {
-        base: 18,
-      },
-  },
-};
+}
 
 export const body = {
-  fontSize: typography.roboto.sizes.base,
-  fontFamily: typography.gillroy.fontFamily,
+  fontSize: 18,
+  fontFamily: "'Gilroy', sans-serif",
   lineHeight: 1.6,
   color: colors.gray[0],
-};
+}
 
 export const transition = {
   base: ".2s ease-in-out",
@@ -103,7 +130,7 @@ export const global = css`
     footer {
       display: flex;
       align-items: center;
-      justify-content: 'center';
+      justify-content: "center";
 
       &::before {
         display: block;

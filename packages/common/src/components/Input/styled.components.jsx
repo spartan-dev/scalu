@@ -1,11 +1,10 @@
-import styled from 'styled-components';
-import { base, theme } from '../../utils';
+import styled from "styled-components"
+import { base, theme } from "../../utils"
 import Typography from "../../../../themes/src/Startup/components/Typography"
-import { typography } from "../../../../themes/src/Startup/styles";
-
+import { body } from "../../../../themes/src/Startup/styles"
 
 export const Wrapper = styled.div`
-  ${theme('Input.Wrapper')}
+  ${theme("Input.Wrapper")}
   ${base}
 
   .ReactCollapse--collapse {
@@ -20,36 +19,36 @@ export const Wrapper = styled.div`
   &.error .ReactCollapse--content {
     opacity: 1;
   }
-`;
+`
 export const Label = styled.label`
   margin-bottom: 0.5em;
-	color:#333333;
+  color: #333333;
   display: block;
   font-weight: 600;
   font-size: 14px;
   line-height: 14px;
-  letter-spacing: '0.03em';
-  
+  letter-spacing: "0.03em";
+
   ${base}
-`;
+`
 export const InputWrapper = styled.div`
   ${base}
-`;
+`
 export const StyledInput = styled.textarea`
   padding: 1em;
-	color: #333333;
-	background:#F8F8F8;
-	border: none;
-	width: 100%;
-  font-family: ${typography.gillroy.fontFamily};
+  color: #333333;
+  background: #f8f8f8;
+  border: none;
+  width: 100%;
+  font-family: ${body.fontFamily};
   ${Typography.variants.button2};
-  height: ${props => (props.placeholder == 'Mensaje...' ? "140px" : "57px")};
-	margin-bottom: 0.5em;
- 
+  height: ${props => (props.placeholder === "Mensaje..." ? "140px" : "57px")};
+  margin-bottom: 0.5em;
+
   ${base}
-`;
+`
 export const ErrorMessage = styled.span`
-  ${theme('Input.ErrorMessage')}
+  ${theme("Input.ErrorMessage")}
   ${base}
-`;
-export const StyledTextarea = StyledInput.withComponent('textarea');
+`
+export const StyledTextarea = StyledInput.withComponent("textarea")
