@@ -17,7 +17,6 @@ import {
 import Box from "@pagerland/common/src/components/Box"
 import Button from "@pagerland/common/src/components/Button"
 import Card from "@pagerland/common/src/components/Card"
-import Container from "@pagerland/common/src/components/Container"
 import Icon from "@pagerland/common/src/components/Icon"
 import Img from "@pagerland/common/src/components/Img"
 import List from "@pagerland/common/src/components/List"
@@ -45,7 +44,7 @@ const Pricing = ({
   CardListItemIconProps,
   CardListItemPrefixProps,
   CardButtonProps,
-  DescriptionProps,
+  DotSlideProps,
   SecondTextProps,
   sections,
   name,
@@ -72,104 +71,100 @@ const Pricing = ({
   const slides = width > 1024 ? 3 : width > 768 ? 2 : 1
   const sliderHeigth =
     width > 1024
-      ? 400
+      ? 350
       : width > 768
-      ? 370
+      ? 325
       : width > 640
-      ? 230
+      ? 220
       : width > 425
       ? 275
-      : 480
+      : 450
 
   return (
     <Box {...WrapperProps} name={name}>
-      <Container {...ContainerProps}>
+      <Box {...ContainerProps}>
         <Fade bottom cascade duration={600}>
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
         </Fade>
-      </Container>
-      <Reveal effect="cards" duration={600}>
-        <CarouselProvider
-          naturalSlideWidth={200}
-          naturalSlideHeight={sliderHeigth}
-          totalSlides={prices?.sections?.length}
-          touchEnabled
-          dragEnabled
-          visibleSlides={slides}
-          infinite
-        >
-          <Slider>
-            <Box {...CardWrapperProps}>
-              {prices?.sections?.map((section, i) => (
-                <Slide key={i}>
-                  <Card {...CardProps}>
-                    <Typography {...TitleProps}>{section.title}</Typography>
-                    <Img src={section.icon} {...CardIconProps} />
-                    <Typography {...SecondTextProps}>
-                      <Typography {...DescriptionProps}>
+
+        <Reveal effect="cards" duration={600}>
+          <CarouselProvider
+            naturalSlideWidth={170}
+            naturalSlideHeight={sliderHeigth}
+            totalSlides={prices?.sections?.length}
+            touchEnabled
+            dragEnabled
+            visibleSlides={slides}
+            infinite
+          >
+            <Slider>
+              <Box {...CardWrapperProps}>
+                {prices?.sections?.map((section, i) => (
+                  <Slide id="silder" key={i}>
+                    <Card {...CardProps}>
+                      <Typography {...TitleProps}>{section.title}</Typography>
+                      <Img src={section.icon} {...CardIconProps} />
+                      <Typography {...SecondTextProps}>
                         {section.text}
                       </Typography>
-                      {section.secondText}
-                    </Typography>
-                    <List {...CardListProps}>
-                      {section.features?.map((feature, key) => (
-                        <List.Item key={key} {...CardListItemProps}>
-                          <Icon
-                            icon={Plus}
-                            {...CardListItemIconProps}
-                            {...sections[i]?.CardListItemIconProps}
-                          />
-                          <Typography {...CardListItemPrefixProps}>
-                            {feature.prefix}
-                          </Typography>
-                          {feature.text}
-                        </List.Item>
-                      ))}
-                    </List>
-                    <Button
-                      {...CardButtonProps}
-                      {...sections[i]?.CardButtonProps}
-                      {...section.button.ButtonProps}
-                    >
-                      Contáctanos
-                    </Button>
-                  </Card>
-                </Slide>
-              ))}
-            </Box>
-          </Slider>
-          {width < 1023 ? (
-            <div
-              style={{
-                position: "relative",
-                marginLeft: "auto",
-                marginRight: "auto",
-                width: "fit-content",
-                marginBottom: "4rem",
-                marginTop: "-4rem",
-              }}
-            >
-              <DotGroup
-                style={{
-                  width: 100,
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              />
-            </div>
-          ) : (
-            <div>
-              <ButtonNext style={ControlsNextProps}>
-                <Img src={next} />
-              </ButtonNext>
-              <ButtonBack style={ControlsBackProps}>
-                <Img src={back} />
-              </ButtonBack>
-            </div>
-          )}
-        </CarouselProvider>
-      </Reveal>
+                      {section.features && section.features.length && (
+                        <List {...CardListProps}>
+                          {section.features?.map((feature, key) => (
+                            <List.Item key={key} {...CardListItemProps}>
+                              <Icon
+                                icon={Plus}
+                                {...CardListItemIconProps}
+                                {...sections[i]?.CardListItemIconProps}
+                              />
+                              <Typography {...CardListItemPrefixProps}>
+                                {feature.text}
+                              </Typography>
+                            </List.Item>
+                          ))}
+                        </List>
+                      )}
+                      <Box
+                        {...CardButtonProps}
+                        {...sections[i]?.CardButtonProps}
+                        {...section.button.ButtonProps}
+                      >
+                        {section.button.ButtonProps.map(
+                          ({ label, ...props }, key) => (
+                            <Button {...props} key={key}>
+                              {label}
+                            </Button>
+                          )
+                        )}
+                      </Box>
+                    </Card>
+                  </Slide>
+                ))}
+              </Box>
+            </Slider>
+            {width < 1023 ? (
+              <Box {...DotSlideProps}>
+                <DotGroup
+                  style={{
+                    width: 100,
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                />
+              </Box>
+            ) : (
+              <div>
+                <ButtonNext style={ControlsNextProps}>
+                  <Img src={next} />
+                </ButtonNext>
+                <ButtonBack style={ControlsBackProps}>
+                  <Img src={back} />
+                </ButtonBack>
+              </div>
+            )}
+          </CarouselProvider>
+        </Reveal>
+      </Box>
     </Box>
   )
 }
@@ -261,6 +256,7 @@ Pricing.propTypes = {
   CardWrapperProps: PropTypes.object,
   ControlsNextProps: PropTypes.object,
   ControlsBackProps: PropTypes.object,
+  DotSlideProps: PropTypes.object,
   /**
    * Title text props
    * @See @pagerland/common/src/components/Typography
@@ -304,20 +300,18 @@ Pricing.defaultProps = {
   },
   ContainerProps: {
     position: "relative",
+    p: {
+      _: "0 16px",
+      sm: "0 16px",
+      md: "0 40px",
+      lg: 0,
+    },
+    width: "100%",
   },
   CardWrapperProps: {
-    pt: {
-      _: 56,
-      md: 64,
-      lg: 96,
-    },
-    pl: {
-      md: 3,
-      lg: 4,
-    },
-    pr: {
-      sm: 5,
-    },
+    marginTop: 98,
+    display: "flex",
+    flexDirection: "row",
   },
   ControlsNextProps: {
     position: "absolute",
@@ -327,7 +321,7 @@ Pricing.defaultProps = {
     backgroundColor: "#FFFFFF",
     border: "none",
     boxShadow: "0px 10px 14px 4px rgba(34, 39, 43, 0.06)",
-    top: 660,
+    top: 564,
     right: 15,
     display: "flex",
     alignItems: "center",
@@ -342,7 +336,7 @@ Pricing.defaultProps = {
     backgroundColor: "#FFFFFF",
     border: "none",
     boxShadow: "0px 10px 14px 4px rgba(34, 39, 43, 0.06)",
-    top: 660,
+    top: 564,
     left: 15,
     display: "flex",
     alignItems: "center",
@@ -368,17 +362,30 @@ Pricing.defaultProps = {
   CardProps: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
     borderRadius: "8px",
-    py: 64,
+
+    pt: 62,
+    pb: 68,
     px: {
-      _: 10,
-      sm: 32,
+      _: 24,
+      sm: 24,
+      lg: 32,
     },
     mx: {
-      _: 3,
-      sm: 24,
+      _: 8,
+      sm: 8,
+      md: 20,
+      lg: 30,
     },
-    height: 772,
+    height: {
+      _: 776,
+      md: 776,
+      lg: 728,
+    },
+    width: {
+      lg: 359,
+    },
   },
   CardTitleProps: {
     textAlign: "center",
@@ -399,15 +406,19 @@ Pricing.defaultProps = {
     borderBottomWidth: "1px",
     borderBottomColor: "gray.5",
     borderBottomStyle: "solid",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
   },
   CardListItemIconProps: {
-    fontSize: 24,
-    mb: "-6px",
-    mr: 3,
+    mr: "12px",
+    width: 21,
+    height: 21,
   },
   CardListItemPrefixProps: {
-    fontWeight: "bold",
-    as: "span",
+    display: "flex",
+    flexDirection: "row",
+    variant: "button2",
   },
   CardButtonProps: {
     mt: 30,
@@ -417,67 +428,61 @@ Pricing.defaultProps = {
   },
   DescriptionProps: {
     fontWeight: 600,
-    as: "span",
     color: "#333333",
     fontSize: 20,
     textAlign: "center",
+    lineHeight: "23px",
   },
   SecondTextProps: {
     color: "#333333",
     fontSize: 20,
     textAlign: "center",
-    mx: {
-      sm: 3,
-    },
+    lineHeight: "23px",
   },
   sections: [
     {
-      CardButtonProps: {
-        variant: "secondary",
-      },
       CardListItemIconProps: {
         color: "rgba(255, 184, 0, 0.5)",
       },
     },
     {
-      CardButtonProps: {
-        variant: "accent",
-      },
       CardListItemIconProps: {
         color: "rgba(255, 95, 0, 0.5)",
       },
     },
     {
-      CardButtonProps: {
-        variant: "quaternary",
-      },
       CardListItemIconProps: {
         color: "rgba(255, 66, 179, 0.5)",
       },
     },
     {
-      CardButtonProps: {
-        variant: "primary",
-      },
       CardListItemIconProps: {
         color: "rgba(141, 0, 255, 0.5)",
       },
     },
     {
-      CardButtonProps: {
-        mt: {
-          _: 86,
-          sm: 116,
-          md: 85,
-          lg: 52,
-        },
-        variant: "quinary",
-      },
       CardListItemIconProps: {
         color: "shades.accent.3",
       },
     },
   ],
+  DotSlideProps: {
+    position: "relative",
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "fit-content",
+    marginBottom: "4rem",
+    marginTop: "-4rem",
+    top: {
+      _: -130,
+      sm: -130,
+      md: -110,
+    },
+    left: {
+      _: 0,
+      md: 15,
+    },
+  },
   ...data.pricing,
 }
 

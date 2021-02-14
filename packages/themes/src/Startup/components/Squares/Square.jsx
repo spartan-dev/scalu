@@ -15,14 +15,119 @@ const Square = props => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g filter="url(#square_filter)">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M107.333 27.3333H80.6667C73.3029 27.3333 67.3333 33.3029 67.3333 40.6667V67.3333C67.3333 74.6971 73.3029 80.6667 80.6667 80.6667H107.333C114.697 80.6667 120.667 74.6971 120.667 67.3333V40.6667C120.667 33.3029 114.697 27.3333 107.333 27.3333ZM80.6667 14C65.9391 14 54 25.9391 54 40.6667V67.3333C54 82.0609 65.9391 94 80.6667 94H107.333C122.061 94 134 82.0609 134 67.3333V40.6667C134 25.9391 122.061 14 107.333 14H80.6667Z"
+    <svg
+      width="212"
+      height="119"
+      viewBox="0 0 212 119"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="70.0036"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 70.0036 38.1837)"
         fill="currentColor"
       />
-    </g>
+      <circle
+        cx="70.0036"
+        cy="53.7401"
+        r="5"
+        transform="rotate(45 70.0036 53.7401)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 54.4472 38.1837)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="53.7401"
+        r="5"
+        transform="rotate(45 54.4472 53.7401)"
+        fill="currentColor"
+      />
+      <circle
+        cx="70.7107"
+        cy="68.5894"
+        r="5"
+        transform="rotate(45 70.7107 68.5894)"
+        fill="currentColor"
+      />
+      <circle
+        cx="70.0036"
+        cy="84.8528"
+        r="5"
+        transform="rotate(45 70.0036 84.8528)"
+        fill="currentColor"
+      />
+      <circle
+        cx="38.8909"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 38.8909 38.1837)"
+        fill="currentColor"
+      />
+      <circle
+        cx="38.8909"
+        cy="69.2965"
+        r="5"
+        transform="rotate(45 38.8909 69.2965)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="69.2965"
+        r="5"
+        transform="rotate(45 54.4472 69.2965)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="84.8528"
+        r="5"
+        transform="rotate(45 54.4472 84.8528)"
+        fill="currentColor"
+      />
+      <circle
+        cx="70.0036"
+        cy="100.409"
+        r="5"
+        transform="rotate(45 70.0036 100.409)"
+        fill="currentColor"
+      />
+      <circle
+        cx="38.8909"
+        cy="53.7401"
+        r="5"
+        transform="rotate(45 38.8909 53.7401)"
+        fill="currentColor"
+      />
+      <circle
+        cx="23.3345"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 23.3345 38.1837)"
+        fill="currentColor"
+      />
+      <circle
+        cx="22.6274"
+        cy="54.4472"
+        r="5"
+        transform="rotate(45 22.6274 54.4472)"
+        fill="currentColor"
+      />
+      <circle
+        cx="7.07107"
+        cy="38.8909"
+        r="5"
+        transform="rotate(45 7.07107 38.8909)"
+        fill="currentColor"
+      />
+    </svg>
     <defs>
       <filter
         id="square_filter"

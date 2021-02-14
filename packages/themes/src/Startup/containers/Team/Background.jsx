@@ -6,34 +6,34 @@ import { breakpoints, colors } from "../../styles"
 const Svg = styled.svg`
   ${base};
   position: absolute;
-  top: -150px;
+  top: -100px;
   z-index: -1;
   width: 100%;
   height: 100%;
-  color: ${colors.gray[6]};
+  color: ${colors.gray[3]};
 
   @media (max-width: ${breakpoints.md}) {
-    top: 400px;
-    height: 50%;
+    height: 100%;
+    top: -90px;
   }
 
   @media (max-width: ${breakpoints.sm}) {
-    top: 200px;
-    height: 50%;
+    height: 100%;
+    top: -130px;
   }
 `
 
 const Background = props => (
   <Svg
-    viewBox="0 0 1600 935"
+    viewBox="0 0 1440 792"
     preserveAspectRatio="none"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
-      d="M0 0C183.421 448.627 632.222 530.859 900 403.893C1167.78 276.927 1344.44 227.94 1600 295.922V807.786C1237.78 1138.7 655.556 710.812 0 784.792V0Z"
-      fill="currentColor"
+      d="M303.5 399C145.9 332.2 35.5 89.5 0 0V695.5C377 621 496 677.5 633.5 721.5C752.077 759.445 798.5 783 1050 791C1251.2 797.4 1393.83 730 1440 695.5V284C1384.67 268.833 1239.9 239.9 1103.5 245.5C967.1 251.1 782.667 336.167 707.5 378C638.5 412.833 461.1 465.8 303.5 399Z"
+      fill="#F8F8F8"
     />
   </Svg>
 )

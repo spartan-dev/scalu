@@ -9,6 +9,7 @@ import Grid from "@pagerland/common/src/components/Grid"
 
 import data from "../../data"
 import Avatar from "../../components/Avatar"
+import Background from "./Background"
 
 const Team = ({
   name,
@@ -23,6 +24,7 @@ const Team = ({
   AvatarProps,
 }) => (
   <Box name={name} {...WrapperProps}>
+    <Background />
     <Container {...ContainerProps}>
       <Box {...CaptionProps}>
         <Fade bottom cascade duration={600}>
@@ -151,6 +153,7 @@ Team.defaultProps = {
       md: 64,
       lg: 96,
     },
+    position: "relative",
   },
   ContainerProps: {
     textAlign: "center",
@@ -167,7 +170,7 @@ Team.defaultProps = {
     as: "h2",
     variant: "h2",
     color: "black",
-    mb: 3,
+
     textAlign: "center",
   },
   TextProps: {
@@ -178,6 +181,12 @@ Team.defaultProps = {
     mb: {
       _: 4,
       md: 5,
+    },
+    mt: {
+      _: 40,
+      sm: 40,
+      md: 80,
+      lg: 100,
     },
     gridTemplateColumns: {
       _: "repeat(2, 1fr)",

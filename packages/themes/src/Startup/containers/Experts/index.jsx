@@ -10,8 +10,6 @@ import { Details, Summary, Accordion, TextWrapper } from "./styled.components"
 
 import data from "../../data"
 
-import Background from "./Background"
-
 const Experts = ({
   name,
   title,
@@ -30,7 +28,6 @@ const Experts = ({
   AcctionButtonProps,
 }) => (
   <Box name={name} {...WrapperProps}>
-    <Background />
     <Container {...ContainerProps}>
       <Box {...CaptionProps}>
         <Fade bottom cascade duration={600}>
