@@ -12,11 +12,6 @@ const Card = styled.div`
   border-radius: 8px;
   page-break-inside: avoid;
   break-inside: avoid;
-  @media screen and (min-width: 768px) and (max-width: 769px) {
-    padding-left: 196px;
-    padding-right: 196px;
-    width: 668px;
-  } ;
 `
 
 export default Card

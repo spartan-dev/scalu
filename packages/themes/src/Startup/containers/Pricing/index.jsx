@@ -4,15 +4,7 @@ import PropTypes from "prop-types"
 
 import Fade from "react-reveal/Fade"
 import Reveal from "react-reveal/Reveal"
-
-import {
-  ButtonBack,
-  ButtonNext,
-  CarouselProvider,
-  DotGroup,
-  Slide,
-  Slider,
-} from "pure-react-carousel"
+import Slider from "react-slick"
 
 import Box from "@pagerland/common/src/components/Box"
 import Button from "@pagerland/common/src/components/Button"
@@ -24,27 +16,19 @@ import Typography from "@pagerland/common/src/components/Typography"
 
 import Plus from "@pagerland/icons/src/monochrome/Plus"
 
-import next from "../../assets/pricing/next.svg"
-import back from "../../assets/pricing/back.svg"
-
 import data from "../../data"
 
 const Pricing = ({
   WrapperProps,
   ContainerProps,
-  CardWrapperProps,
-  ControlsNextProps,
-  ControlsBackProps,
   TitleProps,
   TextProps,
   CardProps,
   CardIconProps,
-  CardListProps,
   CardListItemProps,
   CardListItemIconProps,
   CardListItemPrefixProps,
   CardButtonProps,
-  DotSlideProps,
   SecondTextProps,
   sections,
   name,
@@ -68,17 +52,14 @@ const Pricing = ({
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  const slides = width > 1024 ? 3 : width > 768 ? 2 : 1
-  const sliderHeigth =
-    width > 1024
-      ? 350
-      : width > 768
-      ? 325
-      : width > 640
-      ? 220
-      : width > 425
-      ? 275
-      : 450
+  const slides = width > 2000 ? 4 : width > 1024 ? 3 : width > 768 ? 1 : 1
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: slides,
+    slidesToScroll: slides,
+  }
 
   return (
     <Box {...WrapperProps} name={name}>
@@ -87,82 +68,47 @@ const Pricing = ({
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
         </Fade>
-
         <Reveal effect="cards" duration={600}>
-          <CarouselProvider
-            naturalSlideWidth={170}
-            naturalSlideHeight={sliderHeigth}
-            totalSlides={prices?.sections?.length}
-            touchEnabled
-            dragEnabled
-            visibleSlides={slides}
-            infinite
-          >
-            <Slider>
-              <Box {...CardWrapperProps}>
-                {prices?.sections?.map((section, i) => (
-                  <Slide id="silder" key={i}>
-                    <Card {...CardProps}>
-                      <Typography {...TitleProps}>{section.title}</Typography>
-                      <Img src={section.icon} {...CardIconProps} />
-                      <Typography {...SecondTextProps}>
-                        {section.text}
-                      </Typography>
-                      {section.features && section.features.length && (
-                        <List {...CardListProps}>
-                          {section.features?.map((feature, key) => (
-                            <List.Item key={key} {...CardListItemProps}>
-                              <Icon
-                                icon={Plus}
-                                {...CardListItemIconProps}
-                                {...sections[i]?.CardListItemIconProps}
-                              />
-                              <Typography {...CardListItemPrefixProps}>
-                                {feature.text}
-                              </Typography>
-                            </List.Item>
-                          ))}
-                        </List>
-                      )}
-                      <Box
-                        {...CardButtonProps}
-                        {...sections[i]?.CardButtonProps}
-                        {...section.button.ButtonProps}
-                      >
-                        {section.button.ButtonProps.map(
-                          ({ label, ...props }, key) => (
-                            <Button {...props} key={key}>
-                              {label}
-                            </Button>
-                          )
-                        )}
-                      </Box>
-                    </Card>
-                  </Slide>
-                ))}
-              </Box>
+          <Box className="slider-wrapper">
+            <Slider {...settings}>
+              {prices?.sections?.map((section, i) => (
+                <Card id="slider" {...CardProps}>
+                  <Typography {...TitleProps}>{section.title}</Typography>
+                  <Img src={section.icon} {...CardIconProps} />
+                  <Typography {...SecondTextProps}>{section.text}</Typography>
+                  {section.features && section.features.length && (
+                    <List>
+                      {section.features?.map((feature, key) => (
+                        <List.Item key={key} {...CardListItemProps}>
+                          <Icon
+                            icon={Plus}
+                            {...CardListItemIconProps}
+                            {...sections[i]?.CardListItemIconProps}
+                          />
+                          <Typography {...CardListItemPrefixProps}>
+                            {feature.text}
+                          </Typography>
+                        </List.Item>
+                      ))}
+                    </List>
+                  )}
+                  <Box
+                    {...CardButtonProps}
+                    {...sections[i]?.CardButtonProps}
+                    {...section.button.ButtonProps}
+                  >
+                    {section.button.ButtonProps.map(
+                      ({ label, ...props }, key) => (
+                        <Button {...props} key={key}>
+                          {label}
+                        </Button>
+                      )
+                    )}
+                  </Box>
+                </Card>
+              ))}
             </Slider>
-            {width < 1023 ? (
-              <Box {...DotSlideProps}>
-                <DotGroup
-                  style={{
-                    width: 100,
-                    display: "flex",
-                    justifyContent: "space-between",
-                  }}
-                />
-              </Box>
-            ) : (
-              <div>
-                <ButtonNext style={ControlsNextProps}>
-                  <Img src={next} />
-                </ButtonNext>
-                <ButtonBack style={ControlsBackProps}>
-                  <Img src={back} />
-                </ButtonBack>
-              </div>
-            )}
-          </CarouselProvider>
+          </Box>
         </Reveal>
       </Box>
     </Box>
@@ -189,7 +135,7 @@ const CardPropTypes = {
    * Features list props
    * @See @pagerland/common/src/components/List
    */
-  CardListProps: PropTypes.object,
+
   /**
    * Features list single item props
    * @See @pagerland/common/src/components/List
@@ -253,10 +199,6 @@ Pricing.propTypes = {
    * @See @pagerland/common/src/components/Container
    */
   ContainerProps: PropTypes.object,
-  CardWrapperProps: PropTypes.object,
-  ControlsNextProps: PropTypes.object,
-  ControlsBackProps: PropTypes.object,
-  DotSlideProps: PropTypes.object,
   /**
    * Title text props
    * @See @pagerland/common/src/components/Typography
@@ -299,52 +241,14 @@ Pricing.defaultProps = {
     },
   },
   ContainerProps: {
-    position: "relative",
     p: {
-      _: "0 16px",
-      sm: "0 16px",
-      md: "0 40px",
-      lg: 0,
+      _: 0,
+      lg: 70,
     },
-    width: "100%",
   },
-  CardWrapperProps: {
-    marginTop: 98,
-    display: "flex",
-    flexDirection: "row",
-  },
-  ControlsNextProps: {
-    position: "absolute",
-    width: 64,
-    height: 64,
-    borderRadius: 9999,
-    backgroundColor: "#FFFFFF",
-    border: "none",
-    boxShadow: "0px 10px 14px 4px rgba(34, 39, 43, 0.06)",
-    top: 564,
-    right: 15,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingLeft: 12,
-  },
-  ControlsBackProps: {
-    position: "absolute",
-    width: 64,
-    height: 64,
-    borderRadius: 9999,
-    backgroundColor: "#FFFFFF",
-    border: "none",
-    boxShadow: "0px 10px 14px 4px rgba(34, 39, 43, 0.06)",
-    top: 564,
-    left: 15,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingRight: 12,
-  },
+
   TitleProps: {
-    mb: 4,
+    mb: 21,
     textAlign: "center",
     variant: "h2",
     as: "h2",
@@ -364,28 +268,10 @@ Pricing.defaultProps = {
     flexDirection: "column",
     alignItems: "center",
     borderRadius: "8px",
-
     pt: 62,
     pb: 68,
-    px: {
-      _: 24,
-      sm: 24,
-      lg: 32,
-    },
-    mx: {
-      _: 8,
-      sm: 8,
-      md: 20,
-      lg: 30,
-    },
-    height: {
-      _: 776,
-      md: 776,
-      lg: 728,
-    },
-    width: {
-      lg: 359,
-    },
+    px: 32,
+    mb: 68,
   },
   CardTitleProps: {
     textAlign: "center",
@@ -398,11 +284,10 @@ Pricing.defaultProps = {
     mx: "auto",
     mb: 40,
   },
-  CardListProps: {
-    mt: 32,
-  },
+
   CardListItemProps: {
     py: 16,
+    mb: 20,
     borderBottomWidth: "1px",
     borderBottomColor: "gray.5",
     borderBottomStyle: "solid",
@@ -438,6 +323,7 @@ Pricing.defaultProps = {
     fontSize: 20,
     textAlign: "center",
     lineHeight: "23px",
+    mb: 36,
   },
   sections: [
     {
@@ -466,23 +352,6 @@ Pricing.defaultProps = {
       },
     },
   ],
-  DotSlideProps: {
-    position: "relative",
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: "fit-content",
-    marginBottom: "4rem",
-    marginTop: "-4rem",
-    top: {
-      _: -130,
-      sm: -130,
-      md: -110,
-    },
-    left: {
-      _: 0,
-      md: 15,
-    },
-  },
   ...data.pricing,
 }
 
