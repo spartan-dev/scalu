@@ -9,56 +9,59 @@ const Squares = () => (
     <Square
       color="accent"
       zIndex={2}
-      right={-40}
-      top={-49}
-      width={80}
+      right={-103}
+      top={-47}
+      width={142}
       height={80}
       position="absolute"
     />
     <Square
-      color="accent"
+      color="quaternary"
       zIndex={2}
-      left={-38}
+      left={-25}
       top={124}
-      width={62}
-      height={62}
+      width={142}
+      height={80}
       position="absolute"
     />
     <Square
-      color="secondary"
+      color="quinary"
       zIndex={2}
-      right={148}
+      right={-15}
       bottom={-24}
-      width={48}
-      height={48}
+      width={142}
+      height={80}
       position="absolute"
     />
     <SquareBlur
-      color="accent"
+      color="quaternary"
       zIndex={-1}
-      left={-105}
+      left={-115}
       bottom={60}
-      width={75}
-      height={75}
+      width={146}
+      height={102}
       position="absolute"
+      filter="blur(5px)"
     />
     <SquareBlur
       color="accent"
       zIndex={-1}
       left={120}
-      top={-57}
-      width={80}
-      height={80}
+      top={-70}
+      width={146}
+      height={102}
       position="absolute"
+      filter="blur(5px)"
     />
     <SquareBlur
-      color="secondary"
+      color="quinary"
       zIndex={-1}
       right={-106}
       bottom={113}
-      width={130}
-      height={130}
+      width={146}
+      height={102}
       position="absolute"
+      filter="blur(5px)"
     />
   </Fade>
 )

@@ -359,8 +359,19 @@ export default {
           text: "Si deseas conocer y explorar soluciones digitales",
           features: [
             {
-              text: " - catálogo de soluciones",
-              prefix: "GRATIS",
+              text: [
+                <Typography variant="button2" color="gray.8" fontWeight="600">
+                  GRATIS
+                </Typography>,
+                <Typography
+                  variant="button2"
+                  color="gray.8"
+                  fontWeight="normal"
+                >
+                  {" "}
+                  - catálogo de soluciones
+                </Typography>,
+              ],
             },
             {
               text: "Desarrollado por expertos",
@@ -370,10 +381,15 @@ export default {
             },
           ],
           button: {
-            ButtonProps: {
-              as: "a",
-              href: "https://mypags.app",
-            },
+            ButtonProps: [
+              {
+                label: "Contáctonos",
+                to: "contact",
+                variant: "secondary",
+                as: Link,
+                ...smoothLinkProps,
+              },
+            ],
           },
         },
         {
@@ -392,10 +408,15 @@ export default {
             },
           ],
           button: {
-            ButtonProps: {
-              as: "a",
-              href: "https://mypags.app",
-            },
+            ButtonProps: [
+              {
+                label: "Contáctonos",
+                variant: "accent",
+                to: "contact",
+                as: Link,
+                ...smoothLinkProps,
+              },
+            ],
           },
         },
         {
@@ -414,10 +435,15 @@ export default {
             },
           ],
           button: {
-            ButtonProps: {
-              as: "a",
-              href: "https://mypags.app",
-            },
+            ButtonProps: [
+              {
+                label: "Contáctonos",
+                variant: "quaternary",
+                to: "contact",
+                as: Link,
+                ...smoothLinkProps,
+              },
+            ],
           },
         },
         {
@@ -436,23 +462,45 @@ export default {
             },
           ],
           button: {
-            ButtonProps: {
-              as: "a",
-              href: "https://mypags.app",
-            },
+            ButtonProps: [
+              {
+                label: "Contáctonos",
+                variant: "primary",
+                to: "contact",
+                as: Link,
+                ...smoothLinkProps,
+              },
+            ],
           },
         },
         {
           icon: PricingOndemand,
           title: "On demand",
-          text: "Pregunta por nuestra fabrica de desarrollos ",
-          secondText:
-            " donde proveemos Outsourcing Especializado y Soluciones Digitales en temas de E-commerce, Logística, Servicios Financieros y Cyberseguridad.",
+          text: [
+            <Typography
+              marginBottom="15px"
+              fontSize="20px"
+              color="gray.8"
+              fontWeight="600"
+            >
+              Pregunta por nuestra fabrica de desarrollos
+              <Typography fontSize="20px" color="gray.8" fontWeight="normal">
+                donde proveemos Outsourcing Especializado y Soluciones Digitales
+                en temas de E-commerce, Logística, Servicios Financieros y
+                Cyberseguridad.
+              </Typography>
+            </Typography>,
+          ],
           button: {
-            ButtonProps: {
-              as: "a",
-              href: "https://mypags.app",
-            },
+            ButtonProps: [
+              {
+                label: "Contáctonos",
+                variant: "quinary",
+                to: "contact",
+                as: Link,
+                ...smoothLinkProps,
+              },
+            ],
           },
         },
       ],

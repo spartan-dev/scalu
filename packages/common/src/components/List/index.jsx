@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { base, theme } from '../../utils';
+import styled from "styled-components"
+import { base, theme } from "../../utils"
 
 /**
  * Just a prestyled HTML lists
@@ -10,14 +10,14 @@ const List = styled.ul`
   list-style: none;
 
   ${base}
-  ${theme('List')}
-`;
+  ${theme("List")}
+`
 
 const ListItem = styled.li`
   ${base}
-  ${theme('List.Item')}
-`;
+  ${theme("List.Item")}
+`
 
-List.Item = ListItem;
+List.Item = ListItem
 
-export default List;
+export default List

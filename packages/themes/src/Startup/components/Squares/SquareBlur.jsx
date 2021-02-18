@@ -15,14 +15,119 @@ const SquareBlur = props => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g opacity="0.2" filter="url(#square_blur_filter)">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M69.3333 29.3333H42.6667C35.3029 29.3333 29.3333 35.3029 29.3333 42.6667V69.3333C29.3333 76.6971 35.3029 82.6667 42.6667 82.6667H69.3333C76.6971 82.6667 82.6667 76.6971 82.6667 69.3333V42.6667C82.6667 35.3029 76.6971 29.3333 69.3333 29.3333ZM42.6667 16C27.9391 16 16 27.9391 16 42.6667V69.3333C16 84.0609 27.9391 96 42.6667 96H69.3333C84.0609 96 96 84.0609 96 69.3333V42.6667C96 27.9391 84.0609 16 69.3333 16H42.6667Z"
+    <svg
+      width="212"
+      height="119"
+      viewBox="0 0 212 119"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="70.0036"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 70.0036 38.1837)"
         fill="currentColor"
       />
-    </g>
+      <circle
+        cx="70.0036"
+        cy="53.7401"
+        r="5"
+        transform="rotate(45 70.0036 53.7401)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 54.4472 38.1837)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="53.7401"
+        r="5"
+        transform="rotate(45 54.4472 53.7401)"
+        fill="currentColor"
+      />
+      <circle
+        cx="70.7107"
+        cy="68.5894"
+        r="5"
+        transform="rotate(45 70.7107 68.5894)"
+        fill="currentColor"
+      />
+      <circle
+        cx="70.0036"
+        cy="84.8528"
+        r="5"
+        transform="rotate(45 70.0036 84.8528)"
+        fill="currentColor"
+      />
+      <circle
+        cx="38.8909"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 38.8909 38.1837)"
+        fill="currentColor"
+      />
+      <circle
+        cx="38.8909"
+        cy="69.2965"
+        r="5"
+        transform="rotate(45 38.8909 69.2965)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="69.2965"
+        r="5"
+        transform="rotate(45 54.4472 69.2965)"
+        fill="currentColor"
+      />
+      <circle
+        cx="54.4472"
+        cy="84.8528"
+        r="5"
+        transform="rotate(45 54.4472 84.8528)"
+        fill="currentColor"
+      />
+      <circle
+        cx="70.0036"
+        cy="100.409"
+        r="5"
+        transform="rotate(45 70.0036 100.409)"
+        fill="currentColor"
+      />
+      <circle
+        cx="38.8909"
+        cy="53.7401"
+        r="5"
+        transform="rotate(45 38.8909 53.7401)"
+        fill="currentColor"
+      />
+      <circle
+        cx="23.3345"
+        cy="38.1837"
+        r="5"
+        transform="rotate(45 23.3345 38.1837)"
+        fill="currentColor"
+      />
+      <circle
+        cx="22.6274"
+        cy="54.4472"
+        r="5"
+        transform="rotate(45 22.6274 54.4472)"
+        fill="currentColor"
+      />
+      <circle
+        cx="7.07107"
+        cy="38.8909"
+        r="5"
+        transform="rotate(45 7.07107 38.8909)"
+        fill="currentColor"
+      />
+    </svg>
     <defs>
       <filter
         id="square_blur_filter"

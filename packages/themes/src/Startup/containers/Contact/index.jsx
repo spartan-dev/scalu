@@ -10,14 +10,12 @@ import Icon from "@pagerland/common/src/components/Icon"
 import Link from "@pagerland/common/src/components/Link"
 import Img from "@pagerland/common/src/components/Img"
 
-import Card from "@pagerland/common/src/components/Card"
 import { Form, Formik } from "formik"
 import Input from "@pagerland/common/src/components/Formik/Input"
 import Button from "@pagerland/common/src/components/Button"
 import data from "../../data"
 import Background from "./Background"
 import Squares from "./Squares"
-
 
 const Contact = ({
   name,
@@ -44,7 +42,7 @@ const Contact = ({
   <Box name={name} {...WrapperProps}>
     <Box {...FirstTitleProps}>
       <Typography {...TitleProps}>{firstTitle}</Typography>
-      <Img src={src}/>
+      <Img src={src} />
     </Box>
     <Background />
     <Container {...ContainerProps}>
@@ -83,7 +81,7 @@ const Contact = ({
           </Box>
         </Fade>
       </Box>
-      <Card {...MailerCardProps}>
+      <Box {...MailerCardProps}>
         <Squares />
         <Typography {...MailerTitleProps}>{mailer.title}</Typography>
 
@@ -105,15 +103,13 @@ const Contact = ({
                   <Input key={field.name} {...field} />
                 ))}
               </div>
-              <Box display='flex' justifyContent='center'>
-                <Button {...MailerButtonProps}>
-                  {mailer.cta}
-                </Button>
+              <Box display="flex" justifyContent="center">
+                <Button {...MailerButtonProps}>{mailer.cta}</Button>
               </Box>
             </Fade>
           </Form>
         </Formik>
-      </Card>
+      </Box>
     </Container>
   </Box>
 )
@@ -123,6 +119,8 @@ Contact.propTypes = {
    * Name of container, can be used for anchors
    */
   name: PropTypes.string.isRequired,
+  firstTitle: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
   /**
    * Wrapper props
    * @See @pagerland/common/src/components/Box
@@ -327,12 +325,12 @@ Contact.defaultProps = {
   SectionTextProps: {
     color: "gray.1",
     fontSize: 16,
-    lineHeight: '24px',
-    letterSpacing: '0.07em',
-    fontWeight:'normal',
+    lineHeight: "24px",
+    letterSpacing: "0.07em",
+    fontWeight: "normal",
     width: {
-      lg: '140px',
-    }
+      lg: "140px",
+    },
   },
   SocialLinkWrapperProps: {
     flexBox: true,
@@ -352,7 +350,6 @@ Contact.defaultProps = {
     lineHeight: 1,
   },
   MailerCardProps: {
-    bg: "primary",
     width: "100%",
     maxWidth: 544,
     p: {
@@ -364,15 +361,15 @@ Contact.defaultProps = {
   MailerTitleProps: {
     as: "h3",
     variant: "h2",
-    color: "gray.7",
+    color: "gray.8",
     mb: 4,
   },
   MailerButtonProps: {
     mt: 4,
     variant: "primary",
     fontSize: 20,
-    lineHeight: '23px',
-    letterSpacing: '0.07em',
+    lineHeight: "23px",
+    letterSpacing: "0.07em",
     fontWeight: 600,
   },
   FirstTitleProps: {
@@ -380,11 +377,11 @@ Contact.defaultProps = {
       _: 158,
       lg: 234,
     },
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection:'column',
-    alignItems:'center',
-    textAlign:'center',
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
   },
   ...data.contact,
 }
