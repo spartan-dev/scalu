@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import Sticky from "react-sticky-el"
 
@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet"
 
 import Theme, { theme } from "@pagerland/themes/src/Startup"
 import {
+  Modal,
   Navbar,
   Copyright,
   Welcome,
@@ -19,33 +20,53 @@ import {
 import preview from "@pagerland/themes/src/Startup/assets/preview.jpg"
 
 import SEO from "../components/SEO"
-
 import "../styles/global.css"
 
-const Startup = ({ url }) => (
-  <Theme>
-    <Helmet>
-      <link href={theme.typography.roboto.googleFont} rel="stylesheet" />
+const Startup = ({ url }) => {
+  const [showModal, setShowModal] = useState(false)
+  const [body, setBody] = useState(null)
 
-      <meta name="theme-color" content={theme.colors.primary} />
-      <meta property="og:image" content={`${url}${preview}`} />
-    </Helmet>
-    <SEO />
+  useEffect(() => {
+    if (typeof window !== "undefined")
+      setBody(document.getElementsByTagName("body")[0])
+  }, [])
 
-    <Sticky style={{ zIndex: 999, position: "relative" }}>
-      <Navbar />
-    </Sticky>
+  useEffect(() => {
+    if (body !== null) {
+      body.style.overflow = showModal ? "hidden" : "auto"
+    }
+  }, [body, showModal])
 
-    <Welcome name="" />
-    <Services name="services" />
-    <Pricing name="pricing" />
-    <Experts name="experts" />
-    <Team name="team" />
-    <Contact name="contact" />
+  return (
+    <Theme>
+      <Helmet>
+        <link href={theme.typography.roboto.googleFont} rel="stylesheet" />
+        <meta name="theme-color" content={theme.colors.primary} />
+        <meta property="og:image" content={`${url}${preview}`} />
+      </Helmet>
+      <SEO />
 
-    <Copyright />
-  </Theme>
-)
+      <Sticky style={{ zIndex: 999 }}>
+        <Navbar />
+      </Sticky>
+      {showModal && (
+        <Modal
+          onClick={() => {
+            setShowModal(false)
+          }}
+        />
+      )}
+      <Welcome name="" />
+      <Services name="services" />
+      <Pricing name="pricing" />
+      <Experts name="experts" onClick={() => setShowModal(true)} />
+      <Team name="team" />
+      <Contact name="contact" />
+
+      <Copyright />
+    </Theme>
+  )
+}
 
 Startup.propTypes = {
   url: PropTypes.string,

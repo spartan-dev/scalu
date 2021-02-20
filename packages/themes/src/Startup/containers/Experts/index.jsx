@@ -12,6 +12,7 @@ import data from "../../data"
 
 const Experts = ({
   name,
+  onClick,
   title,
   text,
   sections,
@@ -52,7 +53,7 @@ const Experts = ({
             ))}
           </Box>
           <Box {...AcctionButtonProps}>
-            <Button {...CtaProps} {...cta}>
+            <Button {...CtaProps} {...cta} onClick={() => onClick()}>
               {cta.label}
             </Button>
           </Box>
@@ -67,6 +68,7 @@ Experts.propTypes = {
    * Name of container, can be used for anchors
    */
   name: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
   /**
    * Wrapper props
    * @See @pagerland/common/src/components/Box
@@ -141,7 +143,6 @@ Experts.defaultProps = {
       _: "hidden",
       sm: "visible",
     },
-    position: "relative",
     py: {
       _: 56,
       md: 64,

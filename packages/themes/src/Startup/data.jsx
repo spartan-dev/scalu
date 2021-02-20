@@ -647,5 +647,44 @@ export default {
       ],
     },
   },
+  modalMailer: {
+    title: "ÚNETE A NUESTROS EXPERTOS",
+    description:
+      "Si te interesa ser parte del equipo Scalu, no dudes en mandarnos tu información.",
+    cta: "Mandar información",
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .max(15, "Deben ser 15 caracteres o menos")
+        .required("Campo requerido"),
+      email: Yup.string()
+        .email("Debe contener un e-mail válido")
+        .required("Campo requerido"),
+      ocupation: Yup.string().required("Campo requerido"),
+    }),
+    // eslint-disable-next-line no-undef
+    onSubmit: values =>
+      window.alert(`Form sent with values ${JSON.stringify(values)}`),
+    fields: [
+      {
+        name: "name",
+        label: "Nombre",
+        placeholder: "ie. John Doe",
+        initialValue: "",
+      },
+      {
+        name: "email",
+        label: "Correo",
+        placeholder: "i.e. john.doe@email.com",
+        type: "email",
+        initialValue: "",
+      },
+      {
+        name: "ocupation",
+        label: "Ocupación",
+        placeholder: "i.e. Desarrollador",
+        initialValue: "",
+      },
+    ],
+  },
   copyright: "© 2020 Scalu Technologies",
 }
