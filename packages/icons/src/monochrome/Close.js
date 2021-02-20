@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Instagram() {
+export default function Close() {
   return (
     <svg
       width="26"
