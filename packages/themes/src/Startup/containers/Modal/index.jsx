@@ -90,8 +90,8 @@ Modal.defaultProps = {
   MailerButtonProps: {
     mt: 4,
     variant: "primary",
-    fontSize: 20,
-    lineHeight: "23px",
+    fontSize: 16,
+    lineHeight: "18.75px",
     letterSpacing: "0.07em",
     fontWeight: 600,
   },
@@ -104,7 +104,7 @@ Modal.defaultProps = {
   },
   TextProps: {
     color: "gray.8",
-    mb: 3,
+    mb: 4,
     variant: "body1",
     fontWeight: 300,
   },

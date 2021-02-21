@@ -73,25 +73,27 @@ const Pricing = ({
             <Slider {...settings}>
               {prices?.sections?.map((section, i) => (
                 <Card id="slider" {...CardProps}>
-                  <Typography {...TitleProps}>{section.title}</Typography>
-                  <Img src={section.icon} {...CardIconProps} />
-                  <Typography {...SecondTextProps}>{section.text}</Typography>
-                  {section.features && section.features.length && (
-                    <List>
-                      {section.features?.map((feature, key) => (
-                        <List.Item key={key} {...CardListItemProps}>
-                          <Icon
-                            icon={Plus}
-                            {...CardListItemIconProps}
-                            {...sections[i]?.CardListItemIconProps}
-                          />
-                          <Typography {...CardListItemPrefixProps}>
-                            {feature.text}
-                          </Typography>
-                        </List.Item>
-                      ))}
-                    </List>
-                  )}
+                  <div>
+                    <Typography {...TitleProps}>{section.title}</Typography>
+                    <Img src={section.icon} {...CardIconProps} />
+                    <Typography {...SecondTextProps}>{section.text}</Typography>
+                    {section.features && section.features.length && (
+                      <List width="100%">
+                        {section.features?.map((feature, key) => (
+                          <List.Item key={key} {...CardListItemProps}>
+                            <Icon
+                              icon={Plus}
+                              {...CardListItemIconProps}
+                              {...sections[i]?.CardListItemIconProps}
+                            />
+                            <Typography {...CardListItemPrefixProps}>
+                              {feature.text}
+                            </Typography>
+                          </List.Item>
+                        ))}
+                      </List>
+                    )}
+                  </div>
                   <Box
                     {...CardButtonProps}
                     {...sections[i]?.CardButtonProps}
@@ -234,16 +236,11 @@ Pricing.defaultProps = {
   WrapperProps: {
     overflow: "hidden",
     position: "relative",
-    pt: {
-      _: 56,
-      md: 64,
-      lg: 96,
-    },
   },
   ContainerProps: {
     p: {
       _: 0,
-      lg: 70,
+      lg: 96,
     },
   },
 
@@ -252,11 +249,15 @@ Pricing.defaultProps = {
     textAlign: "center",
     variant: "h2",
     as: "h2",
-    color: "#333333",
+    color: "gray.8",
   },
   TextProps: {
     color: "gray.1",
     textAlign: "center",
+    mb: {
+      _: 96,
+      lg: 0,
+    },
     px: {
       _: 21,
       md: 40,
@@ -266,8 +267,9 @@ Pricing.defaultProps = {
   CardProps: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    justifyContent: "space-between",
     borderRadius: "8px",
+    width: "360px",
     pt: 62,
     pb: 68,
     px: 32,
@@ -294,6 +296,7 @@ Pricing.defaultProps = {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    color: "gray.1",
   },
   CardListItemIconProps: {
     mr: "12px",
@@ -307,23 +310,28 @@ Pricing.defaultProps = {
   },
   CardButtonProps: {
     mt: 30,
+    mb: {
+      _: 30,
+      lg: 0,
+    },
     alignSelf: "center",
     textAlign: "center",
     justifySelf: "end",
   },
   DescriptionProps: {
     fontWeight: 600,
-    color: "#333333",
+    color: "gray.8",
     fontSize: 20,
     textAlign: "center",
     lineHeight: "23px",
   },
   SecondTextProps: {
-    color: "#333333",
+    color: "gray.8",
     fontSize: 20,
     textAlign: "center",
     lineHeight: "23px",
     mb: 36,
+    fontWeight: 600,
   },
   sections: [
     {

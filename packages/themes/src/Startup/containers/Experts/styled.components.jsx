@@ -22,7 +22,7 @@ export const Summary = styled.summary`
   display: flex;
   flex-direction: row;
   border-bottom: solid;
-  margin-bottom: 31px;
+  margin-bottom: 41px;
   padding-bottom: 9px;
   justify-content: center;
   color: ${props => colors[props.color] || ""};

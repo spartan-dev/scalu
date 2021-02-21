@@ -37,7 +37,7 @@ const Squares = () => {
         <Square
           color="quaternary"
           zIndex={-1}
-          right={-145}
+          right={-200}
           top={265}
           width={142}
           height={80}
@@ -46,51 +46,51 @@ const Squares = () => {
         <Square
           color="quinary"
           zIndex={-1}
-          left={-115}
-          top={30}
+          left={-75}
+          top={10}
           width={142}
           height={80}
           position="absolute"
         />
-        <Square
-          color="secondary"
+        <SquareBlur
           display={sliderHeigth}
+          color="primary"
           zIndex={-1}
           left={220}
-          top={-115}
+          top={-125}
           width={142}
           height={80}
           position="absolute"
-          filter="blur(5px)"
+          filter="blur(3px)"
         />
         <SquareBlur
-          color="quinary"
+          color="primary"
           zIndex={-1}
           left={-176}
-          bottom={255}
+          top={410}
           width={142}
           height={80}
           position="absolute"
-          filter="blur(5px)"
+          filter="blur(3px)"
         />
-        <SquareBlur
+        <Square
           color="accent"
           zIndex={-1}
-          left={-90}
+          left={-60}
           bottom={50}
           width={142}
           height={80}
           position="absolute"
         />
         <SquareBlur
-          color="quaternary"
+          color="quinary"
           zIndex={-1}
-          right={-110}
-          bottom={35}
+          right={-113}
+          bottom={-15}
           width={142}
           height={80}
           position="absolute"
-          filter="blur(5px)"
+          filter="blur(3px)"
         />
       </Fade>
     </>

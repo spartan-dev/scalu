@@ -8,8 +8,8 @@ export const ContainerWithBackground = styled(Container)`
 
   &::after {
     position: absolute;
-    top: 0;
-    left: 56%;
+    top: 70px;
+    left: 60%;
     z-index: -1;
     display: block;
     width: 100vw;
@@ -23,4 +23,12 @@ export const ContainerWithBackground = styled(Container)`
 
 export const RoundedImage = styled(Img)`
   border-radius: 128px 0;
+`
+
+export const Rectangle = styled.div`
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: ${colors.primary};
+  margin-left: -17px;
 `

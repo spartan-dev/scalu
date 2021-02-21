@@ -148,10 +148,10 @@ Team.propTypes = {
 
 Team.defaultProps = {
   WrapperProps: {
-    pb: {
+    py: {
       _: 56,
       md: 64,
-      lg: 96,
+      lg: 150,
     },
     position: "relative",
   },
@@ -169,8 +169,7 @@ Team.defaultProps = {
   TitleProps: {
     as: "h2",
     variant: "h2",
-    color: "black",
-
+    color: "gray.8",
     textAlign: "center",
   },
   TextProps: {
