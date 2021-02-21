@@ -144,9 +144,8 @@ Experts.defaultProps = {
       sm: "visible",
     },
     py: {
-      _: 56,
-      md: 64,
-      lg: 96,
+      _: 96,
+      lg: 32,
     },
   },
   ContainerProps: {
@@ -167,18 +166,14 @@ Experts.defaultProps = {
   TitleProps: {
     as: "h2",
     variant: "h2",
-    color: "black",
+    color: "gray.8",
     mb: 4,
     textAlign: "center",
   },
   TextProps: {
+    textAlign: "center",
     color: "gray.8",
     mb: 48,
-    px: {
-      _: 21,
-      md: 80,
-      lg: 200,
-    },
     variant: "body1",
     fontWeight: 300,
   },
@@ -193,7 +188,6 @@ Experts.defaultProps = {
     as: "a",
     height: 48,
     width: 296,
-    fontWeight: 800,
   },
   AccordionWrapperProps: {
     mb: 80,

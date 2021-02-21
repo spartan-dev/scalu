@@ -4,7 +4,6 @@ import React from "react"
 import { smoothLinkProps } from "@pagerland/common/src/utils"
 import { Link } from "react-scroll"
 
-import textToMultiline from "@pagerland/common/src/utils/textToMultiline"
 import Typography from "@pagerland/common/src/components/Typography"
 
 import MapMarker from "@pagerland/icons/src/monochrome/MapMarker"
@@ -96,24 +95,21 @@ export default {
     title: [
       "SCALE OUTSIDE",
       <Typography as="span" variant="title">
-        {" "}
+        <br />
         THE <br /> BOX
-        <Typography as="span" variant="title" color="primary">
-          .
-        </Typography>
       </Typography>,
     ],
     text: [
       "En Scalu Technologies",
       <Typography as="span" variant="body1" color="primary">
         {" "}
-        damos soluciones ágiles para escalar tu negocio físico a dígital.
+        damos soluciones ágiles para escalar tu negocio físico a dígital.{" "}
       </Typography>,
-      "Te acampañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.",
+      "Te acompañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.",
     ],
     actions: [
       {
-        label: "Contáctonos",
+        label: "Contáctanos",
         to: "contact",
         as: Link,
         ...smoothLinkProps,
@@ -127,8 +123,14 @@ export default {
   },
   services: {
     title: "¿CÓMO TE AYUDAMOS?",
-    text:
-      "Scalu Technologies te ofrece asesoría, desarrollo y acompañamiento en branding, marketing, diseño, desarrollo web, ventas, logística y sourcing para tu negocio digital.",
+    text: (
+      <>
+        Scalu Technologies te ofrece asesoría, desarrollo y acompañamiento en
+        branding,
+        <br className="none" /> marketing, diseño, desarrollo web, ventas,
+        logística y sourcing para tu negocio digital.
+      </>
+    ),
     services: [
       {
         icon: Practico,
@@ -163,7 +165,7 @@ export default {
     ],
     actions: [
       {
-        label: "Contáctonos",
+        label: "Contáctanos",
         to: "contact",
         as: Link,
         ...smoothLinkProps,
@@ -231,7 +233,12 @@ export default {
     ],
   },
   team: {
-    title: "Estamos orgullosos de trabajar con los mejores clientes",
+    title: (
+      <>
+        Estamos orgullosos de trabajar con <br className="none" /> los mejores
+        clientes
+      </>
+    ),
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu magna pharetra sem ullamcorper bibendum quis et mauris. Phasellus tincidunt iaculis porttitor. Sed ut mi varius, gravida nulla eget, bibendum est. Ut auctor nec erat vitae placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     cta: {
@@ -348,15 +355,23 @@ export default {
   },
   pricing: {
     title: "PAQUETES",
-    text:
-      "Tenemos el paquete perfecto para tu negocio ya que nuestras soluciones son personalizadas y no pagarás por un servicio que no requieres.",
+    text: (
+      <>
+        Tenemos el paquete perfecto para tu negocio ya que nuestras soluciones{" "}
+        <br /> son personalizadas y no pagarás por un servicio que no requieres.
+      </>
+    ),
     prices: {
       currency: "$",
       sections: [
         {
           icon: PricingExplore,
           title: "Explore",
-          text: "Si deseas conocer y explorar soluciones digitales",
+          text: (
+            <>
+              Si deseas conocer y explorar <br /> soluciones digitales
+            </>
+          ),
           features: [
             {
               text: [
@@ -383,7 +398,7 @@ export default {
           button: {
             ButtonProps: [
               {
-                label: "Contáctonos",
+                label: "Contáctanos",
                 to: "contact",
                 variant: "secondary",
                 as: Link,
@@ -395,7 +410,12 @@ export default {
         {
           icon: PricingStartup,
           title: "Startup",
-          text: "Si deseas comenzar a vender en canales digitales",
+          text: (
+            <>
+              Si deseas comenzar a vender
+              <br /> en canales digitales
+            </>
+          ),
           features: [
             {
               text: "Soluciones ágiles",
@@ -410,7 +430,7 @@ export default {
           button: {
             ButtonProps: [
               {
-                label: "Contáctonos",
+                label: "Contáctanos",
                 variant: "accent",
                 to: "contact",
                 as: Link,
@@ -422,7 +442,12 @@ export default {
         {
           icon: PricingGrowup,
           title: "Growup",
-          text: "Si deseas renovar tus plataformas digitales",
+          text: (
+            <>
+              Si deseas renovar tus plata- <br />
+              formas digitales
+            </>
+          ),
           features: [
             {
               text: "Nuevas tecnologías y estrategías ",
@@ -437,7 +462,7 @@ export default {
           button: {
             ButtonProps: [
               {
-                label: "Contáctonos",
+                label: "Contáctanos",
                 variant: "quaternary",
                 to: "contact",
                 as: Link,
@@ -449,7 +474,11 @@ export default {
         {
           icon: PricingScaleup,
           title: "Scaleup",
-          text: "Si necesitas una solución a la medida",
+          text: (
+            <>
+              Si necesitas una solución a <br /> la medida
+            </>
+          ),
           features: [
             {
               text: "Experiencia SCALU",
@@ -464,7 +493,7 @@ export default {
           button: {
             ButtonProps: [
               {
-                label: "Contáctonos",
+                label: "Contáctanos",
                 variant: "primary",
                 to: "contact",
                 as: Link,
@@ -483,8 +512,13 @@ export default {
               color="gray.8"
               fontWeight="600"
             >
-              Pregunta por nuestra fabrica de desarrollos
-              <Typography fontSize="20px" color="gray.8" fontWeight="normal">
+              Pregunta por nuestra fabrica <br /> de desarrollos{" "}
+              <Typography
+                fontSize="20px"
+                color="gray.8"
+                fontWeight="normal"
+                as="span"
+              >
                 donde proveemos Outsourcing Especializado y Soluciones Digitales
                 en temas de E-commerce, Logística, Servicios Financieros y
                 Cyberseguridad.
@@ -494,7 +528,7 @@ export default {
           button: {
             ButtonProps: [
               {
-                label: "Contáctonos",
+                label: "Contáctanos",
                 variant: "quinary",
                 to: "contact",
                 as: Link,
@@ -560,7 +594,13 @@ export default {
     sections: [
       {
         icon: MapMarker,
-        text: textToMultiline`Magnolias 203, Nova Ciudad Cayalá, zona 16. Guatemala`,
+        text: (
+          <>
+            Magnolias 203,
+            <br /> Nova Ciudad Cayalá,
+            <br /> zona 16. Guatemala
+          </>
+        ),
       },
       {
         icon: MobilePhone,
@@ -616,6 +656,7 @@ export default {
           label: "Nombre",
           placeholder: "ie. John Doe",
           initialValue: "",
+          as: "input",
         },
         {
           name: "email",
@@ -623,6 +664,7 @@ export default {
           placeholder: "i.e. john.doe@email.com",
           type: "email",
           initialValue: "",
+          as: "input",
         },
         {
           name: "country",
@@ -630,6 +672,7 @@ export default {
           placeholder: "123",
           type: "number",
           initialValue: "",
+          as: "input",
         },
         {
           name: "phone",
@@ -637,12 +680,14 @@ export default {
           placeholder: "123-456-7890",
           type: "number",
           initialValue: "",
+          as: "input",
         },
         {
           name: "comments",
           label: "¡Cuéntanos tu idea!",
           placeholder: `Mensaje...`,
           initialValue: "",
+          as: "textarea",
         },
       ],
     },
@@ -670,6 +715,7 @@ export default {
         label: "Nombre",
         placeholder: "ie. John Doe",
         initialValue: "",
+        as: "input",
       },
       {
         name: "email",
@@ -677,12 +723,14 @@ export default {
         placeholder: "i.e. john.doe@email.com",
         type: "email",
         initialValue: "",
+        as: "input",
       },
       {
         name: "ocupation",
         label: "Ocupación",
         placeholder: "i.e. Desarrollador",
         initialValue: "",
+        as: "input",
       },
     ],
   },

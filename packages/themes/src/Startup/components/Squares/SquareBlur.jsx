@@ -6,6 +6,7 @@ import { base } from "@pagerland/common/src/utils"
 const Svg = styled.svg`
   ${base};
   overflow: visible !important;
+  opacity: 0.2 !important;
 `
 
 const SquareBlur = props => (

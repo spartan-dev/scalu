@@ -13,6 +13,7 @@ export default {
     white-space: nowrap;
     transition: ${transition.all};
     letter-spacing: 0.07em;
+    font-weight: 700;
 
     ${variant({
       prop: "variant",

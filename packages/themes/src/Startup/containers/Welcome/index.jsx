@@ -8,7 +8,11 @@ import Button from "@pagerland/common/src/components/Button"
 
 import data from "../../data"
 
-import { ContainerWithBackground, RoundedImage } from "./styled.components"
+import {
+  ContainerWithBackground,
+  RoundedImage,
+  Rectangle,
+} from "./styled.components"
 import Squares from "./Squares"
 
 const Welcome = ({
@@ -30,7 +34,9 @@ const Welcome = ({
     <ContainerWithBackground {...ContainerProps}>
       <Box {...CaptionProps}>
         <Fade bottom cascade duration={600}>
-          <Typography {...TitleProps}>{title}</Typography>
+          <Typography {...TitleProps}>
+            {title} <Rectangle />
+          </Typography>
           <Typography {...TextProps}>{text}</Typography>
           <Box {...ActionButtonsProps}>
             {actions.map(({ label, ...props }, key) => (
@@ -130,11 +136,6 @@ Welcome.propTypes = {
 Welcome.defaultProps = {
   WrapperProps: {
     overflow: "hidden",
-    py: 4,
-    pb: {
-      _: 0,
-      lg: 60,
-    },
   },
   ContainerProps: {
     display: "flex",
@@ -147,17 +148,21 @@ Welcome.defaultProps = {
   },
   CaptionProps: {
     my: {
-      _: 30,
+      _: 26,
+      md: 70,
       lg: 135,
     },
-    maxWidth: 448,
+    maxWidth: {
+      _: 500,
+      lg: 457,
+    },
   },
   TitleProps: {
     as: "h1",
     variant: "h1",
     mb: 4,
     mx: "auto",
-    color: "black",
+    color: "gray.8",
   },
   TextProps: {
     variant: "body1",
@@ -167,19 +172,20 @@ Welcome.defaultProps = {
     mt: 4,
     width: 172,
     height: 48,
-    letterSpacing: '.07em',
+    letterSpacing: ".07em",
   },
   ImageWrapperProps: {
     zIndex: 4,
     position: "relative",
     my: {
-      _: 90,
+      _: 78,
+      md: 56,
       lg: 0,
     },
   },
   ImageProps: {
     width: "100%",
-    maxWidth: 544,
+    maxWidth: 520,
   },
   AvatarsProps: [
     {

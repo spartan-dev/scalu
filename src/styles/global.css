@@ -1,6 +1,7 @@
 #slider {
   display: flex !important;
   height: 95%;
+  width: 360px !important;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1025px) {
@@ -43,7 +44,7 @@
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 58%;
+  top: 57%;
   padding: 0;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -60,6 +61,12 @@
   }
 }
 
+@media screen and (max-width: 1023px) {
+  .none {
+    display: none;
+  }
+}
+
 .slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
@@ -72,7 +79,8 @@
 }
 
 .slick-prev {
-  left: 25px;
+  left: 36px;
+  padding-right: 6px;
 }
 
 .slick-prev:before {
@@ -80,7 +88,8 @@
 }
 
 .slick-next {
-  right: 50px;
+  right: 36px;
+  padding-left: 6px;
 }
 
 .slick-next:before {

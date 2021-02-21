@@ -62,6 +62,7 @@ const Services = ({
 )
 
 Services.propTypes = {
+  actions: PropTypes.array,
   /**
    * Name of container, can be used for anchors
    */
@@ -123,7 +124,7 @@ Services.propTypes = {
   CtaProps: PropTypes.object,
 
   ActionButtonsProps: PropTypes.object,
-  
+
   /**
    * Title node of component
    */
@@ -154,9 +155,13 @@ Services.propTypes = {
 
 Services.defaultProps = {
   WrapperProps: {
-    py: {
+    pt: {
       _: 56,
       md: 64,
+      lg: 96,
+    },
+    pb: {
+      _: 136,
       lg: 96,
     },
   },
@@ -164,24 +169,22 @@ Services.defaultProps = {
     textAlign: "center",
   },
   CaptionProps: {
-    mb: 5,
+    mb: {
+      _: 112,
+      lg: 5,
+    },
   },
   TitleProps: {
     as: "h2",
     variant: "h2",
-    color: "black",
+    color: "gray.8",
     mb: 3,
     textAlign: "center",
   },
   TextProps: {
     color: "gray.8",
     mb: 4,
-    px:{
-      _: 21,
-      md:80,
-      lg:200,
-    },
-    variant: 'body1'
+    variant: "body1",
   },
   GridProps: {
     gridTemplateColumns: {
@@ -196,25 +199,29 @@ Services.defaultProps = {
   ServiceIconProps: {
     display: "block",
     mx: "auto",
-    mb: 56,
-    mt: 56,
-    height: '100%',
+    my: {
+      _: 0,
+      lg: 56,
+    },
+    height: "100%",
   },
   ServiceTitleProps: {
     textAlign: "center",
     as: "h3",
     variant: "h3",
-    mb: 3,
+    mb: {
+      _: 16,
+      lg: 32,
+    },
+    mt: {
+      _: 58,
+      lg: 0,
+    },
   },
   ServiceTextProps: {
     color: "gray.1",
     textAlign: "center",
-    px:{
-      _: 21,
-      md:40,
-      lg:0,
-    },
-    variant: 'body2',
+    variant: "body2",
     fontWeight: 300,
   },
   CtaProps: {
@@ -224,11 +231,11 @@ Services.defaultProps = {
     as: "a",
   },
   ActionButtonsProps: {
-    width: '100%',
+    width: "100%",
     height: 48,
-    letterSpacing: '.07em',
-    display: 'flex',
-    justifyContent: 'center',
+    letterSpacing: ".07em",
+    display: "flex",
+    justifyContent: "center",
   },
   ...data.services,
 }

@@ -15,6 +15,7 @@ import {
   Team,
   Pricing,
   Contact,
+  Out,
 } from "@pagerland/themes/src/Startup/containers"
 
 import preview from "@pagerland/themes/src/Startup/assets/preview.jpg"
@@ -61,6 +62,7 @@ const Startup = ({ url }) => {
       <Pricing name="pricing" />
       <Experts name="experts" onClick={() => setShowModal(true)} />
       <Team name="team" />
+      <Out name="" />
       <Contact name="contact" />
 
       <Copyright />
