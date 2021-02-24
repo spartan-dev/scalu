@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import Sticky from "react-sticky-el"
-
 import { Helmet } from "react-helmet"
 
-import Theme, { theme } from "@pagerland/themes/src/Startup"
+import Theme, { theme } from "@pagerland/themes"
 import {
   Modal,
   Navbar,
@@ -16,12 +15,11 @@ import {
   Pricing,
   Contact,
   Out,
-} from "@pagerland/themes/src/Startup/containers"
-
-import preview from "@pagerland/themes/src/Startup/assets/preview.jpg"
+} from "@pagerland/themes/containers"
 
 import SEO from "../components/SEO"
 import "../styles/global.css"
+import preview from "../images/scalu.png"
 
 const Startup = ({ url }) => {
   const [showModal, setShowModal] = useState(false)
@@ -62,9 +60,8 @@ const Startup = ({ url }) => {
       <Pricing name="pricing" />
       <Experts name="experts" onClick={() => setShowModal(true)} />
       <Team name="team" />
-      <Out name="" />
+      <Out name="out" />
       <Contact name="contact" />
-
       <Copyright />
     </Theme>
   )

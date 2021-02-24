@@ -1,3 +1,9 @@
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none !important;
+}
+
 #slider {
   display: flex !important;
   height: 95%;
@@ -84,7 +90,7 @@
 }
 
 .slick-prev:before {
-  content: url("../../packages/themes/src/Startup/assets/pricing/back.svg");
+  content: url("../../packages/themes/assets/back.svg");
 }
 
 .slick-next {
@@ -93,7 +99,7 @@
 }
 
 .slick-next:before {
-  content: url("../../packages/themes/src/Startup/assets/pricing/next.svg");
+  content: url("../../packages/themes/assets/next.svg");
 }
 
 /* Dots */
@@ -103,7 +109,7 @@
 
 .slick-dots {
   position: absolute;
-  bottom: 85px;
+  bottom: 184px;
   display: block;
   width: 100%;
   left: 0;
