@@ -62,9 +62,8 @@ const Startup = ({ url }) => {
       <Pricing name="pricing" />
       <Experts name="experts" onClick={() => setShowModal(true)} />
       <Team name="team" />
-      <Out name="" />
+      <Out name="out" />
       <Contact name="contact" />
-
       <Copyright />
     </Theme>
   )

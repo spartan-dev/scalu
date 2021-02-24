@@ -83,13 +83,12 @@ export default {
         label: "Contacto",
       },
     ],
-    actions: [
-      {
-        href:
-          "https://themeforest.net/item/pagerland-react-and-gatsby-landing-page-templates/26548567",
-        label: "Buy this theme",
-      },
-    ],
+    actions: {
+      label: "Agendar llamada",
+      to: "contact",
+      as: Link,
+      variant: "primary",
+    },
   },
   welcome: {
     title: [
@@ -103,7 +102,8 @@ export default {
       "En Scalu Technologies",
       <Typography as="span" variant="body1" color="primary">
         {" "}
-        damos soluciones ágiles para escalar tu negocio físico a dígital.{" "}
+        damos soluciones <br className="none" /> ágiles para escalar tu negocio
+        físico a dígital. <br className="none" />
       </Typography>,
       "Te acompañamos durante cada etapa de la transformación para crecer por medio del comercio electrónico de alto impacto.",
     ],
@@ -358,7 +358,8 @@ export default {
     text: (
       <>
         Tenemos el paquete perfecto para tu negocio ya que nuestras soluciones{" "}
-        <br /> son personalizadas y no pagarás por un servicio que no requieres.
+        <br className="none" /> son personalizadas y no pagarás por un servicio
+        que no requieres.
       </>
     ),
     prices: {
@@ -398,7 +399,7 @@ export default {
           button: {
             ButtonProps: [
               {
-                label: "Contáctanos",
+                label: "Descargar catálogo",
                 to: "contact",
                 variant: "secondary",
                 as: Link,
@@ -507,10 +508,11 @@ export default {
           title: "On demand",
           text: [
             <Typography
-              marginBottom="15px"
+              marginBottom="50px"
               fontSize="20px"
               color="gray.8"
               fontWeight="600"
+              lineHeight="28px"
             >
               Pregunta por nuestra fabrica <br /> de desarrollos{" "}
               <Typography
@@ -518,6 +520,7 @@ export default {
                 color="gray.8"
                 fontWeight="normal"
                 as="span"
+                lineHeight="28px"
               >
                 donde proveemos Outsourcing Especializado y Soluciones Digitales
                 en temas de E-commerce, Logística, Servicios Financieros y
@@ -596,9 +599,9 @@ export default {
         icon: MapMarker,
         text: (
           <>
-            Magnolias 203,
-            <br /> Nova Ciudad Cayalá,
-            <br /> zona 16. Guatemala
+            Magnolias 203
+            <br /> Nova, Ciudad Cayalá
+            <br /> Z16, Guatemala
           </>
         ),
       },
@@ -651,44 +654,56 @@ export default {
       onSubmit: values =>
         window.alert(`Form sent with values ${JSON.stringify(values)}`),
       fields: [
-        {
-          name: "name",
-          label: "Nombre",
-          placeholder: "ie. John Doe",
-          initialValue: "",
-          as: "input",
-        },
-        {
-          name: "email",
-          label: "Correo",
-          placeholder: "i.e. john.doe@email.com",
-          type: "email",
-          initialValue: "",
-          as: "input",
-        },
-        {
-          name: "country",
-          label: "Código de país",
-          placeholder: "123",
-          type: "number",
-          initialValue: "",
-          as: "input",
-        },
-        {
-          name: "phone",
-          label: "Número de teléfono",
-          placeholder: "123-456-7890",
-          type: "number",
-          initialValue: "",
-          as: "input",
-        },
-        {
-          name: "comments",
-          label: "¡Cuéntanos tu idea!",
-          placeholder: `Mensaje...`,
-          initialValue: "",
-          as: "textarea",
-        },
+        [
+          {
+            name: "name",
+            label: "Nombre",
+            placeholder: "ie. John Doe",
+            initialValue: "",
+            as: "input",
+          },
+        ],
+        [
+          {
+            name: "email",
+            label: "Correo",
+            placeholder: "i.e. john.doe@email.com",
+            type: "email",
+            initialValue: "",
+            as: "input",
+          },
+        ],
+        [
+          {
+            name: "country",
+            label: "Código de país",
+            placeholder: "123",
+            type: "number",
+            initialValue: "",
+            as: "input",
+            styles: {
+              width: 143,
+              marginRight: 24,
+            },
+          },
+          {
+            name: "phone",
+            label: "Número de teléfono",
+            placeholder: "123-456-7890",
+            type: "number",
+            initialValue: "",
+            as: "input",
+          },
+        ],
+        [
+          {
+            name: "comments",
+            label: "¡Cuéntanos tu idea!",
+            placeholder: `Mensaje...`,
+            initialValue: "",
+            as: "textarea",
+          },
+        ],
       ],
     },
   },

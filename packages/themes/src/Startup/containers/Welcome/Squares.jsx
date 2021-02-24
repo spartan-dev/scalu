@@ -9,28 +9,28 @@ const Squares = () => (
     <Square
       color="accent"
       zIndex={2}
-      right={-103}
-      top={-47}
+      right={-110}
+      top={-60}
       width={142}
-      height={80}
+      height={102}
       position="absolute"
     />
     <Square
       color="quaternary"
       zIndex={2}
-      left={-24}
+      left={-10}
       top={124}
       width={142}
-      height={80}
+      height={102}
       position="absolute"
     />
     <Square
       color="quinary"
       zIndex={2}
       right={40}
-      bottom={-22}
+      bottom={-32}
       width={142}
-      height={80}
+      height={102}
       position="absolute"
     />
     <SquareBlur

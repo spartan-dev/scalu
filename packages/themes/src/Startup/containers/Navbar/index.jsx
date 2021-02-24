@@ -1,21 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react"
+import PropTypes from "prop-types"
 
-import { Link } from 'react-scroll';
-import { smoothLinkProps } from '@pagerland/common/src/utils';
+import { Link } from "react-scroll"
+import { smoothLinkProps } from "@pagerland/common/src/utils"
 
-import Container from '@pagerland/common/src/components/Container';
-import Box from '@pagerland/common/src/components/Box';
-import List from '@pagerland/common/src/components/List';
-import NavbarWrapper from '@pagerland/common/src/components/Navbar';
-import Button from '@pagerland/common/src/components/Button';
+import Container from "@pagerland/common/src/components/Container"
+import Box from "@pagerland/common/src/components/Box"
+import List from "@pagerland/common/src/components/List"
+import NavbarWrapper from "@pagerland/common/src/components/Navbar"
+import Button from "@pagerland/common/src/components/Button"
 
+import LanderPagerLogo from "../../components/Logo"
 
-import LanderPagerLogo from '../../components/Logo';
-
-import data from '../../data';
-import { LogoWrapper, MobileWrapper, NavbarLink, ToggleButton, Wrapper, } from './styled.components';
-import { zIndex } from '../../styles';
+import data from "../../data"
+import {
+  LogoWrapper,
+  MobileWrapper,
+  NavbarLink,
+  ToggleButton,
+  Wrapper,
+} from "./styled.components"
+import { zIndex } from "../../styles"
 
 const Navbar = ({
   WrapperProps,
@@ -30,11 +35,12 @@ const Navbar = ({
   Logo,
   links,
   ButtonProps,
+  actions,
 }) => {
   const menu = onClick => (
     <>
       {links && (
-        <List  {...LinksWrapperProps}>
+        <List {...LinksWrapperProps}>
           {links.map(({ label, ...link }, i) => (
             <List.Item key={i}>
               <NavbarLink {...LinkProps} onClick={onClick} {...link}>
@@ -44,17 +50,22 @@ const Navbar = ({
           ))}
         </List>
       )}
-     
     </>
-  );
+  )
 
   return (
     <NavbarWrapper
       rwdMenu={({ onToggle, isOpen, onClose }) => (
         <MobileWrapper isActive={isOpen} {...MobileMenuProps}>
-          <ToggleButton isActive={isOpen} toggleButton={onToggle} {...MobileMenuToggleProps} />
+          <ToggleButton
+            isActive={isOpen}
+            toggleButton={onToggle}
+            {...MobileMenuToggleProps}
+          />
           {menu(onClose)}
-          <Button {...ButtonProps}>Contáctanos</Button>
+          <Button {...ButtonProps} {...actions} onClick={onClose}>
+            {actions.label}
+          </Button>
         </MobileWrapper>
       )}
     >
@@ -68,14 +79,18 @@ const Navbar = ({
                 </LogoWrapper>
               )}
               <Box {...MenuItemsListProps}>{menu(onClose)}</Box>
-              <ToggleButton  isActive={isOpen} toggleButton={onToggle} {...ToggleButtonProps} />
+              <ToggleButton
+                isActive={isOpen}
+                toggleButton={onToggle}
+                {...ToggleButtonProps}
+              />
             </Box>
           </Container>
         </Wrapper>
       )}
     </NavbarWrapper>
-  );
-};
+  )
+}
 
 Navbar.propTypes = {
   /**
@@ -142,7 +157,7 @@ Navbar.propTypes = {
       as: PropTypes.elementType,
       to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
       label: PropTypes.node.isRequired,
-    }),
+    })
   ),
   /**
    * List of action buttons
@@ -152,42 +167,42 @@ Navbar.propTypes = {
       as: PropTypes.elementType,
       to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
       label: PropTypes.node.isRequired,
-    }),
+    })
   ),
-};
+}
 
 Navbar.defaultProps = {
   WrapperProps: {
-    stickyBgColor: 'gray.7',
+    stickyBgColor: "gray.7",
   },
   ContainerProps: {
     py: 3,
   },
   MenuItemsListProps: {
     display: {
-      _: 'none',
-      lg: 'flex',
+      _: "none",
+      lg: "flex",
     },
-    alignItems: 'center',
-    justifyContent:'flex-end',
-    width: '100%',
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "100%",
   },
   LogoProps: {
     as: Link,
-    to: '',
+    to: "",
     ...smoothLinkProps,
     mx: {
-      _: 'auto',
-      md: '0',
+      _: "auto",
+      md: "0",
     },
   },
   LinksWrapperProps: {
-    display: 'flex',
+    display: "flex",
     flexDirection: {
-      _: 'column',
-      lg: 'row',
+      _: "column",
+      lg: "row",
     },
-    alignItems: 'center',
+    alignItems: "center",
   },
   LinkProps: {
     mx: {
@@ -198,10 +213,9 @@ Navbar.defaultProps = {
       _: 4,
       lg: 0,
     },
-    color: 'gray.2',
+    color: "gray.2",
     as: Link,
-    activeColor: 'primary',
-    letterSpacing: '0.09em',
+    activeColor: "primary",
     ...smoothLinkProps,
   },
   ActionsWrapperProps: {
@@ -211,56 +225,56 @@ Navbar.defaultProps = {
     },
     ml: {
       _: 0,
-      lg: 'auto',
+      lg: "auto",
     },
   },
   ActionProps: {
-    variant: 'primary',
-    as: 'a',
+    variant: "primary",
+    as: "a",
   },
   ToggleButtonProps: {
     buttonWidth: 24,
-    position: 'absolute',
+    position: "absolute",
     padding: 0,
     right: 4,
-    top: '24px',
-    color: 'gray.0',
+    top: "24px",
+    color: "gray.0",
     display: {
-      lg: 'none',
+      lg: "none",
     },
   },
   MobileMenuProps: {
     display: {
-      _: 'flex',
-      lg: 'none',
+      _: "flex",
+      lg: "none",
     },
-    position: 'fixed',
-    backgroundColor: 'gray.7',
+    position: "fixed",
+    backgroundColor: "gray.7",
     left: 0,
     top: 0,
     bottom: 0,
     right: 0,
     zIndex: zIndex.menuNav,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
+    alignItems: "center",
+    justifyContent: "flex-start",
+    flexDirection: "column",
     paddingTop: 146,
   },
   MobileMenuToggleProps: {
     buttonWidth: 24,
-    color: 'gray.0',
-    position: 'absolute',
+    color: "gray.0",
+    position: "absolute",
     padding: 0,
     right: 4,
-    top: '24px',
+    top: "24px",
   },
   ButtonProps: {
-    variant: 'primary',
-    size: 'small',
+    variant: "primary",
+    size: "small",
   },
   Logo: LanderPagerLogo,
   links: data.navbar.links,
   actions: data.navbar.actions,
-};
+}
 
-export default Navbar;
+export default Navbar

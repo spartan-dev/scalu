@@ -172,7 +172,6 @@ Welcome.defaultProps = {
     mt: 4,
     width: 172,
     height: 48,
-    letterSpacing: ".07em",
   },
   ImageWrapperProps: {
     zIndex: 4,

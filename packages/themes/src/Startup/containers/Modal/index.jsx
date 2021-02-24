@@ -92,7 +92,6 @@ Modal.defaultProps = {
     variant: "primary",
     fontSize: 16,
     lineHeight: "18.75px",
-    letterSpacing: "0.07em",
     fontWeight: 600,
   },
   MailerTitleProps: {

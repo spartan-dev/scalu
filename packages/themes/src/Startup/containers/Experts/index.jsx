@@ -143,7 +143,11 @@ Experts.defaultProps = {
       _: "hidden",
       sm: "visible",
     },
-    py: {
+    pt: {
+      _: 0,
+      lg: 32,
+    },
+    pb: {
       _: 96,
       lg: 32,
     },
@@ -155,6 +159,9 @@ Experts.defaultProps = {
     flexDirection: {
       _: "column",
       lg: "row",
+    },
+    px: {
+      md: 40,
     },
   },
   CaptionProps: {
@@ -196,7 +203,6 @@ Experts.defaultProps = {
     mb: 20,
     fontSize: 20,
     lineHeight: 1.5,
-    letterSpacing: "0.025em",
     fontWeight: 300,
     textAlign: "center",
     color: "gray.8",
@@ -205,7 +211,6 @@ Experts.defaultProps = {
     fontSize: 30,
     lineHeight: "35px",
     fontWeight: "bold",
-    letterSpacing: "0.025em",
   },
   ...data.experts,
 }

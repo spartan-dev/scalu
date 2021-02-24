@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import Fade from "react-reveal/Fade"
-import Reveal from "react-reveal/Reveal"
 import Slider from "react-slick"
 
 import Box from "@pagerland/common/src/components/Box"
@@ -68,7 +67,7 @@ const Pricing = ({
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
         </Fade>
-        <Reveal effect="cards" duration={600}>
+        <Fade bottom cascade duration={600}>
           <Box className="slider-wrapper">
             <Slider {...settings}>
               {prices?.sections?.map((section, i) => (
@@ -111,7 +110,7 @@ const Pricing = ({
               ))}
             </Slider>
           </Box>
-        </Reveal>
+        </Fade>
       </Box>
     </Box>
   )
@@ -234,6 +233,7 @@ Pricing.propTypes = {
 
 Pricing.defaultProps = {
   WrapperProps: {
+    pb: 96,
     overflow: "hidden",
     position: "relative",
   },
@@ -260,7 +260,7 @@ Pricing.defaultProps = {
     },
     px: {
       _: 21,
-      md: 40,
+      md: 16,
       lg: 200,
     },
   },
@@ -270,8 +270,11 @@ Pricing.defaultProps = {
     justifyContent: "space-between",
     borderRadius: "8px",
     width: "360px",
-    pt: 62,
-    pb: 68,
+    pt: 48,
+    pb: {
+      _: 80,
+      lg: 56,
+    },
     px: 32,
     mb: 68,
   },
@@ -289,7 +292,6 @@ Pricing.defaultProps = {
 
   CardListItemProps: {
     py: 16,
-    mb: 20,
     borderBottomWidth: "1px",
     borderBottomColor: "gray.5",
     borderBottomStyle: "solid",
@@ -323,13 +325,13 @@ Pricing.defaultProps = {
     color: "gray.8",
     fontSize: 20,
     textAlign: "center",
-    lineHeight: "23px",
+    lineHeight: "24.5px",
   },
   SecondTextProps: {
     color: "gray.8",
     fontSize: 20,
     textAlign: "center",
-    lineHeight: "23px",
+    lineHeight: "24.5px",
     mb: 36,
     fontWeight: 600,
   },
