@@ -28,19 +28,19 @@ const Squares = () => {
         <Square
           color="secondary"
           zIndex={-1}
-          right={-120}
-          top={-50}
+          right={-132}
+          top={-62}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
         />
         <Square
           color="quaternary"
           zIndex={-1}
-          right={-200}
+          right={-220}
           top={265}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
         />
         <Square
@@ -49,7 +49,7 @@ const Squares = () => {
           left={-75}
           top={10}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
         />
         <SquareBlur
@@ -57,9 +57,9 @@ const Squares = () => {
           color="primary"
           zIndex={-1}
           left={220}
-          top={-125}
+          top={-150}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
           filter="blur(3px)"
         />
@@ -69,26 +69,26 @@ const Squares = () => {
           left={-176}
           top={410}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
           filter="blur(3px)"
         />
         <Square
           color="accent"
           zIndex={-1}
-          left={-60}
-          bottom={50}
+          left={-32}
+          bottom={40}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
         />
         <SquareBlur
           color="quinary"
           zIndex={-1}
-          right={-113}
+          right={-122}
           bottom={-15}
           width={142}
-          height={80}
+          height={102}
           position="absolute"
           filter="blur(3px)"
         />

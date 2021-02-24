@@ -167,6 +167,9 @@ Services.defaultProps = {
   },
   ContainerProps: {
     textAlign: "center",
+    px: {
+      md: 40,
+    },
   },
   CaptionProps: {
     mb: {
@@ -199,9 +202,13 @@ Services.defaultProps = {
   ServiceIconProps: {
     display: "block",
     mx: "auto",
-    my: {
+    mt: {
       _: 0,
       lg: 56,
+    },
+    mb: {
+      _: 0,
+      lg: 24,
     },
     height: "100%",
   },
@@ -209,10 +216,7 @@ Services.defaultProps = {
     textAlign: "center",
     as: "h3",
     variant: "h3",
-    mb: {
-      _: 16,
-      lg: 32,
-    },
+    mb: 16,
     mt: {
       _: 58,
       lg: 0,
@@ -233,7 +237,6 @@ Services.defaultProps = {
   ActionButtonsProps: {
     width: "100%",
     height: 48,
-    letterSpacing: ".07em",
     display: "flex",
     justifyContent: "center",
   },

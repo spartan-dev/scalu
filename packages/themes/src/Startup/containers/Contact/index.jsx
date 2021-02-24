@@ -91,11 +91,15 @@ const Contact = ({
           <Form>
             <Fade cascade bottom duration={600}>
               <div>
-                {mailer.fields.map(field => (
-                  <Input key={field.name} {...field} />
+                {mailer.fields.map((row, index) => (
+                  <div key={index} style={{ display: "flex", marginTop: 16 }}>
+                    {row.map((field, idx) => (
+                      <Input key={idx} styles={field.styles} {...field} />
+                    ))}
+                  </div>
                 ))}
               </div>
-              <Box display="flex" justifyContent="center">
+              <Box display="flex" justifyContent="start">
                 <Button {...MailerButtonProps}>{mailer.cta}</Button>
               </Box>
             </Fade>
@@ -315,11 +319,7 @@ Contact.defaultProps = {
     color: "gray.1",
     fontSize: 16,
     lineHeight: "24px",
-    letterSpacing: "0.07em",
     fontWeight: "normal",
-    width: {
-      lg: "140px",
-    },
   },
   SocialLinkWrapperProps: {
     flexBox: true,
@@ -358,7 +358,6 @@ Contact.defaultProps = {
     variant: "primary",
     fontSize: 16,
     lineHeight: "18.75px",
-    letterSpacing: "0.07em",
     fontWeight: 600,
   },
   ...data.contact,

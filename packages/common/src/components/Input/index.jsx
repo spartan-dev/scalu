@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, { useState } from "react"
+import PropTypes from "prop-types"
+import classNames from "classnames"
 
-import { Collapse } from 'react-collapse';
+import { Collapse } from "react-collapse"
 
 import {
   ErrorMessage,
@@ -11,7 +11,7 @@ import {
   StyledInput,
   StyledTextarea,
   Wrapper,
-} from './styled.components';
+} from "./styled.components"
 
 /**
  * Input let users enter and edit text.
@@ -32,29 +32,31 @@ const Input = ({
   InputWrapperProps,
   LabelProps,
   ErrorMessageProps,
+  styles,
   ...props
 }) => {
-  const [focused, setFocused] = useState(false);
-  const InputComponent = multiline ? StyledTextarea : StyledInput;
+  const [focused, setFocused] = useState(false)
+  const InputComponent = multiline ? StyledTextarea : StyledInput
 
   const handleFocus = event => {
     if (onFocus) {
-      onFocus(event);
+      onFocus(event)
     }
 
-    setFocused(true);
-  };
+    setFocused(true)
+  }
 
   const handleBlur = event => {
     if (onBlur) {
-      onBlur(event);
+      onBlur(event)
     }
 
-    setFocused(false);
-  };
+    setFocused(false)
+  }
 
   return (
     <Wrapper
+      style={{ width: "100%", marginTop: 0, ...styles }}
       className={classNames({
         focused,
         error: !!error,
@@ -85,8 +87,8 @@ const Input = ({
         <ErrorMessage {...ErrorMessageProps}>{error}</ErrorMessage>
       </Collapse>
     </Wrapper>
-  );
-};
+  )
+}
 
 Input.propTypes = {
   /**
@@ -153,6 +155,7 @@ Input.propTypes = {
    * Additional props for error message.
    */
   ErrorMessageProps: PropTypes.object,
-};
+  styles: PropTypes.object,
+}
 
-export default Input;
+export default Input

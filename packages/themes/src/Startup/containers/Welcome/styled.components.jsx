@@ -5,7 +5,6 @@ import { colors } from "../../styles"
 
 export const ContainerWithBackground = styled(Container)`
   position: relative;
-
   &::after {
     position: absolute;
     top: 70px;
@@ -30,5 +29,5 @@ export const Rectangle = styled.div`
   height: 12px;
   width: 12px;
   background-color: ${colors.primary};
-  margin-left: -17px;
+  margin-left: -13px;
 `

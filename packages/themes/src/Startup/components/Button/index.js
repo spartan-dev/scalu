@@ -9,7 +9,7 @@ export default {
   main: css`
     ${Typography.main};
     ${Typography.variants.button2};
-    padding: 11px 48px 12px;
+    padding: 12px 48px 12px;
     white-space: nowrap;
     transition: ${transition.all};
     letter-spacing: 0.07em;
