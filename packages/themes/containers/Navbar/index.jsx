@@ -113,13 +113,7 @@ Navbar.propTypes = {
       label: PropTypes.node.isRequired,
     })
   ),
-  actions: PropTypes.arrayOf(
-    PropTypes.shape({
-      as: PropTypes.elementType,
-      to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-      label: PropTypes.node.isRequired,
-    })
-  ),
+  actions: PropTypes.object,
 }
 
 Navbar.defaultProps = {
@@ -166,7 +160,7 @@ Navbar.defaultProps = {
     },
     color: "gray.2",
     as: Link,
-    activeColor: "primary",
+    activecolor: "primary",
     ...smoothLinkProps,
   },
   ActionsWrapperProps: {

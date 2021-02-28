@@ -27,7 +27,7 @@ export const LogoWrapper = styled.a`
 `
 
 // eslint-disable-next-line jsx-a11y/anchor-has-content
-export const NavbarLink = styled(({ activeColor, ...props }) => (
+export const NavbarLink = styled(({ activecolor, ...props }) => (
   <a {...props} />
 ))`
   display: block;
@@ -37,7 +37,7 @@ export const NavbarLink = styled(({ activeColor, ...props }) => (
   transition: ${transition.all};
   ${base};
   &.active {
-    color: ${props => _.get(props.theme.colors, props.activeColor)};
+    color: ${props => _.get(props.theme.colors, props.activecolor)};
   }
 `
 

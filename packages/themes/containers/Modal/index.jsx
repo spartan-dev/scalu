@@ -20,44 +20,73 @@ const Modal = ({
   MailerButtonProps,
   MailerTitleProps,
   TextProps,
-}) => (
-  <ModalWrapper>
-    <ModalBox>
-      <div>
-        <Box display="flex" justifyContent="flex-end">
-          <Button {...CloseButtonProps} onClick={() => onClick()}>
-            <Close />
-          </Button>
-        </Box>
-        <Typography {...MailerTitleProps}>{modalMailer.title}</Typography>
-        <Typography {...TextProps}>{modalMailer.description}</Typography>
-        <Formik
-          validationSchema={modalMailer.validationSchema}
-          onSubmit={modalMailer.onSubmit}
-          initialValues={modalMailer.fields.reduce(
-            (acc, field) => ({
-              ...acc,
-              [field.name]: field.initialValue,
-            }),
-            {}
-          )}
-        >
-          <Form>
-            <div>
-              {modalMailer.fields.map(field => (
-                <Input key={field.name} {...field} />
-              ))}
-            </div>
-            <Box display="flex" justifyContent="flex-start">
-              <Button {...MailerButtonProps}>{modalMailer.cta}</Button>
-            </Box>
-          </Form>
-        </Formik>
-        {/*  */}
-      </div>
-    </ModalBox>
-  </ModalWrapper>
-)
+}) => {
+  const encode = object =>
+    Object.keys(object)
+      .map(
+        key => `${encodeURIComponent(key)}=${encodeURIComponent(object[key])}`
+      )
+      .join("&")
+
+  const handleSubmit = (values, actions) => {
+    fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encode({ "form-name": "modal-form", ...values }),
+    })
+      .then(() => {
+        actions.resetForm()
+      })
+      .catch(err => {
+        // eslint-disable-next-line no-console
+        console.error("Send modal form error =>", err)
+      })
+      .finally(() => actions.setSubmitting(false))
+  }
+  return (
+    <ModalWrapper>
+      <ModalBox>
+        <div>
+          <Box display="flex" justifyContent="flex-end">
+            <Button {...CloseButtonProps} onClick={() => onClick()}>
+              <Close />
+            </Button>
+          </Box>
+          <Typography {...MailerTitleProps}>{modalMailer.title}</Typography>
+          <Typography {...TextProps}>{modalMailer.description}</Typography>
+          <Formik
+            validationSchema={modalMailer.validationSchema}
+            onSubmit={(values, actions) => handleSubmit(values, actions)}
+            initialValues={modalMailer.fields.reduce(
+              (acc, field) => ({
+                ...acc,
+                [field.name]: field.initialValue,
+              }),
+              {}
+            )}
+          >
+            {/* eslint-disable-next-line react/jsx-boolean-value */}
+            <Form name="modal-form" data-netlify={true}>
+              <div>
+                {modalMailer.fields.map(field => (
+                  <Input key={field.name} {...field} />
+                ))}
+              </div>
+              <Box display="flex" justifyContent="flex-start">
+                <Button type="submit" {...MailerButtonProps}>
+                  {modalMailer.cta}
+                </Button>
+              </Box>
+            </Form>
+          </Formik>
+          {/*  */}
+        </div>
+      </ModalBox>
+    </ModalWrapper>
+  )
+}
 
 Modal.propTypes = {
   onClick: PropTypes.func,

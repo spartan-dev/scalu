@@ -67,10 +67,11 @@ const Pricing = ({
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
         </Fade>
-        <Fade bottom cascade duration={600}>
-          <Box className="slider-wrapper">
-            <Slider {...settings}>
-              {prices?.sections?.map((section, i) => (
+
+        <Box className="slider-wrapper">
+          <Slider {...settings}>
+            {prices?.sections?.map((section, i) => (
+              <Fade key={i} bottom cascade duration={600} delay={i * 100}>
                 <Card id="slider" {...CardProps}>
                   <div>
                     <Typography {...TitleProps}>{section.title}</Typography>
@@ -109,10 +110,10 @@ const Pricing = ({
                     )}
                   </Box>
                 </Card>
-              ))}
-            </Slider>
-          </Box>
-        </Fade>
+              </Fade>
+            ))}
+          </Slider>
+        </Box>
       </Box>
     </Box>
   )
@@ -140,7 +141,7 @@ Pricing.propTypes = {
         ),
         button: PropTypes.shape({
           text: PropTypes.node,
-          ButtonProps: PropTypes.object,
+          ButtonProps: PropTypes.array,
         }),
       })
     ),

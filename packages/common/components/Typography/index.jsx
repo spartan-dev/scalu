@@ -26,6 +26,7 @@ Typography.propTypes = {
       "small",
       "large",
       "title",
+      "button2",
     ]),
     PropTypes.object,
   ]),

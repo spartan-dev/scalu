@@ -33,7 +33,7 @@ const Team = ({
       </Box>
       <Grid {...GridProps}>
         {people.map((person, key) => (
-          <Fade bottom cascade duration={600} delay={key * 100}>
+          <Fade key={key} bottom cascade duration={600} delay={key * 100}>
             <Box {...PersonWrapperProps}>
               <Avatar {...AvatarProps} {...person.avatar} />
             </Box>
