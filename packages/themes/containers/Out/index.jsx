@@ -19,6 +19,8 @@ const Out = ({
     <Box {...FirstTitleProps}>
       <Fade bottom cascade duration={600}>
         <Typography {...TitleProps}>{firstTitle}</Typography>
+      </Fade>
+      <Fade bottom cascade duration={600}>
         <Src />
       </Fade>
     </Box>
@@ -28,7 +30,7 @@ const Out = ({
 Out.propTypes = {
   name: PropTypes.string.isRequired,
   firstTitle: PropTypes.string.isRequired,
-  src: PropTypes.string.isRequired,
+  src: PropTypes.func.isRequired,
   WrapperProps: PropTypes.object,
   TitleProps: PropTypes.object,
   FirstTitleProps: PropTypes.object,

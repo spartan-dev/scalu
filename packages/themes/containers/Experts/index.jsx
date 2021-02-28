@@ -35,8 +35,8 @@ const Experts = ({
           <Typography {...TitleProps}>{title}</Typography>
           <Typography {...TextProps}>{text}</Typography>
           <Box {...AccordionWrapperProps}>
-            {sections.map(section => (
-              <Accordion>
+            {sections.map((section, idx) => (
+              <Accordion key={idx}>
                 <Details>
                   <Summary color={section.color}>
                     <Typography {...AccordionTitleProps}>
@@ -44,8 +44,10 @@ const Experts = ({
                     </Typography>
                   </Summary>
                   <TextWrapper>
-                    {section.labels.map(label => (
-                      <Typography {...AccordionLabelProps}>{label}</Typography>
+                    {section.labels.map((label, i) => (
+                      <Typography key={i} {...AccordionLabelProps}>
+                        {label}
+                      </Typography>
                     ))}
                   </TextWrapper>
                 </Details>
@@ -83,11 +85,7 @@ Experts.propTypes = {
   AccordionWrapperProps: PropTypes.object,
   title: PropTypes.node,
   text: PropTypes.node,
-  cta: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.node,
-    })
-  ),
+  cta: PropTypes.object,
 }
 
 Experts.defaultProps = {

@@ -68,14 +68,14 @@ export default {
   welcome: {
     title: [
       "SCALE OUTSIDE",
-      <Typography as="span" variant="title">
+      <Typography as="span" variant="title" key="welcome-title">
         <br />
         THE <br /> BOX
       </Typography>,
     ],
     text: [
       "En Scalu Technologies",
-      <Typography as="span" variant="body1" color="primary">
+      <Typography as="span" variant="body1" color="primary" key="welcome-text">
         {" "}
         damos soluciones <br className="none" /> ágiles para escalar tu negocio
         físico a dígital. <br className="none" />
@@ -111,7 +111,7 @@ export default {
       {
         icon: Practico,
         title: [
-          <Typography variant="h5" color="primary">
+          <Typography variant="h5" color="primary" key="services-1">
             Práctico y ágil
           </Typography>,
         ],
@@ -121,7 +121,7 @@ export default {
       {
         icon: Experiencia,
         title: [
-          <Typography variant="h5" color="primary">
+          <Typography variant="h5" color="primary" key="services-2">
             Alta experiencia
           </Typography>,
         ],
@@ -131,7 +131,7 @@ export default {
       {
         icon: Multiplica,
         title: [
-          <Typography variant="h5" color="primary">
+          <Typography variant="h5" color="primary" key="services-3">
             Multiplica tus clientes
           </Typography>,
         ],
@@ -339,13 +339,19 @@ export default {
           features: [
             {
               text: [
-                <Typography variant="button2" color="gray.8" fontWeight="600">
+                <Typography
+                  variant="button2"
+                  color="gray.8"
+                  fontWeight="600"
+                  key="pricing-gratis"
+                >
                   GRATIS
                 </Typography>,
                 <Typography
                   variant="button2"
                   color="gray.8"
                   fontWeight="normal"
+                  key="pricing-catalog"
                 >
                   {" "}
                   - catálogo de soluciones
@@ -476,6 +482,7 @@ export default {
               color="gray.8"
               fontWeight="600"
               lineHeight="28px"
+              key="pricing-on"
             >
               Pregunta por nuestra fabrica <br /> de desarrollos{" "}
               <Typography
@@ -484,6 +491,7 @@ export default {
                 fontWeight="normal"
                 as="span"
                 lineHeight="28px"
+                key="pricing-demand"
               >
                 donde proveemos Outsourcing Especializado y Soluciones Digitales
                 en temas de E-commerce, Logística, Servicios Financieros y
@@ -566,9 +574,6 @@ export default {
         phone: Yup.string().required("Campo requerido"),
         comments: Yup.string().required("Campo requerido"),
       }),
-      // eslint-disable-next-line no-undef
-      onSubmit: values =>
-        window.alert(`Form sent with values ${JSON.stringify(values)}`),
       fields: [
         [
           {
@@ -598,7 +603,7 @@ export default {
             initialValue: "",
             as: "input",
             styles: {
-              width: 143,
+              width: 240,
               marginRight: 24,
             },
           },

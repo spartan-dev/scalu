@@ -95,7 +95,7 @@ Services.propTypes = {
   text: PropTypes.node,
   services: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string,
+      icon: PropTypes.function,
       title: PropTypes.node,
       text: PropTypes.node,
     })
