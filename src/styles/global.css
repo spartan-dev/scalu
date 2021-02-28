@@ -90,7 +90,7 @@ textarea:focus {
 }
 
 .slick-prev:before {
-  content: url("../../packages/themes/src/Startup/assets/pricing/back.svg");
+  content: url("../../packages/themes/assets/back.svg");
 }
 
 .slick-next {
@@ -99,7 +99,7 @@ textarea:focus {
 }
 
 .slick-next:before {
-  content: url("../../packages/themes/src/Startup/assets/pricing/next.svg");
+  content: url("../../packages/themes/assets/next.svg");
 }
 
 /* Dots */
