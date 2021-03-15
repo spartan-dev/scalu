@@ -180,6 +180,7 @@ Pricing.defaultProps = {
   },
   TextProps: {
     color: "gray.1",
+    variant: "body1",
     textAlign: "center",
     mb: {
       _: 96,

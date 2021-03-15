@@ -21,17 +21,15 @@ import Multiplica from "@pagerland/icons/Multiplica"
 
 import Powerfull from "@pagerland/icons/Powerfull"
 
+import Alpha from "@pagerland/icons/Alpha"
+import Kixik from "@pagerland/icons/Kixik"
+import Octavia from "@pagerland/icons/Octavia"
+import Udizain from "@pagerland/icons/Udizain"
+import Wikanbi from "@pagerland/icons/Wikanbi"
+
 import * as Yup from "yup"
 import Welcome from "./assets/welcome.png"
-
-import Avatar1 from "./assets/avatars/avatar-1.jpg"
-import Avatar2 from "./assets/avatars/avatar-2.jpg"
-import Avatar3 from "./assets/avatars/avatar-3.jpg"
-import Avatar4 from "./assets/avatars/avatar-4.jpg"
-import Avatar5 from "./assets/avatars/avatar-5.jpg"
-import Avatar6 from "./assets/avatars/avatar-6.jpg"
-import Avatar7 from "./assets/avatars/avatar-7.jpg"
-import Avatar8 from "./assets/avatars/avatar-8.jpg"
+import WelcomeWebp from "./assets/welcome.webp"
 
 export default {
   title: "Startup",
@@ -93,8 +91,8 @@ export default {
     ],
     img: {
       src: Welcome,
+      srcWebp: WelcomeWebp,
       alt: "Soluciones digitales",
-      title: "Soluciones digitales",
     },
   },
   services: {
@@ -151,8 +149,13 @@ export default {
   },
   experts: {
     title: "NUESTROS EXPERTOS",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    text: (
+      <>
+        Nuestros expertos están dispuestos a acompañarte para escalar tu negocio{" "}
+        <br className="none" /> al siguiente nivel y en cada paso de tu camino
+        de transformación
+      </>
+    ),
     cta: {
       label: "¡Únete a nuestros expertos!",
       to: "",
@@ -217,104 +220,7 @@ export default {
     ),
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu magna pharetra sem ullamcorper bibendum quis et mauris. Phasellus tincidunt iaculis porttitor. Sed ut mi varius, gravida nulla eget, bibendum est. Ut auctor nec erat vitae placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-    people: [
-      {
-        avatar: {
-          src: Avatar1,
-        },
-        name: "Timothy Wilson",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar2,
-        },
-        name: "Bernard Nguyen",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar3,
-        },
-        name: "Bessie Richards",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar4,
-        },
-        name: "Judith Black",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar5,
-        },
-        name: "Robert Edwards",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar6,
-        },
-        name: "Dianne Robertson",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar7,
-        },
-        name: "Shane Black",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-      {
-        avatar: {
-          src: Avatar8,
-        },
-        name: "Nathan Fox",
-        position: "Co-Founder, CEO",
-        social: {
-          linkedin: "#",
-          twitter: "#",
-          skype: "#",
-        },
-      },
-    ],
+    brands: [<Alpha />, <Kixik />, <Octavia />, <Udizain />, <Wikanbi />],
   },
   pricing: {
     title: "PAQUETES",
