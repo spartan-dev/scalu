@@ -19,7 +19,7 @@ import {
 
 import SEO from "../components/SEO"
 import "../styles/global.css"
-import preview from "../images/scalu.png"
+import preview from "../images/scalu.jpg"
 
 const Startup = ({ url }) => {
   const [showModal, setShowModal] = useState(false)

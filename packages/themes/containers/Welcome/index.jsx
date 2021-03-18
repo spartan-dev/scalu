@@ -50,7 +50,16 @@ const Welcome = ({
       <Box {...ImageWrapperProps}>
         <Squares />
         <Fade cascade duration={600}>
-          <RoundedImage {...ImageProps} {...img} />
+          <picture>
+            <source srcSet={img.srcWebp} type="image/webp" />
+            <source srcSet={img.src} type="image/png" />
+            <RoundedImage
+              {...ImageProps}
+              src={img.src}
+              alt={img.alt}
+              title={img.alt}
+            />
+          </picture>
         </Fade>
       </Box>
     </ContainerWithBackground>
@@ -122,6 +131,7 @@ Welcome.defaultProps = {
   ImageWrapperProps: {
     zIndex: 4,
     position: "relative",
+    borderRadius: "128px 0",
     my: {
       _: 78,
       md: 56,
